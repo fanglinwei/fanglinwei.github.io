@@ -325,8 +325,10 @@
       
         
           
-            <p>###定义一个懒加载的宏<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#define DYJ_LAZY(object, assignment) (object = object ?: assignment)</span></div></pre></td></tr></table></figure></p>
-<p>#####使用<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">//使用</span></div><div class="line">- (<span class="built_in">UINavigationBar</span> *)navBar</div><div class="line">&#123;</div><div class="line"><span class="keyword">return</span> DYJ_LAZY(_navBar, (&#123;</div><div class="line"></div><div class="line"><span class="built_in">UINavigationBar</span> *bar = [[<span class="built_in">UINavigationBar</span> alloc] init];</div><div class="line">bar.barStyle = <span class="built_in">UINavigationBar</span>.appearance.barStyle;</div><div class="line">bar.translucent = <span class="literal">YES</span>;</div><div class="line">[<span class="keyword">self</span>.view addSubview:bar];</div><div class="line">[bar setFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, SCREEN_WIDTH, <span class="number">64</span>)];</div><div class="line">bar;</div><div class="line">&#125;));</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+            <p>##定义一个懒加载的宏</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#define DYJ_LAZY(object, assignment) (object = object ?: assignment)</span></div></pre></td></tr></table></figure>
+<p>###使用</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">//使用</span></div><div class="line">- (<span class="built_in">UINavigationBar</span> *)navBar</div><div class="line">&#123;</div><div class="line"><span class="keyword">return</span> DYJ_LAZY(_navBar, (&#123;</div><div class="line"></div><div class="line"><span class="built_in">UINavigationBar</span> *bar = [[<span class="built_in">UINavigationBar</span> alloc] init];</div><div class="line">bar.barStyle = <span class="built_in">UINavigationBar</span>.appearance.barStyle;</div><div class="line">bar.translucent = <span class="literal">YES</span>;</div><div class="line">[<span class="keyword">self</span>.view addSubview:bar];</div><div class="line">[bar setFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, SCREEN_WIDTH, <span class="number">64</span>)];</div><div class="line">bar;</div><div class="line">&#125;));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -535,6 +537,15 @@
 
           
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
           
 
         </nav>
