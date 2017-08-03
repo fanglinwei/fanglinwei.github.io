@@ -93,18 +93,18 @@
 
 
 
-<meta name="description" content="定义一个懒加载的宏‘```{objc} #define DYJ_LAZY(object, assignment) (object = object ?: assignment) ```’ 使用‘```{objc} //使用  (UINavigationBar *)navBar{  return DYJ_LAZY(_navBar, ({ UINavigationBar *bar = [[UINavi">
+<meta name="description" content="定义一个懒加载的宏12#define DYJ_LAZY(object, assignment) (object = object ?: assignment) 使用1234567891011121314//使用- (UINavigationBar *)navBar&amp;#123;    return DYJ_LAZY(_navBar, (&amp;#123;                UINavigati">
 <meta name="keywords" content="iOS,OC">
 <meta property="og:type" content="article">
 <meta property="og:title" content="懒加载">
 <meta property="og:url" content="http://CSummer.com/2017/08/01/My-New-Post/index.html">
 <meta property="og:site_name" content="CSummer Blog">
-<meta property="og:description" content="定义一个懒加载的宏‘```{objc} #define DYJ_LAZY(object, assignment) (object = object ?: assignment) ```’ 使用‘```{objc} //使用  (UINavigationBar *)navBar{  return DYJ_LAZY(_navBar, ({ UINavigationBar *bar = [[UINavi">
+<meta property="og:description" content="定义一个懒加载的宏12#define DYJ_LAZY(object, assignment) (object = object ?: assignment) 使用1234567891011121314//使用- (UINavigationBar *)navBar&amp;#123;    return DYJ_LAZY(_navBar, (&amp;#123;                UINavigati">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-03T02:13:10.000Z">
+<meta property="og:updated_time" content="2017-08-03T03:07:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="懒加载">
-<meta name="twitter:description" content="定义一个懒加载的宏‘```{objc} #define DYJ_LAZY(object, assignment) (object = object ?: assignment) ```’ 使用‘```{objc} //使用  (UINavigationBar *)navBar{  return DYJ_LAZY(_navBar, ({ UINavigationBar *bar = [[UINavi">
+<meta name="twitter:description" content="定义一个懒加载的宏12#define DYJ_LAZY(object, assignment) (object = object ?: assignment) 使用1234567891011121314//使用- (UINavigationBar *)navBar&amp;#123;    return DYJ_LAZY(_navBar, (&amp;#123;                UINavigati">
 
 
 
@@ -374,23 +374,8 @@
       
 
       
-        <h1 id="定义一个懒加载的宏"><a href="#定义一个懒加载的宏" class="headerlink" title="定义一个懒加载的宏"></a>定义一个懒加载的宏</h1><p>‘```{objc}</p>
-<p>#define DYJ_LAZY(object, assignment) (object = object ?: assignment)</p>
-<p>```’</p>
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>‘```{objc}</p>
-<p>//使用</p>
-<ul>
-<li><p>(UINavigationBar *)navBar<br>{<br>  return DYJ_LAZY(_navBar, ({</p>
-<pre><code>UINavigationBar *bar = [[UINavigationBar alloc] init];
-bar.barStyle = UINavigationBar.appearance.barStyle;
-bar.translucent = YES;
-[self.view addSubview:bar];
-[bar setFrame:CGRectMake(0, 0, SCREEN_WIDTH, 64)];
-bar;
-</code></pre><p>  }));<br>}</p>
-</li>
-</ul>
-<p>```’</p>
+        <h1 id="定义一个懒加载的宏"><a href="#定义一个懒加载的宏" class="headerlink" title="定义一个懒加载的宏"></a>定义一个懒加载的宏</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#define DYJ_LAZY(object, assignment) (object = object ?: assignment)</div></pre></td></tr></table></figure>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">//使用</div><div class="line">- (UINavigationBar *)navBar</div><div class="line">&#123;</div><div class="line">    return DYJ_LAZY(_navBar, (&#123;</div><div class="line">        </div><div class="line">        UINavigationBar *bar = [[UINavigationBar alloc] init];</div><div class="line">        bar.barStyle = UINavigationBar.appearance.barStyle;</div><div class="line">        bar.translucent = YES;</div><div class="line">        [self.view addSubview:bar];</div><div class="line">        [bar setFrame:CGRectMake(0, 0, SCREEN_WIDTH, 64)];</div><div class="line">        bar;</div><div class="line">    &#125;));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
