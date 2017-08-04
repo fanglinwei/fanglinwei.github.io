@@ -404,7 +404,7 @@
         
           
             <h1 id="定义一个懒加载的宏"><a href="#定义一个懒加载的宏" class="headerlink" title="定义一个懒加载的宏"></a>定义一个懒加载的宏</h1><figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="meta">#define DYJ_LAZY(object, assignment) (object = object ?: assignment)</span></div></pre></td></tr></table></figure>
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">//使用</span></div><div class="line">- (<span class="built_in">UINavigationBar</span> *)navBar</div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> DYJ_LAZY(_navBar, (&#123;</div><div class="line">        </div><div class="line">        <span class="built_in">UINavigationBar</span> *bar = [[<span class="built_in">UINavigationBar</span> alloc] init];</div><div class="line">        bar.barStyle = <span class="built_in">UINavigationBar</span>.appearance.barStyle;</div><div class="line">        bar.translucent = <span class="literal">YES</span>;</div><div class="line">        [<span class="keyword">self</span>.view addSubview:bar];</div><div class="line">        [bar setFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, SCREEN_WIDTH, <span class="number">64</span>)];</div><div class="line">        bar;</div><div class="line">    &#125;));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"></div><div class="line">- (<span class="built_in">UINavigationBar</span> *)navBar</div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> DYJ_LAZY(_navBar, (&#123;</div><div class="line">        </div><div class="line">        <span class="built_in">UINavigationBar</span> *bar = [[<span class="built_in">UINavigationBar</span> alloc] init];</div><div class="line">        bar.barStyle = <span class="built_in">UINavigationBar</span>.appearance.barStyle;</div><div class="line">        bar.translucent = <span class="literal">YES</span>;</div><div class="line">        [<span class="keyword">self</span>.view addSubview:bar];</div><div class="line">        [bar setFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, SCREEN_WIDTH, <span class="number">64</span>)];</div><div class="line">        bar;</div><div class="line">    &#125;));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -659,8 +659,6 @@
 
 
   
-
-
 
 
 
