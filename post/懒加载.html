@@ -95,18 +95,18 @@
 
 
 
-<meta name="description" content="定义一个懒加载的宏#define DYJ_LAZY(object, assignment) (object = object ?: assignment) 使用- (UINavigationBar *)navBar&amp;#123;    return DYJ_LAZY(_navBar, (&amp;#123;                UINavigationBar *bar = [[UINavigati">
+<meta name="description" content="定义一个懒加载的宏#define DYJ_LAZY(object, assignment) (object = object ?: assignment)">
 <meta name="keywords" content="iOS,OC">
 <meta property="og:type" content="article">
 <meta property="og:title" content="懒加载">
 <meta property="og:url" content="http://csummer.coding.me/post/懒加载.html">
 <meta property="og:site_name" content="CSummer Blog">
-<meta property="og:description" content="定义一个懒加载的宏#define DYJ_LAZY(object, assignment) (object = object ?: assignment) 使用- (UINavigationBar *)navBar&amp;#123;    return DYJ_LAZY(_navBar, (&amp;#123;                UINavigationBar *bar = [[UINavigati">
+<meta property="og:description" content="定义一个懒加载的宏#define DYJ_LAZY(object, assignment) (object = object ?: assignment)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-07T04:54:38.000Z">
+<meta property="og:updated_time" content="2017-08-07T08:20:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="懒加载">
-<meta name="twitter:description" content="定义一个懒加载的宏#define DYJ_LAZY(object, assignment) (object = object ?: assignment) 使用- (UINavigationBar *)navBar&amp;#123;    return DYJ_LAZY(_navBar, (&amp;#123;                UINavigationBar *bar = [[UINavigati">
+<meta name="twitter:description" content="定义一个懒加载的宏#define DYJ_LAZY(object, assignment) (object = object ?: assignment)">
 
 
 
@@ -400,8 +400,10 @@
 
       
         <h1 id="定义一个懒加载的宏"><a href="#定义一个懒加载的宏" class="headerlink" title="定义一个懒加载的宏"></a>定义一个懒加载的宏</h1><figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="meta">#define DYJ_LAZY(object, assignment) (object = object ?: assignment)</span></div></pre></td></tr></table></figure>
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"></div><div class="line">- (<span class="built_in">UINavigationBar</span> *)navBar</div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> DYJ_LAZY(_navBar, (&#123;</div><div class="line">        </div><div class="line">        <span class="built_in">UINavigationBar</span> *bar = [[<span class="built_in">UINavigationBar</span> alloc] init];</div><div class="line">        bar.barStyle = <span class="built_in">UINavigationBar</span>.appearance.barStyle;</div><div class="line">        bar.translucent = <span class="literal">YES</span>;</div><div class="line">        [<span class="keyword">self</span>.view addSubview:bar];</div><div class="line">        [bar setFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, SCREEN_WIDTH, <span class="number">64</span>)];</div><div class="line">        bar;</div><div class="line">    &#125;));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
+<!-- <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="meta">#define DYJ_LAZY(object, assignment) (object = object ?: assignment)</span></div></pre></td></tr></table></figure> –&gt;
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="built_in">UINavigationBar</span> *)navBar</div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> DYJ_LAZY(_navBar, (&#123;</div><div class="line">        </div><div class="line">        <span class="built_in">UINavigationBar</span> *bar = [[<span class="built_in">UINavigationBar</span> alloc] init];</div><div class="line">        bar.barStyle = <span class="built_in">UINavigationBar</span>.appearance.barStyle;</div><div class="line">        bar.translucent = <span class="literal">YES</span>;</div><div class="line">        [<span class="keyword">self</span>.view addSubview:bar];</div><div class="line">        [bar setFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, SCREEN_WIDTH, <span class="number">64</span>)];</div><div class="line">        bar;</div><div class="line">    &#125;));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<!-- <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure> –&gt;
+-->
       
     </div>
 
@@ -493,11 +495,11 @@
  <div class="-mob-share-ui-button -mob-share-open">分享</div>
  <div class="-mob-share-ui" style="display: none">
      <ul class="-mob-share-list">
-         <li class="-mob-share-weibo"><p>新浪微博</p></li>
-         <li class="-mob-share-tencentweibo"><p>腾讯微博</p></li>
          <li class="-mob-share-qzone"><p>QQ空间</p></li>
          <li class="-mob-share-qq"><p>QQ好友</p></li>
          <li class="-mob-share-weixin"><p>微信</p></li>
+         <li class="-mob-share-weibo"><p>新浪微博</p></li>
+         <li class="-mob-share-tencentweibo"><p>腾讯微博</p></li>
          <li class="-mob-share-douban"><p>豆瓣</p></li>
          <li class="-mob-share-renren"><p>人人网</p></li>
          <li class="-mob-share-kaixin"><p>开心网</p></li>
@@ -691,7 +693,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#定义一个懒加载的宏"><span class="nav-number">1.</span> <span class="nav-text">定义一个懒加载的宏</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#定义一个懒加载的宏"><span class="nav-number">1.</span> <span class="nav-text">定义一个懒加载的宏</span></a></li></ol></div>
             
 
           </div>
