@@ -100,10 +100,10 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="懒加载">
 <meta property="og:url" content="http://csummer.coding.me/post/懒加载.html">
-<meta property="og:site_name" content="CSummer Blog">
+<meta property="og:site_name" content="CSummer&#39;s Blog">
 <meta property="og:description" content="定义一个懒加载的宏#define DYJ_LAZY(object, assignment) (object = object ?: assignment) 使用- (UINavigationBar *)navBar&amp;#123;    return DYJ_LAZY(_navBar, (&amp;#123;                UINavigationBar *bar = [[UINavigati">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-07T08:25:09.000Z">
+<meta property="og:updated_time" content="2017-08-07T08:28:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="懒加载">
 <meta name="twitter:description" content="定义一个懒加载的宏#define DYJ_LAZY(object, assignment) (object = object ?: assignment) 使用- (UINavigationBar *)navBar&amp;#123;    return DYJ_LAZY(_navBar, (&amp;#123;                UINavigationBar *bar = [[UINavigati">
@@ -140,7 +140,7 @@
 
 
 
-  <title>懒加载 | CSummer Blog</title>
+  <title>懒加载 | CSummer's Blog</title>
   
 
 
@@ -176,12 +176,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">CSummer Blog</span>
+        <span class="site-title">CSummer's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle">一个好玩的博客</p>
+        <p class="site-subtitle">一个有趣的博客</p>
       
   </div>
 
@@ -322,7 +322,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CSummer Blog">
+      <meta itemprop="name" content="CSummer's Blog">
     </span>
 
     
@@ -401,8 +401,7 @@
       
         <h1 id="定义一个懒加载的宏"><a href="#定义一个懒加载的宏" class="headerlink" title="定义一个懒加载的宏"></a>定义一个懒加载的宏</h1><figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="meta">#define DYJ_LAZY(object, assignment) (object = object ?: assignment)</span></div></pre></td></tr></table></figure>
 <h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="built_in">UINavigationBar</span> *)navBar</div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> DYJ_LAZY(_navBar, (&#123;</div><div class="line">        </div><div class="line">        <span class="built_in">UINavigationBar</span> *bar = [[<span class="built_in">UINavigationBar</span> alloc] init];</div><div class="line">        bar.barStyle = <span class="built_in">UINavigationBar</span>.appearance.barStyle;</div><div class="line">        bar.translucent = <span class="literal">YES</span>;</div><div class="line">        [<span class="keyword">self</span>.view addSubview:bar];</div><div class="line">        [bar setFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, SCREEN_WIDTH, <span class="number">64</span>)];</div><div class="line">        bar;</div><div class="line">    &#125;));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<!-- <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure> –&gt;
--->
+
       
     </div>
 
@@ -580,7 +579,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -591,7 +590,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -602,7 +601,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
