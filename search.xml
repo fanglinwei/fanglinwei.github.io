@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[hexo优化系列]]></title>
+    <url>%2Fpost%2Fhexo%E4%BC%98%E5%8C%96%E7%B3%BB%E5%88%97.html</url>
+    <content type="text"><![CDATA[写一个Hexo的优化系列]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[懒加载]]></title>
-    <url>%2Fpost%2FMy-New-Post.html</url>
+    <url>%2Fpost%2F%E6%87%92%E5%8A%A0%E8%BD%BD.html</url>
     <content type="text"><![CDATA[定义一个懒加载的宏#define DYJ_LAZY(object, assignment) (object = object ?: assignment) 使用- (UINavigationBar *)navBar&#123; return DYJ_LAZY(_navBar, (&#123; UINavigationBar *bar = [[UINavigationBar alloc] init]; bar.barStyle = UINavigationBar.appearance.barStyle; bar.translucent = YES; [self.view addSubview:bar]; [bar setFrame:CGRectMake(0, 0, SCREEN_WIDTH, 64)]; bar; &#125;));&#125;]]></content>
       <categories>
         <category>iOS</category>
