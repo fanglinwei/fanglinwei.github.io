@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[大神技术博客]]></title>
+    <url>%2Fpost%2F%E5%A4%A7%E7%A5%9E%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2.html</url>
+    <content type="text"><![CDATA[摘要 个人收集的一些大神技术博客 mrpeakkittenyangphilon微读书团队sunnyxx]]></content>
+      <tags>
+        <tag>大神技术博客</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[cocoapods出现linker command failed with exit code 1 (use -v to see invocation) 解决方法]]></title>
     <url>%2Fpost%2FCocoapods%2Fcocoapods%E5%87%BA%E9%94%99.html</url>
     <content type="text"><![CDATA[摘要 最近要把项目里的以前手动拖进去的第三方改为cocoapods管理 出现了一个编译问题 把原来的拖进去的库删了也会出现linker command failed with exit code 1 (use -v to see invocation) 此时你用cocoapods导入库的时候命令行会有 解决方法第一步去xcode设置 第二步]]></content>
@@ -14,7 +22,7 @@
   <entry>
     <title><![CDATA[Hexo添加音乐]]></title>
     <url>%2Fpost%2FHexo%2FHexo%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90.html</url>
-    <content type="text"><![CDATA[摘要 在hexo文章添加网易音乐插件 生成音乐链接打开网易云音乐,搜索想要的音乐,点击生成外部链接播放器 获取html代码 &lt;iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&amp;id=436514312&amp;auto=1&amp;height=66"&gt;&lt;/iframe&gt; 添加在文章中这里是音乐播放器 结尾 插上耳机欣赏一首我最喜欢的 《成都》]]></content>
+    <content type="text"><![CDATA[摘要 在hexo文章添加网易音乐插件 生成音乐链接打开网易云音乐,搜索想要的音乐,点击生成外部链接播放器 获取html代码 &lt;iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&amp;id=436514312&amp;auto=1&amp;height=66"&gt;&lt;/iframe&gt; 添加在文章中这里是音乐播放器 结尾 带上耳机欣赏一首我最喜欢的 《成都》]]></content>
       <categories>
         <category>Hexo</category>
       </categories>
