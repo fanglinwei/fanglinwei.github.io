@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://csummer.coding.me/post/Cocoapods/cocoapods%E5%87%BA%E9%94%99.html</loc>
+    
+    <lastmod>2017-08-08T08:28:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://csummer.coding.me/post/Hexo/hexo%E5%9F%9F%E5%90%8D%E4%BC%98%E5%8C%96%E7%BD%91%E9%A1%B5.html</loc>
     
-    <lastmod>2017-08-08T07:56:10.000Z</lastmod>
+    <lastmod>2017-08-08T07:58:45.000Z</lastmod>
     
   </url>
   
@@ -19,13 +26,6 @@
     <loc>http://csummer.coding.me/post/Hexo/hexo%E4%BC%98%E5%8C%96%E7%B3%BB%E5%88%97.html</loc>
     
     <lastmod>2017-08-08T07:41:04.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://csummer.coding.me/post/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.html</loc>
-    
-    <lastmod>2017-08-08T07:15:08.000Z</lastmod>
     
   </url>
   

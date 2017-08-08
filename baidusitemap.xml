@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>http://csummer.coding.me/post/Cocoapods/cocoapods%E5%87%BA%E9%94%99.html</loc>
+    <lastmod>2017-08-08T08:28:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>cocoapods出现linker command failed with exit code 1 (use -v to see invocation) 解决方法</title>
+        <pubTime>2017-08-08T07:15:07.000Z</pubTime>
+        
+        <tag>Cocoapods</tag>
+         
+         
+           
+             
+              <breadCrumb title="Cocoapods" url="http://csummer.coding.me/categories/Cocoapods/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://csummer.coding.me/post/Hexo/hexo%E5%9F%9F%E5%90%8D%E4%BC%98%E5%8C%96%E7%BD%91%E9%A1%B5.html</loc>
-    <lastmod>2017-08-08T07:56:10.000Z</lastmod>
+    <lastmod>2017-08-08T07:58:45.000Z</lastmod>
     <data>
         <display>
         <title>hexo域名优化网页</title>
@@ -58,21 +78,6 @@
              
               <breadCrumb title="Hexo" url="http://csummer.coding.me/categories/Hexo/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://csummer.coding.me/post/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.html</loc>
-    <lastmod>2017-08-08T07:15:08.000Z</lastmod>
-    <data>
-        <display>
-        <title>解决方法</title>
-        <pubTime>2017-08-08T07:15:07.000Z</pubTime>
-        
-         
-           
         </display>
     </data>
     </url>
