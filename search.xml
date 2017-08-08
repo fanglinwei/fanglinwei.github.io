@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[解决方法]]></title>
+    <url>%2Fpost%2F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.html</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[Hexo添加音乐]]></title>
     <url>%2Fpost%2FHexo%2FHexo%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90.html</url>
     <content type="text"><![CDATA[摘要 在hexo文章添加网易音乐插件 生成音乐链接打开网易云音乐,搜索想要的音乐,点击生成外部链接播放器 获取html代码 &lt;iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&amp;id=436514312&amp;auto=1&amp;height=66"&gt;&lt;/iframe&gt; 添加在文章中这里是音乐播放器]]></content>
@@ -25,7 +30,7 @@
   <entry>
     <title><![CDATA[hexo域名优化网页]]></title>
     <url>%2Fpost%2FHexo%2Fhexo%E5%9F%9F%E5%90%8D%E4%BC%98%E5%8C%96%E7%BD%91%E9%A1%B5.html</url>
-    <content type="text"><![CDATA[原文地址:Dnspod+Namesilo域名结合实现域名选路解析 摘要 上面的地址采用Dnspod+Namesilo实现国内国外解析,我用的是阿里的万网注册域名阿里云域名注册 注册流程阿里有很简单跟着走一遍就可以了,最好能实名认证一下. 域名解析我是直接用的阿里的解析的域名,如果想用DNSPOD解析要改一下解析DNS DNSPOD的把下面的两个解析地址填到图中: f1g1ns1.dnspod.net f1g1ns2.dnspod.net 添加设置记录进入您的域名管理界面，添加别名 留意的部分有： 主机记录：域名主机位（如；如果你的域名是xx.com,主机记录是mm,测mm.xx.com） 记录值：是那个域名的别名（如xx.coding.me，侧mm.xx.com的解析将转向xx.coding.me，即访问mm.xx.com等于访问xx.coding.me） 线路类型：指你的域名是针对哪些线路解析（国内，国外，联通等等，DNSPOD的优势就在这里，选路） 先添加两个github的链接 coding me实现别名在coding添加一个私有博客项目 创建好了后coding.me实现别名,点击Pages 服务-&gt;修改域名绑定为你在将要解析到阿里云的别名 gitHub实现别名在Hexo目录下的Source下建立CNAME(注意必须为大写且只允许输入一个别名记录到此文件),并填入你在DNSPOD添加的CNAME到文件CNAME。如何查看是否生效？ 链接到你的Git如：https://github.com/yourname/yourname.github.io -&gt; 点击导航栏部Settings 添加coding me 和github地址解析 添加coding me的SSH公钥 设置站点_config.yml文件设置站点_config.yml是为了每次改变同步都可以同步到github和codingme上的文件deploy: type: git repo: github: git@github.com:fanglinwei/fanglinwei.github.io.git #github地址 codingme: git@git.coding.net:CSummer/CSummer-blog.git #codingme地址 branch: master 设置到这里基本上就可以达到域名访问国内资源了使用codingme绑定的page域名看看,是不是感觉快很多,而使用github绑定的page域名访问会慢一些]]></content>
+    <content type="text"><![CDATA[原文地址:Dnspod+Namesilo域名结合实现域名选路解析 摘要 上面的地址采用Dnspod+Namesilo实现国内国外解析,我用的是阿里的万网注册域名阿里云域名注册 注册流程阿里有很简单跟着走一遍就可以了,最好能实名认证一下. 域名解析我是直接用的阿里的解析的域名,如果想用DNSPOD解析要改一下解析DNS DNSPOD的把下面的两个解析地址填到图中: f1g1ns1.dnspod.net f1g1ns2.dnspod.net 添加设置记录进入您的域名管理界面，添加别名 留意的部分有： 主机记录：域名主机位（如；如果你的域名是xx.com,主机记录是mm,测mm.xx.com） 记录值：是那个域名的别名（如xx.coding.me，侧mm.xx.com的解析将转向xx.coding.me，即访问mm.xx.com等于访问xx.coding.me） 线路类型：指你的域名是针对哪些线路解析（国内，国外，联通等等，DNSPOD的优势就在这里，选路） 先添加两个github的链接 coding me实现别名在coding添加一个私有博客项目 创建好了后coding.me实现别名,点击Pages 服务->修改域名绑定为你在将要解析到阿里云的别名 gitHub实现别名在Hexo目录下的Source下建立CNAME(注意必须为大写且只允许输入一个别名记录到此文件),并填入你在DNSPOD添加的CNAME到文件CNAME。如何查看是否生效？ 链接到你的Git如：https://github.com/yourname/yourname.github.io -> 点击导航栏部Settings 添加coding me 和github地址解析 添加coding me的SSH公钥 设置站点_config.yml文件设置站点_config.yml是为了每次改变同步都可以同步到github和codingme上的文件deploy: type: git repo: github: git@github.com:fanglinwei/fanglinwei.github.io.git #github地址 codingme: git@git.coding.net:CSummer/CSummer-blog.git #codingme地址 branch: master 设置到这里基本上就可以达到域名访问国内资源了使用codingme绑定的page域名看看,是不是感觉快很多,而使用github绑定的page域名访问会慢一些]]></content>
       <categories>
         <category>Hexo</category>
       </categories>
