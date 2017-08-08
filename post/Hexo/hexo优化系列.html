@@ -75,7 +75,7 @@
 <meta property="og:site_name" content="CSummer&#39;s Blog">
 <meta property="og:description" content="摘要 这段时间产品上线没啥事做,所以就看了网上的一些博客试着搭建一个自己的Hexo博客.基础搭建就不说了网上百度hexo+github多得是推荐一个基础搭建,格式各样的主题也很多  推荐主题 这里推荐几个好用的  next 我用的就是这个 因为这个是由官方团队维护的后续添加新功能很方便 Yilia 简洁大气！ Yelee 该主题是作者基于Yilia修改而来，改变了大量的样式。 Hexo官网主题推荐">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-08T02:55:42.000Z">
+<meta property="og:updated_time" content="2017-08-08T04:23:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo优化系列">
 <meta name="twitter:description" content="摘要 这段时间产品上线没啥事做,所以就看了网上的一些博客试着搭建一个自己的Hexo博客.基础搭建就不说了网上百度hexo+github多得是推荐一个基础搭建,格式各样的主题也很多  推荐主题 这里推荐几个好用的  next 我用的就是这个 因为这个是由官方团队维护的后续添加新功能很方便 Yilia 简洁大气！ Yelee 该主题是作者基于Yilia修改而来，改变了大量的样式。 Hexo官网主题推荐">
@@ -430,7 +430,6 @@
 <span class="attr">  host:</span> <span class="string">//fonts.css.network</span>    <span class="comment">#这里把这里改成  //fonts.css.network</span>
 </code></pre>
 <p>优化到这里你会感觉你的博客网页已经快一些了但是还是会有点慢,那么久就要用域名来优化了<a href="http://www.csummer.top/post/hexo域名优化网页.html" target="_blank" rel="external">hexo域名优化网页</a></p>
-<embed src="//music.163.com/style/swf/widget.swf?sid=436514312&type=2&auto=1&width=320&height=66" width="340" height="86" allownetworking="all">
 
       
     </div>
@@ -822,16 +821,16 @@
   <script type="text/javascript" src="//cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
 
   
-  <script type="text/javascript" src="//cdn.bootcss.com/velocity/1.5.0/velocity.min.js"></script>
+  <script type="text/javascript" src="//cdn.bootcss.com/velocity/1.2.1/velocity.min.js"></script>
 
   
-  <script type="text/javascript" src="//cdn.bootcss.com/velocity/1.5.0/velocity.ui.min.js"></script>
+  <script type="text/javascript" src="//cdn.bootcss.com/velocity/1.2.1/velocity.ui.min.js"></script>
 
   
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
   
-  <script type="text/javascript" src="http://ou344372s.bkt.clouddn.com/canvas-nest.min.js"></script>
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
 
   
@@ -1349,4 +1348,15 @@
 </body>
 </html>
 
+<script type="text/javascript">
+      jQuery(function() {  
+	  	  
+          jQuery("img.jory_lazyimg").lazyload({
+			  delay:5000
+              effect:"fadeIn"
+            });	
+		
+		
+          });
 
+</script>
