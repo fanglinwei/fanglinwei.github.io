@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[cocoapods出现linker command failed with exit code 1 (use -v to see invocation) 解决方法]]></title>
     <url>%2Fpost%2FCocoapods%2Fcocoapods%E5%87%BA%E9%94%99.html</url>
-    <content type="text"><![CDATA[摘要 最近要把项目里的以前拖进去的第三方改为cocoapods管理 出现了一个编译问题 把原来的拖进去的库删了也会出现linker command failed with exit code 1 (use -v to see invocation) 此时你用cocoapods导入库的时候命令行会有 解决方法第一步去xcode设置 第二步]]></content>
+    <content type="text"><![CDATA[摘要 最近要把项目里的以前手动拖进去的第三方改为cocoapods管理 出现了一个编译问题 把原来的拖进去的库删了也会出现linker command failed with exit code 1 (use -v to see invocation) 此时你用cocoapods导入库的时候命令行会有 解决方法第一步去xcode设置 第二步]]></content>
       <categories>
         <category>Cocoapods</category>
       </categories>
