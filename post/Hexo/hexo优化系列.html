@@ -69,26 +69,18 @@
 
 
 
-<meta name="description" content="原文地址:Dnspod+Namesilo域名结合实现域名选路解析  摘要 上面的地址采用Dnspod+Namesilo实现国内国外解析,我用的是阿里的万网注册域名阿里云域名注册  注册流程阿里有很简单跟着走一遍就可以了,最好能实名认证一下. 域名解析我是直接用的阿里的解析的域名,如果想用DNSPOD解析要改一下解析DNS DNSPOD的把下面的两个解析地址填到图中:  f1g1ns1.dn">
+<meta name="description" content="摘要 这段时间产品上线没啥事做,所以就看了网上的一些博客试着搭建一个自己的Hexo博客.基础搭建就不说了网上百度hexo+github多得是推荐一个基础搭建,格式各样的主题也很多  推荐主题 这里推荐几个好用的  next 我用的就是这个 因为这个是由官方团队维护的后续添加新功能很方便 Yilia 简洁大气！ Yelee 该主题是作者基于Yilia修改而来，改变了大量的样式。 Hexo官网主题推荐">
 <meta name="keywords" content="Hexo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo域名优化网页">
-<meta property="og:url" content="http://csummer.coding.me/post/hexo域名优化网页.html">
+<meta property="og:title" content="hexo优化系列">
+<meta property="og:url" content="http://csummer.coding.me/post/Hexo/hexo优化系列.html">
 <meta property="og:site_name" content="CSummer&#39;s Blog">
-<meta property="og:description" content="原文地址:Dnspod+Namesilo域名结合实现域名选路解析  摘要 上面的地址采用Dnspod+Namesilo实现国内国外解析,我用的是阿里的万网注册域名阿里云域名注册  注册流程阿里有很简单跟着走一遍就可以了,最好能实名认证一下. 域名解析我是直接用的阿里的解析的域名,如果想用DNSPOD解析要改一下解析DNS DNSPOD的把下面的两个解析地址填到图中:  f1g1ns1.dn">
+<meta property="og:description" content="摘要 这段时间产品上线没啥事做,所以就看了网上的一些博客试着搭建一个自己的Hexo博客.基础搭建就不说了网上百度hexo+github多得是推荐一个基础搭建,格式各样的主题也很多  推荐主题 这里推荐几个好用的  next 我用的就是这个 因为这个是由官方团队维护的后续添加新功能很方便 Yilia 简洁大气！ Yelee 该主题是作者基于Yilia修改而来，改变了大量的样式。 Hexo官网主题推荐">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://ou344372s.bkt.clouddn.com/F1B0AC73-5580-4DE7-80C6-A7DE49008B17.jpg">
-<meta property="og:image" content="http://ou344372s.bkt.clouddn.com/CC90DF91-6C6E-4C97-9B8F-7666BA19B58D.png">
-<meta property="og:image" content="http://ou344372s.bkt.clouddn.com/914F5980-4D48-4B58-96D8-86B324134DAF.jpg">
-<meta property="og:image" content="http://ou344372s.bkt.clouddn.com/B9E7E0FC-29EC-494C-AA23-EBDCC01F41B8.jpg">
-<meta property="og:image" content="http://ou344372s.bkt.clouddn.com/CE33B624-2936-436D-A93F-8EFFAD668A2F.jpg">
-<meta property="og:image" content="http://ou344372s.bkt.clouddn.com/44324FE3-FE1F-4BFE-A54A-C192D5D554B4.jpg">
-<meta property="og:image" content="http://ou344372s.bkt.clouddn.com/A0B8F581-BE43-49D8-8A88-A93FEFA9A6DB.jpg">
-<meta property="og:updated_time" content="2017-08-08T02:28:36.000Z">
+<meta property="og:updated_time" content="2017-08-08T02:55:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo域名优化网页">
-<meta name="twitter:description" content="原文地址:Dnspod+Namesilo域名结合实现域名选路解析  摘要 上面的地址采用Dnspod+Namesilo实现国内国外解析,我用的是阿里的万网注册域名阿里云域名注册  注册流程阿里有很简单跟着走一遍就可以了,最好能实名认证一下. 域名解析我是直接用的阿里的解析的域名,如果想用DNSPOD解析要改一下解析DNS DNSPOD的把下面的两个解析地址填到图中:  f1g1ns1.dn">
-<meta name="twitter:image" content="http://ou344372s.bkt.clouddn.com/F1B0AC73-5580-4DE7-80C6-A7DE49008B17.jpg">
+<meta name="twitter:title" content="hexo优化系列">
+<meta name="twitter:description" content="摘要 这段时间产品上线没啥事做,所以就看了网上的一些博客试着搭建一个自己的Hexo博客.基础搭建就不说了网上百度hexo+github多得是推荐一个基础搭建,格式各样的主题也很多  推荐主题 这里推荐几个好用的  next 我用的就是这个 因为这个是由官方团队维护的后续添加新功能很方便 Yilia 简洁大气！ Yelee 该主题是作者基于Yilia修改而来，改变了大量的样式。 Hexo官网主题推荐">
 
 
 
@@ -116,13 +108,13 @@
 
 
 
-  <link rel="canonical" href="http://csummer.coding.me/post/hexo域名优化网页.html"/>
+  <link rel="canonical" href="http://csummer.coding.me/post/Hexo/hexo优化系列.html"/>
 
 
 
 
 
-  <title>hexo域名优化网页 | CSummer's Blog</title>
+  <title>hexo优化系列 | CSummer's Blog</title>
   
 
 
@@ -295,7 +287,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://csummer.coding.me/post/hexo域名优化网页.html">
+    <link itemprop="mainEntityOfPage" href="http://csummer.coding.me/post/Hexo/hexo优化系列.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="CSummer">
@@ -312,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hexo域名优化网页</h1>
+          <h1 class="post-title" itemprop="name headline">hexo优化系列</h1>
         
 
         <div class="post-meta">
@@ -324,7 +316,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-07T17:15:47+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-07T12:53:33+08:00">
                 2017-08-07
               </time>
             
@@ -364,7 +356,7 @@
 
           
           
-             <span id="/post/hexo域名优化网页.html" class="leancloud_visitors" data-flag-title="hexo域名优化网页">
+             <span id="/post/Hexo/hexo优化系列.html" class="leancloud_visitors" data-flag-title="hexo优化系列">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -384,7 +376,7 @@
              <i class="fa fa-calendar-o"></i>
            </span>
            <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">547(字)</span>
+           <span class="post-count">1,010(字)</span>
            
          </span>
 	  
@@ -394,7 +386,7 @@
              <i class="fa fa-calendar-o"></i>
            </span>
            <span class="post-meta-item-text">阅读时长:</span>
-           <span class="post-count">2(分)</span>
+           <span class="post-count">4(分)</span>
            
          </span>
     
@@ -415,39 +407,32 @@
       
 
       
-        <blockquote>
-<p>原文地址:<a href="http://www.joryhe.com/2016-06-03-dnspod_NameSilolo_double_line_analysis.html" target="_blank" rel="external">Dnspod+Namesilo域名结合实现域名选路解析</a></p>
+        <h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><blockquote>
+<p>这段时间产品上线没啥事做,所以就看了网上的一些博客试着搭建一个自己的<a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a>博客.基础搭建就不说了网上百度hexo+github多得是推荐一个<a href="http://www.joryhe.com/2016-05-12-git_and_hexo_create_blog.html" target="_blank" rel="external">基础搭建</a>,格式各样的主题也很多</p>
 </blockquote>
-<h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><blockquote>
-<p>上面的地址采用Dnspod+Namesilo实现国内国外解析,我用的是阿里的万网注册域名<a href="https://wanwang.aliyun.com/domain/?spm=5176.8142029.735711.56.715c4636LuLJSG" target="_blank" rel="external">阿里云域名注册</a></p>
-</blockquote>
-<p>注册流程阿里有很简单跟着走一遍就可以了,最好能实名认证一下.</p>
-<h3 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h3><p>我是直接用的阿里的解析的域名,如果想用DNSPOD解析要改一下解析DNS</p>
-<p>DNSPOD的把下面的两个解析地址填到图中:</p>
+<h3 id="推荐主题"><a href="#推荐主题" class="headerlink" title="推荐主题"></a>推荐主题</h3><p> 这里推荐几个好用的</p>
 <ol>
-<li>f1g1ns1.dnspod.net</li>
-<li>f1g1ns2.dnspod.net</li>
+<li><a href="http://theme-next.iissnan.com" target="_blank" rel="external">next</a> 我用的就是这个 因为这个是由官方团队维护的后续添加新功能很方便</li>
+<li><a href="http://litten.me" target="_blank" rel="external">Yilia</a> 简洁大气！</li>
+<li><a href="http://moxfive.xyz" target="_blank" rel="external">Yelee</a> 该主题是作者基于Yilia修改而来，改变了大量的样式。</li>
+<li><a href="https://hexo.io/themes/" target="_blank" rel="external">Hexo官网主题推荐</a></li>
 </ol>
-<p><img src="http://ou344372s.bkt.clouddn.com/F1B0AC73-5580-4DE7-80C6-A7DE49008B17.jpg" alt=""></p>
-<h4 id="添加设置记录"><a href="#添加设置记录" class="headerlink" title="添加设置记录"></a>添加设置记录</h4><p>进入您的域名管理界面，添加别名</p>
-<p>留意的部分有：</p>
-<p><code>主机记录</code>：域名主机位（如；如果你的域名是xx.com,主机记录是mm,测mm.xx.com）</p>
-<p> <code>记录值</code>：是那个域名的别名（如xx.coding.me，侧mm.xx.com的解析将转向xx.coding.me，即访问mm.xx.com等于访问xx.coding.me）</p>
-<p><code>线路类型</code>：指你的域名是针对哪些线路解析（国内，国外，联通等等，DNSPOD的优势就在这里，<code>选路</code>）</p>
-<p>先添加两个github的链接<br><img src="http://ou344372s.bkt.clouddn.com/CC90DF91-6C6E-4C97-9B8F-7666BA19B58D.png" alt="title"></p>
-<h4 id="coding-me实现别名"><a href="#coding-me实现别名" class="headerlink" title="coding me实现别名"></a>coding me实现别名</h4><p>在<a href="https://coding.net" target="_blank" rel="external">coding</a>添加一个私有博客项目<br><img src="http://ou344372s.bkt.clouddn.com/914F5980-4D48-4B58-96D8-86B324134DAF.jpg" alt="title"></p>
-<p>创建好了后coding.me实现别名,点击Pages 服务-&gt;修改域名绑定为你在将要解析到阿里云的别名<br><img src="http://ou344372s.bkt.clouddn.com/B9E7E0FC-29EC-494C-AA23-EBDCC01F41B8.jpg" alt="title"></p>
-<h4 id="gitHub实现别名"><a href="#gitHub实现别名" class="headerlink" title="gitHub实现别名"></a>gitHub实现别名</h4><p>在Hexo目录下的Source下建立CNAME(注意必须为大写且只允许输入一个别名记录到此文件),并填入你在DNSPOD添加的CNAME到文件CNAME。如何查看是否生效？</p>
-<blockquote>
-<p>链接到你的Git如：<a href="https://github.com/yourname/yourname.github.io" target="_blank" rel="external">https://github.com/yourname/yourname.github.io</a> -&gt; 点击导航栏部Settings</p>
+<h3 id="优化网页速度"><a href="#优化网页速度" class="headerlink" title="优化网页速度"></a>优化网页速度</h3><p> 这里先贴个地址 <a href="http://www.joryhe.com/categories/ittech/网站技术/hexo/HEXO优化/" target="_blank" rel="external">joryHe优化</a> 这里面写了一大系列的相关优化.</p>
+<h4 id="静态文件加载优化"><a href="#静态文件加载优化" class="headerlink" title="静态文件加载优化."></a>静态文件加载优化.</h4><blockquote>
+<p>静态文件就是一些Js,css等文件，通常网站都会调用一大堆这些文件，我们可以合理的将静态资源放到CDN服务器（七牛CDN等），如果你的一些静态资源文件是一些通用的文件，如jquery、fancybox等js或者css，你完全可以使用一些外部免费的开源项目CDN网站，如<a href="http://www.bootcdn.cn" target="_blank" rel="external">BootCDN</a>是个很好的选择 ,但是个人觉得在CDN你的静态文件，你应该合理考虑哪些文件才应该进行CDN加速，因为你要CDN加速静态文件的原因是,CDN是以合理的服务器节点返回相关静态资源给你。或许有些情况，你的网站本身的服务器的速度或许比你的CDN更要快速（特别是一些免费的CDN服务）。</p>
 </blockquote>
-<p><img src="http://ou344372s.bkt.clouddn.com/CE33B624-2936-436D-A93F-8EFFAD668A2F.jpg" alt="title"></p>
-<h4 id="添加coding-me-和github地址解析"><a href="#添加coding-me-和github地址解析" class="headerlink" title="添加coding me 和github地址解析"></a>添加coding me 和github地址解析</h4><p><img src="http://ou344372s.bkt.clouddn.com/44324FE3-FE1F-4BFE-A54A-C192D5D554B4.jpg" alt="title"></p>
-<h4 id="添加coding-me的SSH公钥"><a href="#添加coding-me的SSH公钥" class="headerlink" title="添加coding me的SSH公钥"></a>添加coding me的SSH公钥</h4><p><img src="http://ou344372s.bkt.clouddn.com/A0B8F581-BE43-49D8-8A88-A93FEFA9A6DB.jpg" alt="title"></p>
-<h4 id="设置站点-config-yml文件"><a href="#设置站点-config-yml文件" class="headerlink" title="设置站点_config.yml文件"></a>设置站点_config.yml文件</h4><p>设置站点_config.yml是为了每次改变同步都可以同步到github和codingme上的文件<br><figure class="highlight yml"><table><tr><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> <span class="string">git</span></div><div class="line"><span class="attr">  repo:</span> </div><div class="line"><span class="attr">    github:</span> <span class="string">git@github.com:fanglinwei/fanglinwei.github.io.git</span>  <span class="comment">#github地址</span></div><div class="line"><span class="attr">    codingme:</span> <span class="string">git@git.coding.net:CSummer/CSummer-blog.git</span>      <span class="comment">#codingme地址</span></div><div class="line"><span class="attr">  branch:</span> <span class="string">master</span></div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>设置到这里基本上就可以达到域名访问国内资源了使用codingme绑定的page域名看看,是不是感觉快很多,而使用github绑定的page域名访问会慢一些</p>
-</blockquote>
+<h4 id="外部CDN"><a href="#外部CDN" class="headerlink" title="外部CDN"></a>外部CDN</h4><p>这是我添加的外部CDN链接</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><div class="line"><span class="comment"># Script Vendors.</span></div><div class="line"><span class="comment"># Set a CDN address for the vendor you want to customize.</span></div><div class="line"><span class="comment"># For example</span></div><div class="line"><span class="comment">#    jquery: https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js</span></div><div class="line"><span class="comment"># Be aware that you should use the same version as internal ones to avoid potential problems.</span></div><div class="line"><span class="comment"># Please use the https protocol of CDN files when you enable https on your site.</span></div><div class="line"><span class="attr">vendors:</span></div><div class="line">  <span class="comment"># Internal path prefix. Please do not edit it.</span></div><div class="line"><span class="attr">  _internal:</span> <span class="string">lib</span></div><div class="line"></div><div class="line">  <span class="comment"># Internal version: 2.1.3</span></div><div class="line"><span class="attr">  jquery:</span> </div><div class="line"></div><div class="line">  <span class="comment"># 以下都是我在bootCDN里引入的 外部CDN链接 可以去http://www.bootcdn.cn 找最新的版本</span></div><div class="line">  <span class="comment"># Internal version: 2.1.5</span></div><div class="line">  <span class="comment"># See: http://fancyapps.com/fancybox/</span></div><div class="line"><span class="attr">  fancybox:</span> </div><div class="line"><span class="attr">  fancybox_css:</span> <span class="string">//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.css</span>  <span class="comment">#3.1.20是版本号</span></div><div class="line"></div><div class="line">  <span class="comment"># Internal version: 1.0.6</span></div><div class="line">  <span class="comment"># See: https://github.com/ftlabs/fastclick</span></div><div class="line"><span class="attr">  fastclick:</span> <span class="string">//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js</span></div><div class="line"></div><div class="line">  <span class="comment"># Internal version: 1.9.7</span></div><div class="line">  <span class="comment"># See: https://github.com/tuupola/jquery_lazyload</span></div><div class="line"><span class="attr">  lazyload:</span> <span class="string">//cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js</span></div><div class="line"></div><div class="line">  <span class="comment"># Internal version: 1.2.1</span></div><div class="line">  <span class="comment"># See: http://VelocityJS.org</span></div><div class="line"><span class="attr">  velocity:</span> <span class="string">//cdn.bootcss.com/velocity/1.5.0/velocity.min.js</span></div><div class="line"></div><div class="line">  <span class="comment"># Internal version: 1.2.1</span></div><div class="line">  <span class="comment"># See: http://VelocityJS.org</span></div><div class="line"><span class="attr">  velocity_ui:</span> <span class="string">//cdn.bootcss.com/velocity/1.5.0/velocity.ui.min.js</span></div><div class="line"></div><div class="line">  <span class="comment"># Internal version: 0.7.9</span></div><div class="line">  <span class="comment"># See: https://faisalman.github.io/ua-parser-js/</span></div><div class="line"><span class="attr">  ua_parser:</span></div><div class="line"></div><div class="line">  <span class="comment"># Internal version: 4.6.2</span></div><div class="line">  <span class="comment"># See: http://fontawesome.io/</span></div><div class="line"><span class="attr">  fontawesome:</span></div><div class="line"></div><div class="line">  <span class="comment"># Internal version: 1</span></div><div class="line">  <span class="comment"># https://www.algolia.com</span></div><div class="line"><span class="attr">  algolia_instant_js:</span> <span class="string">//cdn.bootcss.com/instantsearch.js/2.1.0-beta.2/instantsearch.min.js</span></div><div class="line"><span class="attr">  algolia_instant_css:</span> <span class="string">//cdn.bootcss.com/instantsearch.js/2.1.0-beta.2/instantsearch.min.css</span></div><div class="line"></div><div class="line">  <span class="comment"># Internal version: 1.0.2</span></div><div class="line">  <span class="comment"># See: https://github.com/HubSpot/pace</span></div><div class="line">  <span class="comment"># Or use direct links below:</span></div><div class="line"><span class="attr">  pace:</span> <span class="string">//cdn.bootcss.com/pace/1.0.2/pace.min.js</span></div><div class="line"><span class="attr">  pace_css:</span> <span class="string">//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css</span></div></pre></td></tr></table></figure>
+<p>从以上看出，很多Next插件已经可以自定义CDN链接，但是如果存在一些没有在上面列出的呢，也有办法，如果想要了解操作方式，请访问<a href="http://www.joryhe.com/2016-05-22-create_the_custom_status_file.html" target="_blank" rel="external">NEXT 加载您自定以的静态文件</a>,如果你还需要进行图片的CDN，点击<a href="http://www.joryhe.com/2016-05-21-jory_cdn_lazyload.html" target="_blank" rel="external">CDN图片加速，实现图片慢加载</a>,以上都可以实现CDN。这里要注意的是如果要引用自己CDN资源(七牛或者阿里云)最好申请注册个个人域名和博客绑定起来.不然会出问题.</p>
+<h4 id="字体引用"><a href="#字体引用" class="headerlink" title="字体引用"></a>字体引用</h4><p>修改站内引用的字体</p>
+<p>实现方法:到主题的_config.yml中设置不从google加载字体（默认会加载本地字体） </p>
+<pre><code class="yml"><span class="attr">font:</span>
+<span class="attr">  enable:</span> <span class="literal">true</span>
+  <span class="comment"># Uri of fonts host. E.g. //fonts.googleapis.com (Default) //fonts.css.network</span>
+<span class="attr">  host:</span> <span class="string">//fonts.css.network</span>    <span class="comment">#这里把这里改成  //fonts.css.network</span>
+</code></pre>
+<p>优化到这里你会感觉你的博客网页已经快一些了但是还是会有点慢,那么久就要用域名来优化了<a href="http://www.csummer.top/post/hexo域名优化网页.html" target="_blank" rel="external">hexo域名优化网页</a></p>
+<embed src="//music.163.com/style/swf/widget.swf?sid=436514312&type=2&auto=1&width=320&height=66" width="340" height="86" allownetworking="all">
 
       
     </div>
@@ -511,8 +496,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/post/hexo优化系列.html" rel="next" title="hexo优化系列">
-                <i class="fa fa-chevron-left"></i> hexo优化系列
+              <a href="/post/懒加载.html" rel="next" title="懒加载">
+                <i class="fa fa-chevron-left"></i> 懒加载
               </a>
             
           </div>
@@ -521,8 +506,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/post/NexT主题添加ShareSDK的分享.html" rel="prev" title="NexT主题添加ShareSDK的分享">
-                NexT主题添加ShareSDK的分享 <i class="fa fa-chevron-right"></i>
+              <a href="/post/Hexo/hexo域名优化网页.html" rel="prev" title="hexo域名优化网页">
+                hexo域名优化网页 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -628,7 +613,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -740,7 +725,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#域名解析"><span class="nav-number">2.</span> <span class="nav-text">域名解析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#添加设置记录"><span class="nav-number">2.1.</span> <span class="nav-text">添加设置记录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#coding-me实现别名"><span class="nav-number">2.2.</span> <span class="nav-text">coding me实现别名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gitHub实现别名"><span class="nav-number">2.3.</span> <span class="nav-text">gitHub实现别名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加coding-me-和github地址解析"><span class="nav-number">2.4.</span> <span class="nav-text">添加coding me 和github地址解析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加coding-me的SSH公钥"><span class="nav-number">2.5.</span> <span class="nav-text">添加coding me的SSH公钥</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置站点-config-yml文件"><span class="nav-number">2.6.</span> <span class="nav-text">设置站点_config.yml文件</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推荐主题"><span class="nav-number">2.</span> <span class="nav-text">推荐主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化网页速度"><span class="nav-number">3.</span> <span class="nav-text">优化网页速度</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#静态文件加载优化"><span class="nav-number">3.1.</span> <span class="nav-text">静态文件加载优化.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#外部CDN"><span class="nav-number">3.2.</span> <span class="nav-text">外部CDN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字体引用"><span class="nav-number">3.3.</span> <span class="nav-text">字体引用</span></a></li></ol></li></ol></div>
             
 
           </div>
