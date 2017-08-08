@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Hexo添加音乐]]></title>
     <url>%2Fpost%2FHexo%2FHexo%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90.html</url>
-    <content type="text"><![CDATA[摘要 在hexo文字添加网易音乐插件 生成音乐链接打开网易云音乐,搜索想要的音乐,点击生成外部链接播放器 获取html代码 &lt;iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&amp;id=436514312&amp;auto=1&amp;height=66"&gt;&lt;/iframe&gt; 添加在文章中这里是音乐播放器]]></content>
+    <content type="text"><![CDATA[摘要 在hexo文章添加网易音乐插件 生成音乐链接打开网易云音乐,搜索想要的音乐,点击生成外部链接播放器 获取html代码 &lt;iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&amp;id=436514312&amp;auto=1&amp;height=66"&gt;&lt;/iframe&gt; 添加在文章中这里是音乐播放器]]></content>
       <categories>
         <category>Hexo</category>
       </categories>
