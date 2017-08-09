@@ -543,8 +543,11 @@ mrpeakkittenyangphilon微读书团队sunnyxx
 
 
 把原来的拖进去的库删了也会出现linker command failed with exit code 1 (use -v to see invocation)
-此时你用cocoapods导入库的时候命令
-          ...
+此时你用cocoapods导入库的时候命令行会有
+解决方法第一步去xcode设置
+第二步
+
+          
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/post/Cocoapods/cocoapods出错.html#more" rel="contents">
@@ -722,7 +725,7 @@ mrpeakkittenyangphilon微读书团队sunnyxx
 
 生成音乐链接打开网易云音乐,搜索想要的音乐,点击生成外部链接播放器
 获取html代码
-&lt;iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 heigh
+&lt;iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&amp;id=436514312&amp;auto=1&amp;height=66"&gt;&lt;/
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -901,6 +904,8 @@ mrpeakkittenyangphilon微读书团队sunnyxx
 今天发现一个分享的的sdk,可以在各个平台使用。由于不太喜欢主题提供的几个分享的样式。就试了试怎么这个。发现还是不错滴。。下面是分享的按钮和分享的样式：
 
 效果见下面—-传送门：ShareSDK
+Web集成官方文档
+下面是在网页上分享按钮的代码，只需要将以下代码添加到想要显示的位置即可。appkey是你自己的appkey。&lt;!--MOB SHARE BEGIN--&gt;&lt;div
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1081,7 +1086,15 @@ mrpeakkittenyangphilon微读书团队sunnyxx
 上面的地址采用Dnspod+Namesilo实现国内国外解析,我用的是阿里的万网注册域名阿里云域名注册
 
 注册流程阿里有很简单跟着走一遍就可以了,最好能实名认证一下.
-域名解析我是直接用的阿里的解析的域名,如果想用DNSPO
+域名解析我是直接用的阿里的解析的域名,如果想用DNSPOD解析要改一下解析DNS
+DNSPOD的把下面的两个解析地址填到图中:
+
+f1g1ns1.dnspod.net
+f1g1ns2.dnspod.net
+
+
+添加设置记录进入您的域名管理界面，添加别名
+留
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1261,7 +1274,12 @@ mrpeakkittenyangphilon微读书团队sunnyxx
 推荐主题 这里推荐几个好用的
 
 next 我用的就是这个 因为这个是由官方团队维护的后续添加新功能很方便
-Yilia 
+Yilia 简洁大气！
+Yelee 该主题是作者基于Yilia修改而来，改变了大量的样式。
+Hexo官网主题推荐
+
+优化网页速度 这里先贴个地址 joryHe优化 这里面写了一大系列的相关优化.
+静态文件加载优
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1436,7 +1454,7 @@ Yilia
         
           
           定义一个懒加载的宏#define DYJ_LAZY(object, assignment) (object = object ?: assignment)
-使用- (UINavigationBar *)navBar&#123;    return DYJ_LAZY(_navBar, (&#123; 
+使用- (UINavigationBar *)navBar&#123;    return DYJ_LAZY(_navBar, (&#123;                UINavigationBar *bar = [[UINavigationBar alloc] init];        bar.barStyle = UINaviga
           ...
           <!--noindex-->
           <div class="post-button text-center">
