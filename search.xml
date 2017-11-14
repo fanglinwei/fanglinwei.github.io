@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title><![CDATA[Python 开发工具安装]]></title>
+      <url>/post/python/Python%20%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85.html</url>
+      <content type="html"><![CDATA[<h3 id="PyCharm-下载链接："><a href="#PyCharm-下载链接：" class="headerlink" title="PyCharm 下载链接："></a>PyCharm 下载链接：</h3><p><a href="https://www.jetbrains.com/pycharm/?fromMenu" target="_blank" rel="external">【PyCharm】</a></p>
+<h3 id="Python-3-x-最新版安装教程："><a href="#Python-3-x-最新版安装教程：" class="headerlink" title="Python 3.x 最新版安装教程："></a>Python 3.x 最新版安装教程：</h3><figure class="highlight sql"><table><tr><td class="code"><pre><div class="line">brew <span class="keyword">install</span> python3</div><div class="line"></div><div class="line">brew linkapps</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">PATH</span>=/usr/<span class="keyword">local</span>/<span class="keyword">bin</span>:$<span class="keyword">PATH</span></div><div class="line"></div><div class="line"><span class="keyword">source</span> ~/.bash_profile</div><div class="line"></div><div class="line">python3 <span class="comment">--version</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>最佳推荐 Python 开发工具，使用 PyCharm，附上 PyCharm 2017 最新激活链接：<br> <a href="http://blog.csdn.net/fx677588/article/details/58164902" target="_blank" rel="external">PyCharm 2017 最新激活链接</a></p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> python </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> python工具 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[mac连上wifi,上网慢卡,打不开appStore问题]]></title>
       <url>/post/Mac/mac%E8%BF%9E%E4%B8%8Awifi,%E4%B8%8A%E7%BD%91%E6%85%A2%E5%8D%A1.html</url>
       <content type="html"><![CDATA[<blockquote>
