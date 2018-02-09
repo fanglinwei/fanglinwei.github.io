@@ -1,622 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-    
-    <entry>
-      <title><![CDATA[Python 开发工具安装]]></title>
-      <url>/post/python/Python%20%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85.html</url>
-      <content type="html"><![CDATA[<h3 id="PyCharm-下载链接："><a href="#PyCharm-下载链接：" class="headerlink" title="PyCharm 下载链接："></a>PyCharm 下载链接：</h3><p><a href="https://www.jetbrains.com/pycharm/?fromMenu" target="_blank" rel="external">【PyCharm】</a></p>
-<h3 id="Python-3-x-最新版安装教程："><a href="#Python-3-x-最新版安装教程：" class="headerlink" title="Python 3.x 最新版安装教程："></a>Python 3.x 最新版安装教程：</h3><figure class="highlight sql"><table><tr><td class="code"><pre><div class="line">brew <span class="keyword">install</span> python3</div><div class="line"></div><div class="line">brew linkapps</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">PATH</span>=/usr/<span class="keyword">local</span>/<span class="keyword">bin</span>:$<span class="keyword">PATH</span></div><div class="line"></div><div class="line"><span class="keyword">source</span> ~/.bash_profile</div><div class="line"></div><div class="line">python3 <span class="comment">--version</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>最佳推荐 Python 开发工具，使用 PyCharm，附上 PyCharm 2017 最新激活链接：<br> <a href="http://blog.csdn.net/fx677588/article/details/58164902" target="_blank" rel="external">PyCharm 2017 最新激活链接</a></p>
-</blockquote>
-<a id="more"></a>
-]]></content>
-      
-        <categories>
-            
-            <category> python </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> python工具 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[mac连上wifi,上网慢卡,打不开appStore问题]]></title>
-      <url>/post/Mac/mac%E8%BF%9E%E4%B8%8Awifi,%E4%B8%8A%E7%BD%91%E6%85%A2%E5%8D%A1.html</url>
-      <content type="html"><![CDATA[<blockquote>
-<p>今天拿出好久没用的mac发现有好多软件可以更新，于是乎，打开 Mac App Store ，显示无法连接,请重试,然后发现软件能上网,Safari上网慢 ,要么就是打不开网页。</p>
-</blockquote>
-<p>上网查了半天，猜测到可能是用代理导致的。由于众所周知的原因，为了方便查询资料，我就在香港弄了一个服务器，提供一个 SOCKS 代理来用。苹果官方论坛中也有提到 哇皮嗯、代理会影响。</p>
-<p>然后，去掉代理，依然不行。重启，依然不行，换 DNS 依然不行。</p>
-<p>据说和钥匙串有关系，于是乎，修复钥匙串，删除 crls 的缓存，去掉代理，就 OK 了。</p>
-<h4 id="修复钥匙串。"><a href="#修复钥匙串。" class="headerlink" title="修复钥匙串。"></a>修复钥匙串。</h4><p>打开“钥匙串访问”应用，然后菜单“钥匙串访问” &gt; “钥匙串急救”，进行修复，果然发现几个有问题的项目</p>
-<h4 id="删除-crls-的缓存。"><a href="#删除-crls-的缓存。" class="headerlink" title="删除 crls 的缓存。"></a>删除 crls 的缓存。</h4><p>在 Finder  command+shift+G 或者命令行前往 “/var/db/crls/”，删除 几个文件：crlcache.db,crlcache2.db 和 ocspcache.db</p>
-<h4 id="去掉代理"><a href="#去掉代理" class="headerlink" title="去掉代理"></a>去掉代理</h4><p>然后重启，然后就好了。</p>
-<a id="more"></a>
-]]></content>
-      
-        <categories>
-            
-            <category> Mac </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Mac </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[关于Xcode9的坑]]></title>
-      <url>/post/iOS11/%E5%85%B3%E4%BA%8EXcode9%E7%9A%84%E5%9D%91.html</url>
-      <content type="html"><![CDATA[<h1 id="Xcode9的添加图片的坑"><a href="#Xcode9的添加图片的坑" class="headerlink" title="Xcode9的添加图片的坑"></a>Xcode9的添加图片的坑</h1><blockquote>
-<p>最近更新了Xcode9,在做项目迭代的时候发现图片拖进项目加载不出来.苹果爸爸这又是在搞事情啊,经过一番折腾后终于发现原因了.</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><div align="center"><br><br><img src="http://ou344372s.bkt.clouddn.com/csummerBlog_Xcode9bug_Image1.jpeg" alt="image1"><br></div>
-
-<p>运行结果:</p>
-<div align="center"><br><br> <img src="http://ou344372s.bkt.clouddn.com/csummerBlog_Xcode9bug_Image2.jpeg" width="350" alt="image2" align="center"><br></div>
-
-
-<h2 id="图片加载不出来的原因"><a href="#图片加载不出来的原因" class="headerlink" title="图片加载不出来的原因"></a>图片加载不出来的原因</h2><p>图片加载不出来的原因是因为Xcode9图片直接拖进项目,并没有将图片真正的放进项目.</p>
-<div align="center"><br><br><img src="http://ou344372s.bkt.clouddn.com/csummerBlog_Xcode9bug_Image3.png" alt="image3"><br></div>
-
-<p>检查一下项目资源文件,原来我们的图片根本没有添加进来.</p>
-<div align="center"><br><br> <img src="http://ou344372s.bkt.clouddn.com/csummerBlog_Xcode9bug_Image4.png" width="650" alt="image4" align="center"><br></div>
-
-<p>假如我们把<code>TagetMembership</code>的对勾勾上呢</p>
-<div align="center"><br><br> <img src="http://ou344372s.bkt.clouddn.com/csummerBlog_Xcode9bug_Image5.png" width="350" alt="image5" align="center"><br></div>
-
-<p>B一下,就会发现项目报错了</p>
-<div align="center"><br><br><img src="http://ou344372s.bkt.clouddn.com/csummerBlog_Xcode9bug_Image6.png" alt="image6"><br></div><br>但是项目还是能运行起来,还是没有图片.<br><br><br>后来我又尝试直接把图片放进了<code>Assets.xcassets</code>蓝色文件夹里面<br><div align="center"><br><br> <img src="http://ou344372s.bkt.clouddn.com/csummerBlog_Xcode9bug_Image7.png" width="600" alt="image7" align="center"><br></div>
-
-<p>运行项目,图片出来了</p>
-<div align="center"><br><br><img src="http://ou344372s.bkt.clouddn.com/csummerBlog_Xcode9bug_Image8.png" alt="image8"><br></div>
-
-
-
-<h2 id="jpg格式图片"><a href="#jpg格式图片" class="headerlink" title="jpg格式图片"></a>jpg格式图片</h2><p>后面我又对jpg格式的图片尝试添加项目,然后把对勾打上.</p>
-<div align="center"><br><br> <img src="http://ou344372s.bkt.clouddn.com/csummerBlog_Xcode9bug_Image9.png" width="300" alt="image9" align="center"><br></div>
-
-<p>运行项目</p>
-<div align="center"><br><br><img src="http://ou344372s.bkt.clouddn.com/csummerBlog_Xcode9bug_Image12.png" alt="image12"><br></div>
-
-<p>没有问题,可以加载出图片</p>
-<p>后来我又发现jpg格式图片通过<code>Add Files to</code>这种方式也是可以正常添加图片的</p>
-<div align="center"><br><br> <img src="http://ou344372s.bkt.clouddn.com/csummerBlog_Xcode9bug_Image10.png" width="300" alt="image10" align="center"><br><br></div>
-
-
-
-<p>查看一下图片资源</p>
-<div align="center"><br><br><img src="http://ou344372s.bkt.clouddn.com/csummerBlog_Xcode9bug_Image11.png" alt="image11"><br></div>
-
-<blockquote>
-<p>所以如果是jpg格式图片大可以通过<code>Add Files to</code>这种方式添加,png图片则需要添加到<code>Assets.xcassets</code>蓝色文件夹里面.拖拽方式拖不进去这确实是一个坑,对于png格式图片苹果更加严格限制开发者的存放位置.也是为了app图片资源的安全性着想.</p>
-</blockquote>
-<h2 id="举一反三"><a href="#举一反三" class="headerlink" title="举一反三"></a>举一反三</h2><blockquote>
-<p>既然图片资源是这样,那么其他资源文件呢,例如json文件,音频,文件,(.h.m)文件,是不是应该也是这样.</p>
-</blockquote>
-]]></content>
-      
-        <categories>
-            
-            <category> iOS </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> iOS 11 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[程序员需要看什么书]]></title>
-      <url>/post/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9C%80%E8%A6%81%E7%9C%8B%E4%BB%80%E4%B9%88%E4%B9%A6.html</url>
-      <content type="html"><![CDATA[<p><center><font size="6">做程序员，要看什么书?</font></center><br><br><br>&emsp;&emsp;第一阶段: 《程序员的修炼之道–从小工到专家》</p>
-<p>&emsp;&emsp;第二阶段: 《莫生气》《圣经》《老子》《轮持久战》</p>
-<p>&emsp;&emsp;第三阶段: 《颈椎病康复指南》《腰椎间盘突出日常护理》《心脏病的预防与治疗》《高血压降压宝典》《强迫症的自我恢复》《精神病症状学》</p>
-<p>&emsp;&emsp;第四阶段: 《活着》</p>
-<blockquote>
-<p>每一个程序猿都不容易,大家珍惜身体.</p>
-</blockquote>
-]]></content>
-      
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[如何正确看待Swift]]></title>
-      <url>/post/Swift/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E7%9C%8B%E5%BE%85Swift.html</url>
-      <content type="html"><![CDATA[<blockquote>
-<p>原文 <a href="http://www.cocoachina.com/swift/20170808/20173.html" target="_blank" rel="external">【硅谷问道】Chris Lattner 访谈录</a></p>
-</blockquote>
-<h2 id="话题"><a href="#话题" class="headerlink" title="话题"></a>话题</h2><ul>
-<li>Chris Lattner 是谁？</li>
-<li>Xcode 的编译器 LLVM 背后有怎样的故事？</li>
-<li>Swift 诞生的前世今生，封闭的苹果为何要拥抱开源？</li>
-<li>说好的 ABI 稳定性何时能推出？</li>
-</ul>
-<h2 id="Chris-Lattner-是谁"><a href="#Chris-Lattner-是谁" class="headerlink" title="Chris Lattner 是谁"></a>Chris Lattner 是谁</h2><div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/1721232-82036a5c693365c1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/650" alt="image1"><br></div>
-
-<a id="more"></a>
-<h3 id="教育背景"><a href="#教育背景" class="headerlink" title="教育背景"></a>教育背景</h3><ul>
-<li>伊利诺伊大学 PHD</li>
-</ul>
-<h3 id="工作经历"><a href="#工作经历" class="headerlink" title="工作经历"></a>工作经历</h3><ul>
-<li>2005年 - 2017年供职苹果，前开发部高级总监，架构师</li>
-<li>2017年开始，担任特斯拉副总裁，负责自动驾驶</li>
-</ul>
-<h3 id="主要成就"><a href="#主要成就" class="headerlink" title="主要成就"></a>主要成就</h3><ul>
-<li>Swift 之父，主要作者</li>
-<li>LLVM 之父，主要作者</li>
-<li>Clang 主要贡献者</li>
-</ul>
-<h3 id="荣誉"><a href="#荣誉" class="headerlink" title="荣誉"></a>荣誉</h3><ul>
-<li>2013年获得 ACM 系统设计大奖</li>
-<li>2016年被评为“创造未来的25位当世天才”</li>
-</ul>
-<h2 id="访谈实录"><a href="#访谈实录" class="headerlink" title="访谈实录"></a>访谈实录</h2><h3 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h3><p><strong>1</strong>. 你怎么看待自己？</p>
-<p>我是个程序员。我喜欢写代码。我编程有很长时间了。</p>
-<p>我在读博的时候就开始写 LLVM 了。当时 LLVM 是我的博士研究项目，我想把它做成工业界中颠覆性的产品。当时我异想天开，尝试了各种架构设计，想解决以往编译器所有的弊端 – 结果当然没有如愿。我毕业后，就希望能接着搞 LLVM ，当时只有苹果允许我入职之后继续设计并实现 LLVM 。我想都没想就加入了苹果。</p>
-<h3 id="LLVM"><a href="#LLVM" class="headerlink" title="LLVM"></a>LLVM</h3><p> <strong>2</strong>. 说说 <strong>LLVM（Low Level Virtual Machine）</strong>到底是什么吧</p>
-<ul>
-<li>先说编译器：编译器是把程序员的代码翻译成机器可以理解的语言的工具；</li>
-<li>再谈 LLVM：一个模块化和可重用的编译器和工具链技术的集合，Clang 是 LLVM 的子项目，是 C，C++ 和 Objective-C 编译器，因为多模块的复用，所以提供了惊人的快速编译，比 GCC 快3倍。</li>
-</ul>
-<p>3.<strong>LLVM</strong>是一开始就作为一个完整的编译工具来使用的吗？还是有什么其他故事</p>
-<p>LLVM 当时是为了解决一个小问题而开发的：当使用OpenGL 函数库的时候（Mac OS 10.4 和 10.5环境下），比如你要调用这个函数，glVertex3f()，编译器必须将其转化为特定的GPU可以理解的数据。但是这带来一个问题：市面上有海量的GPU，每个GPU的性能和参数也不尽相同，所要求的数据格式也不同。这时 LLVM 可以产生很小的一部分代码去解决这个问题，这是 LLVM 诞生的初衷。</p>
-<p><strong>4</strong>. <strong>LLVM</strong> 的 <strong>bytecode</strong> 和 <strong>Apple</strong> 现在的 <strong>bitcode</strong> 有什么不同？</p>
-<p>这是历史遗留问题。一开始 LLVM 是开源的，所有代码在转成二进制时就叫做 bytecode – 因为 java 当年就是这么叫的。当时这一部分有很多问题：比如不能扩展，无法兼容，非常脆弱</p>
-<p>然后就到了 LLVM 2.0，当时我重新设计了架构，采用的就是 Bitcode 机制。LLVM 2.0 将所有代码以比特流(bit stream)而不是字节流(byte stream)的形式来编码。这就是 bitcode 这一术语的由来。</p>
-<p>主要的工作流程就是现将代码转成比特流，然后相应处理。处理完后再将编码传到其他地方去。</p>
-<p><strong>5</strong>. <strong>Bitcode</strong> 这个机制比直接传输二进制有什么好处</p>
-<p>好处那是多了去了。首先 编译器工作起来会越来越好。因为通过Bitcode机制，它可以通过编译不同代码来存储各种优化方法，这样下次碰到类似代码，它就会自动启动相关优化机制，使得效率提升。还有个好处是 LLVM 可以让芯片的兼容性变得很好。因为 Apple 每年都在芯片上推陈出新，它们转化为二进制的规则都不尽相同，LLVM 只要每次重新编码并传输成比特流就好了。</p>
-<p>当然 Bitcode 也不是万能的。比如它不能解决 32位的 APP 在64位机器上的兼容问题。这个问题其实应该依靠代码逻辑。</p>
-<h3 id="谈管理"><a href="#谈管理" class="headerlink" title="谈管理"></a>谈管理</h3><p><strong>6</strong>. 在职业生涯中，你在 <strong>LLVM</strong>上鞠躬尽瘁，但我们发现这几年你更多的工作是在管理上，你自己怎么看这种转变的？</p>
-<p>我虽然做管理了，但是我依然喜欢写代码，而且我每天都写，因为我就是个极客嘛。而且，其实我很早就开始做管理的工作了。不过我一直是作为技术领导人的角色带 2 到 3 个人的，我只是在写代码方面把把关，给他们提提建议这样。</p>
-<p>后来带的人多了，队伍也大了。我不仅管程序员，还管小组经理和其他技术领导人。虽然我一直喜欢写代码，但是管理对我来说是一个必须要去做的事。现在回过头来，我觉得干得还不错。跟大家一起工作之后我知道很多事协同工作效果更好，和同事交流你就会理解他们的想法，这样我就可以制定更好的计划路线。</p>
-<p>其实我没感觉整个过程有什么不同。直到今天我还夜以继日、废寝忘食得写代码，我并不是坐那边动动嘴皮子，指挥别人干活的老板。我其实每个周末都在写代码，我很忙的。</p>
-<h3 id="Swift"><a href="#Swift" class="headerlink" title="Swift"></a>Swift</h3><p><strong>7</strong>. <strong>Swift</strong> 是如何诞生的？在苹果这样一个大厂，决定做出如此巨大的变革，同时还是在封闭的环境下，你是如何一步步实现的？</p>
-<p>首先，苹果内部所有的项目都不尽相同 – 工作流程、战略规划、实施细节，到最后发布。Swift 也一样，没有可比性。因为苹果本身就是小组单兵作战模式 – 每个组负责不同的大方向，组里自己计划和工作，甚至招人都是各自招。</p>
-<p>言归正传，契机发生在2010年了。当时好像是我们刚刚完成了 Clang 对 C++的支持。你也知道 C++ 写起来有多丑，但是做个编辑器支持 C++，完善 C++ 这门语言就是另一回事了，我们当时搞了好久终于完成的时候特别有成就感。当然 Clang 远没有到达完美的地步。</p>
-<p>我又扯远了。除了做 Clang 以外，无论是 C语言，C++，还是 Objective-C，都有一些我不是很满意的地方。所以我就想要不我们搞个新的语言来吧。新的语言要越简单越好。一开始大家都没认真，后来我跟很多同事聊了之后觉得新语言的计划可行，而且大家都很亦可赛艇。于是我们就用业余时间开始顶层设计和写代码。</p>
-<p>现在问题来了，因为我们已经有 Objective-C 了。虽然它有几个地方很丑，比如老是用 “@”，每句结束了还要打分号，但是这些并不妨碍它是一门伟大的语言。所以，我们为什么要开发新语言，而不是把精力花在优化 Objective - C 上？</p>
-<div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/1721232-daeab5554b57f046.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/650" alt="image2"><br></div>
-
-
-<p>原因有三。</p>
-<ul>
-<li>第一，如果我们大幅优化 Objective - C，把很多 Swift 的特性加进去，这对开发者来说是灾难性的，因为他们要对原来的 APP 要进行大幅修改；</li>
-<li>第二，Objective - C 很多特性积重难返，比如它安全性上的问题；</li>
-<li>第三，Objective - C 是基于 C 开发的语言，所以你无论怎么优化，它必然有 C 语言自身的缺陷。</li>
-</ul>
-<p>于是我们就动手做 Swift 了，它的背后有着数百人的努力: 支持 Xcode，开发 Playground，兼容调试器和编译器。我个人感到最骄傲的一点是，我们并不打算自己内部把它做到完美 – 我们开源、我们依靠社区，这样一门语言才能在无数开发者的实战中得到检验和改进，我想这才是 Swift 最棒的地方。</p>
-<p><strong>8</strong>. 你之前在优化 <strong>Objective-C</strong> 的时候，有没有想到什么地方是未来 Swift 可以用得到的？</p>
-<p>ARC。我们其实一直都在争论是用垃圾回收机制（garbage collection）还是 ARC，后来决定了是 ARC。</p>
-<p>另一个是模块化，我们也将这一部分的经验带到了 Swift 开发中。</p>
-<p>其实，很多数组和字典方面的语法优化本来是计划在 Objective - C 上面的。但是后来我们开发了 Swift，于是这些改进被直接用在了新语言上，所以大家会在写 Swift 的时候觉得似曾相识，因为本来这些就是 Objective-C 的升级版本嘛。</p>
-<p>我可以透露一个有意思的事情。我们在做 Swift 的时候，很多 iOS 开发者，包括苹果内部的工程师，都在吐槽我们这几年在 Objective - C 上毫无建树，都在说你们为什么不做这个那个。我们当然不能告诉他们我们在全力开发 Swift，而他们所要的语法功能我们都会给。</p>
-<p><strong>9</strong>. 苹果内部对于 <strong>Swift</strong> 的使用情况和开发是怎么看得？</p>
-<p>Swift 团队对于开发上有明确的目标和计划，应用二进制接口（ABI）的稳定性一直是我们的首要目标。很多人很喜欢我们开源的 Swift Playground。同时 iOS 系统内置的 Music App 也是 Swift 写的。其实用不用 Swift 主要是技术和开发方面的考量，苹果内部同时得兼顾稳定性和开发效率，这不是说大家喜不喜欢这个语言的问题。</p>
-<p>Swift 刚发布的时候，内部很多组都很惊讶：我们已经有了 Objective-C，为什么还要搞新的 Swift？而且 Objective-C 本身就很不错，开发起来也很顺手。后来渐渐 Swift 成熟了，大家也爱上了这个新生儿。</p>
-<p>内部其实对于 Swift 一个很大的顾虑在于，苹果的所有开发必须兼容32位机器，而32位的应用都采用了 Objective-C 的 runtime 机制。这就要求 Swift 团队也弄出个类似的机制，或者弄个兼容的方案，否则 Swift 无法与 AppKit 适配。</p>
-<p><strong>10</strong>. 开源后的 <strong>Swift</strong> 发展态势喜人，你对此有什么看法？</p>
-<p>开源之后，Swift 发展之好让我咋舌，然而这也是问题所在。</p>
-<p>当年我们开源了 LLVM 和 Clang，它们也发展喜人。我们的对手 AMD 们完全跟不上我们。但是跟 Swift 比起来，它们的发展也太慢了，LLVM 和 Clang 开源后完全没有 Swift 这么火。</p>
-<p>Swift 就不同了，开源一年之后，我们就有了上百万的开发者在使用这门语言 – 我和很多有丰富开源经验的老工程师都吓了一跳，这简直了！然后我们每天收到无数的邮件和 pull requests，要求更新这个、要求优化那个，我们的节奏完全被打乱了。我们如何规划开发？我们如何把 Swift 的开发导向一个正确的方向？这些问题随着时间的推移和经验的积累，慢慢找到了解决之道。</p>
-<p>我现在觉得开源这个决定至关重要。一来大家会帮着优化；二来我们有个巨大的论坛，在那里大家可以畅所欲言，全世界的人都在帮着 Swift 进步，这真的很棒。我们虽然没有一开始就具体计划要开源，但是苹果内部当时都觉得 Swift 肯定有一天要开源。</p>
-<h3 id="苹果与特斯拉"><a href="#苹果与特斯拉" class="headerlink" title="苹果与特斯拉"></a>苹果与特斯拉</h3><div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/1721232-648e86dc59a7cf78.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/650" alt="image3"><br></div>
-
-<p><strong>11</strong>. 苹果好像一直是个封闭的公司，你们内部对于开源怎么看？</p>
-<p>苹果其实有开源的传统。 LLVM 虽然不是始于苹果，但是最终是苹果完成并将其开源。Clang 则完完全全是生于斯开源于斯。还有其他工具，比如 LLDB，libc+，以及compiler-rt 都是如此。</p>
-<p>所以对于 Swift 来说，开源只是时间问题。当年从 Swift 1.0 到 Swift 2.0，一切都乱七八糟。当时我们重点在开发错误处理机制，还有协议、拓展等一系列重要的功能。所以开源 Swift 1.0，并不是一个好选择，因为这些重要的东西都没有，而这些开发是当务之急。当 Swift 2.0 到来的时候，我们才有空去开源、去做社区拓展和论坛搭建。开源社区可以帮我们修复细节，我们这时候可以更多的投入在架构设计上。</p>
-<p><strong>12</strong>. 苹果最让你怀念的是什么？</p>
-<p>苹果是这样一个公司，你可以选择你喜欢的东西，然后努力工作去实现它，最终你的工作会落实在产品上，影响亿万计的人。</p>
-<p>有很多公司，你可以努力工作，但是不一定能做你喜欢的东西；你做出来东西，可能会被束之高阁；你做的产品，也许最后很幸运的发布，但是并不一定有很多人会用。在苹果，你的工作可以真正改变世界，很有成就感。</p>
-<p><strong>13</strong>. 你觉得到特斯拉之后，还会努力为 <strong>Swift</strong> 做出贡献吗？</p>
-<p>特斯拉的工作非常有挑战性，这是我最开心的地方。我现在还没入职，所以也不知道我之后对 Swift 能做多少工作。也许我还会夜以继日的发 Pull Request，也许我就周末写写 Swift 代码。我应该会从各个方面 – 无论是顶层设计还是具体代码实现，与苹果的核心团队合作，为这个语言做贡献。</p>
-<p>其实我一直想说，Swift 只是我在苹果工作的一小部分，我花了大量的时间在其他事情上。实际上在苹果我也就晚上或者周末有空写写 Swift。我希望到了特斯拉之后我还能花同样的精力和时间在 Swift 上，毕竟我对这门语言统治世界充满期待。</p>
-<h3 id="ABI-稳定性"><a href="#ABI-稳定性" class="headerlink" title="ABI 稳定性"></a>ABI 稳定性</h3><p><strong>14</strong>. 现在 Swift 已经到了第3个版本了。我们也知道ABI稳定性的追求一直是你们的目标，但是它也一直被各种事情拖延。你对此有什么计划吗？或者说你从拖延中学到了什么经验教训吗？</p>
-<p>ABI 推迟有两个原因。</p>
-<p>第一是因为 Swift 的开发进程中有很多不确定性。当 Swift 开源之时，一堆人对我们提 pull request，提各种各样的 issue。这样我们就不得不去花大量的时间去维护开源社区，而不是专心去做计划内的工作。</p>
-<p>第二个原因是，尽管稳定的 ABI 很重要，但是对于开发者来说，稳定的 ABI 对他们来说没有明显的好处，他们更关心是语法和兼容上的稳定和优化。所以我们后来修改了计划，语法和兼容上的稳定性被定为是最先要实现的目标。这样当 Swift 3.1 或者 Swift 4.0 出来的时候，大家不用担心语言上的转化会让 Xcode 崩溃，或是需要大家整个重构 APP。Swift 3.0 主要就是实现这个目标。</p>
-<div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/1721232-a20135128b592275.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/650" alt="image4"><br></div>
-
-<p><strong>15</strong>. 稳定的 <strong>ABI</strong> 什么时候推出？他会赶在异步和并发模型之前吗？</p>
-<p>Swift 现有的内存管理机制对 ABI 稳定性造成了不小的影响。有些底层逻辑还需要调整，比如 getter 和 setter 的生成以及属性的内存分配问题，苹果内部正在做这件事，这之后我们才能完成 ABI。至于并发模型啥的就跟 ABI 没有关系了。</p>
-<p>很多人担心 Swift 4.0 的时候苹果能不能推出稳定的 ABI，因为毕竟工作量太大。ABI 的工作正在井然有序得进行，而且对于开源社区来讲推出稳定的 ABI 至关重要。Ted （Chris Lattner 之后的 Swift 领导人）有一件事说对了，现在 Swift 当务之急就是让编译器更稳定，让错误处理更方便，提高编译速度，并且将 Swift 拓展到大规模系统中。</p>
-<p>我在想 Swift 4.0 的时候究竟能看到什么。也许没有稳定的 ABI，但是一定会有重要的新功能加入。</p>
-<p>ABI 将允许未来 Swift 版本开发的应用程序和编译库可以在二进制层次上与 Swift 3.0 版本的应用程序和编译库相互调用。这样，ABI的稳定性将保证一定程度的二进制兼容性，并且第三方更容易发布二进制库。另外，ABI 将允许删除需要的 Swift 标准库和二进制文件，就像目前情况下通过Xcode创建的 iOS 和 OS X 应用程序一样。</p>
-<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/1721232-f5541e6b471e30c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/650" alt="image5"><br></div>
-
-<h5 id="LLVM的三层结构"><a href="#LLVM的三层结构" class="headerlink" title="LLVM的三层结构"></a>LLVM的三层结构</h5><ul>
-<li>第一层：Clang 编译器，负责编译各种语言</li>
-<li>第二层：代码优化器，通过模块化操作优化代码，是 Bitcode 逻辑的主要部分</li>
-<li>第三层：代码翻译器，针对不同平台和 GPU 将代码翻译成机器语言</li>
-</ul>
-<h5 id="补充：LLDB，llbc-，compile-rt"><a href="#补充：LLDB，llbc-，compile-rt" class="headerlink" title="补充：LLDB，llbc++，compile rt"></a>补充：LLDB，llbc++，compile rt</h5><ul>
-<li>LLDB: 一个有着 REPL 的特性和 C++ ,Python 插件的开源调试器。LLDB 绑定在 Xcode 内部，存在于主窗口底部的控制台中；</li>
-<li>libc++，libc++ ABI: 高性能 C++ 标准库实现，支持 C++ 11</li>
-<li>compiler-rt：为 LLVM 和 Clang 设计的编译器扩展函数库。针对 __fixunsdfdi 和其他目标机器上没有一个核心 IR (intermediate representation) 对应的短原生指令序列时，提供高度调优过的底层代码生成支持。</li>
-</ul>
-<h5 id="ABI-是什么？"><a href="#ABI-是什么？" class="headerlink" title="ABI 是什么？"></a>ABI 是什么？</h5><ul>
-<li>Application Binary Interface，中文名：应用二进制接口。是 APP 和 操作系统、其他应用之间的二进制接口。它包括以下细节：</li>
-<li>数据类型的大小、布局和对齐;</li>
-<li>调用约定（控制着函数的参数如何传送以及如何接受返回值），例如，是所有的参数都通过栈传递，还是部分参数通过寄存器传递；哪个寄存器用于哪个函数参数；通过栈传递的第一个函数参数是最先push到栈上还是最后；</li>
-<li>系统调用的编码和一个应用如何向操作系统进行系统调用；</li>
-<li>以及在一个完整的操作系统ABI中，目标文件的二进制格式、程序库等等。</li>
-</ul>
-<center><font size="6"><strong>(下)</strong></font></center>
-
-<h2 id="话题-1"><a href="#话题-1" class="headerlink" title="话题"></a>话题</h2><ul>
-<li>Swift 在 Server 和操作系统方面有着怎样的雄心抱负？</li>
-<li>Swift 与 Objective-C 的爱恨情仇？</li>
-<li>Swift 之父对于 RxSwift 和 ARC 有什么独到的见解？</li>
-<li>随着 Swift 之父的出走，这门语言还会继续高歌猛进吗？</li>
-</ul>
-<h2 id="访谈实录-1"><a href="#访谈实录-1" class="headerlink" title="访谈实录"></a>访谈实录</h2><h3 id="Swift-在系统、服务器、网页端的发展"><a href="#Swift-在系统、服务器、网页端的发展" class="headerlink" title="Swift 在系统、服务器、网页端的发展"></a>Swift 在系统、服务器、网页端的发展</h3><p><strong>16</strong>. <strong>Swift</strong> 在服务器，或者 <strong>Linux</strong> 上可以说运行得不错。你们是一开始就计划在服务器或者系统端运行 <strong>Swift</strong>，还是说你们更希望 <strong>Swift</strong> 专注于 iOS 开发，而不是去与 <strong>python</strong> 或 <strong>Rails</strong> 竞争？</p>
-<p>你如果去看苹果官方的 <strong>Swift</strong> 书，里面有这样一句：<code>Swift 的目标是，上能写应用程序，下能写操作系统（Swift was designed to scale from hello world to an entire operating system）。</code>所以我们一开始，就是要将它创作成为一门一统天下的语言。</p>
-<p>这也许有点痴人说梦，但是大家等着，过几年就知道了。无论是我还是苹果的其他人，都把 <strong>Swift</strong> 当成是未来世界的主流语言来看的，它将会超越 <strong>Python</strong>，甚至有一天取代 C。那么我们是怎么实现这一步的呢？</p>
-<p>开源是重要的一环。你不开源，别的平台就不大想用这个语言。当各种各样的开发都采用 Swift ，Swift 一统天下的目标也就越来越现实。现在很多学校的计算机基础教育就在教 Swift，它越来越流行了。</p>
-<p>所以嘛，第一步我们就是让这个语言流行起来，让大家使用它。我对“流行”的定义是，Swift 必须要有一个杀手级的产品，这样大家就会知道 Swift 有多好，大家都会使用它。现在 iOS 平台和 Mac OS 平台有很多非常棒的 Swift 应用。这样我们开始第二步，开源。第三步，我们要走得更远。</p>
-<p>什么叫走得更远？我觉得现在我们要做的就是把 Swift 应用到服务器端。其实服务器和移动应用开发颇有类似，比如架构设计和函数库调用上。但是，唯一的麻烦就是我们得让 Swift 能在 Lunix 上流畅运行。同时构建大量服务器端的库函数。现在 Swift.org 上已经有专门的版块讨论服务器端上的开发了，大家集思广益的感觉非常好。</p>
-<p>再接下来，<strong>Swift</strong> 要取代 <strong>Java</strong>，无论是脚本语言还是底层的系统设计，<strong>Swift</strong> 最终都应该能应付自如。</p>
-<p>脚本语言上，开源社区和我们苹果内部都在尝试将正则表达式、多行字符串等脚本语言的特征都加入到 Swift 当中，虽然工作量很大，但我认为它们最终都将成为 Swift 的一个部分。</p>
-<p>系统开发方面，我觉得取代 Java 最重要的一点就是 Swift 一定要有自己的特色。我觉得 Rust 是一个不错的语言，虽然现在没多少人用。Swift 在某些顶层开发上要明显优于 Rust。再等过些年，当 Swift 在系统开发上真正流行起来之时，Swift 就离一统天下不远了。</p>
-<div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/1721232-97a1247c57b5089c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/650" alt="image6"><br></div>
-
-<p><strong>17</strong>. 对于 Swift 在服务器上的发展，你觉得交给开源社区去做就足够了吗？苹果自己会不会推出面向服务器端的 Swift 函数库？</p>
-<p>首先我觉得若要成为服务器端的流行语言，这几个部分 Swift 必须具备：编码和解码，网络传输协议，HTTP。这些部分我觉得要成为标准函数库，因为它们是最基本的东西，苹果内部自己来做也许更好，因为能确保质量。对于具体的网络应用函数库，我觉得短期内没必要。这是因为业界内部对此就争议很大，如同 Ruby on Rails 那样的王者框架还没有出现。</p>
-<p>我觉得对开源社区而言，最重要是两个工作。第一，是 Swift 的包管理器（Package Manager）。这个可以让我们在多个平台、不同函数库之间协同工作，大幅提高兼容性和效率；第二，是并发模型（Concurrency Model）。Go 语言之所以在服务器和云端开发这么受欢迎，就是因为并发模型做得好。并发模型应该会集成在 Swift 5 中。</p>
-<p><strong>18</strong>. 现在 <strong>Swift</strong> 在服务器端还不是那么成熟。有人说 <strong>Swift</strong> 不过是写 <strong>App</strong> 的一门语言。现在已经 <strong>3.0</strong> 版本了，大家貌似都还只是将 <strong>Swift</strong> 用来写写 <strong>iOS</strong> 应用。你怎么看？</p>
-<p>我现在根本不担心 Swift 在服务器端最后不会成功。很多人写了几年 Swift，自以为很懂这门语言。当 Swift 具备服务器端特性的时候，苹果一定会跟大家说，你看 Swift 能做这个那个，你用其他语言来写就要麻烦得多。</p>
-<p>现在最大的问题是大家还觉得 Swift 只是苹果自己搞出来的东西。他们觉得 Swift 不过是苹果自己的玩具，只能用在苹果自己的 iOS 系统和 Mac OS 系统上。所以我们应该加大开源和构建社区的力度。现在外行对于 Swift 的态度还可以接受，慢慢地 Swift 就会在系统开发领域追上来。</p>
-<p><strong>19</strong>. 大家似乎都在期待 <strong>Swift</strong> 能在网页开发上有所建树。现在网页或者网络程序开发方面，一般是多种语言混用，前端和后端可能语言逻辑完全不一样，你对此怎么看？</p>
-<p>这可能要花很长时间，要是能取代 Javascript 那就简直了。现在 Dart 在网页开发上做的不错。我个人看好 asm.js 和 WebAssembly，它们都是通过 LLVM 编译的，跟 Swift 一样。如果这两个今后做得足够好，也许就没 Swift 什么事了。未来之事，都很难说。</p>
-<p>而且我现在发现，<strong>Javascript</strong> 已经变成一门基础语言了。我看很多脚本语言现在都直接编译成 <strong>Javascript</strong>，<strong>Javascript</strong> 就像比特一样成为一个最基本的表达方式。我觉得五年之后，很有可能 <strong>asm.js</strong> 会一统网页端。虽然大家说 <strong>Javascript</strong> 不好 <strong>debug</strong>，但其实就算你写 C 这么成熟的语言，debug 起来依然很头疼。这也是我们为什么不在 Swift 中加入宏定义，因为那个给编译和 debug 增加了难度。</p>
-<h3 id="Swift-语言设计"><a href="#Swift-语言设计" class="headerlink" title="Swift 语言设计"></a>Swift 语言设计</h3><p><strong>20</strong>. <strong>Swift</strong> 好像一开始就设计得简单易懂、而同时又有很多高阶的复杂操作。经验丰富的程序员可以写出漂亮的语法糖，对编程一窍不通的小孩也可以玩转 <strong>Playground</strong>。你认为 <strong>Swift</strong> 是一门将复杂和简易融为一体的语言吗？</p>
-<p>Swift 在这点上目前做得还不错。但我担心开源之后大量的新功能添加进来，使得 Swift 不再简单。我一直致力于让 Swift 成为一门简单易学的语言，同时又足够强大。你想我们为什么不支持内联汇编 (inline assembly support) 这样的功能，就是只有极少数极客会喜欢。以后我们也要秉持这个原则。</p>
-<p>一个不会写 Swift 的人。打开 Playground，敲下 “print(“Hello World”)”，旁边就会显示出来，这点跟 python 很像，你不用去打”\n”这样的换行符号。也就是说 Swift 对于新手来说非常友好，我们可以从 Hello World 开始逐步深入，从简单慢慢过渡到复杂。</p>
-<p>对于系统开发而言，Swift 相比 Rust，会更好的自动控制内存分配，因为我们可以借鉴开发 ARC 时的经验。你想内存分配这种底层的东西，也只有少数大牛能精通。那为什么不把 ARC 引入到底层来简化开发呢？我觉得这是 Swift 开发的另一个方向。</p>
-<p><strong>21</strong>. 有人说 <strong>Swift</strong> 是大杂烩，一部分借鉴 <strong>C#</strong>，一部分借鉴 <strong>Javascript</strong>，一部分借鉴 <strong>Objective-C</strong>，你是怎么看的？</p>
-<p>Swift 确实是大杂烩。但是它并不是简单的模仿其他语言，而是借鉴，然后创造出一个伟大的语言。我们确实参考了大量其他的语言设计。比如 Haskell 很多概念就被引入到 Swift 中。Swift 中的 Protocol，就是从 Haskell 的 construct 中得到启发的。</p>
-<p>还有其他部分长得像 <strong>Dart</strong>，亦或是借鉴了 <strong>Go</strong> 和 <strong>C#</strong>。这样做也有另一个好处，开发者拿到 <strong>Swift</strong> 的时候会有种似曾相识的感觉，这样大家也更愿意用 <strong>Swift</strong> 开发。</p>
-<h3 id="Swift-vs-Objective-C"><a href="#Swift-vs-Objective-C" class="headerlink" title="Swift vs. Objective-C"></a>Swift vs. Objective-C</h3><div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/1721232-f6b2084f144f48fb.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/650" alt="image7"><br></div>
-
-<p><strong>22</strong>. 给我个现在就学习 <strong>Swift</strong> 的理由？</p>
-<p>这个其实无所谓。我个人不觉得 Objective-C 会短期内被取代，苹果依然支持 C 和 C++，而且放弃 Objective-C 对苹果来说有百害而无一利。你不必一定要学习 Swift，Swift 只是一门更好的语言。</p>
-<p>说到 Swift，我们给它取这个名字就意味着我们希望这门语言非常得高效。它本身设计的目的不是让你短时间内写大量代码，而是用最少的时间、最简洁的代码来完成工作。</p>
-<p>编程其实包括方方面面，不仅仅是写代码，还有 debug，给各种系统适配，以及其他各种事情。其实开发的时间短，找 bug 的时间一般都会很长。比如在 Objective-C 中，你会花不少时间修 unrecognized-selector error，但是 Swift 从顶层设计中就排除了这类 bug。</p>
-<p>Swift 还有其他一些好处。比如可以对字符串使用 switch…case…语句；可以使用 functional programming；可以用 enum 和 protocol。Swift 其实是一门包罗万象的语言，菜鸟和老手写出来的 Swift 可以完全不一样，这取决于经验。</p>
-<p>我最近发现，很多 iOS 开发者会把 Swift 当 Objective-C 来写，逻辑结构完全一样，只是换个语法。其实这就意味着他们没有意识到 Swift 的价值 – 认为 Swift 不过是 Objective-C 的替代品。当开发者深究 Swift 的语法后，他们才会意识到这是一门多么高效的语言。</p>
-<p><strong>23</strong>. 会不会像 <strong>Objective-C</strong> 一样，在未来 <strong>Swift</strong> 添加一些动态特性？</p>
-<p>Swift 目前没有加入动态特性的计划。很多人问为什么 Swift 不能有响应，reflection这些特性。甚至有人写博客说，“迟早有一天，苹果要重写 Swift 的所有架构”，我每次在 WWDC 前看到这些博客都会呵呵。很多人不明白什么叫动态性，也不关心我们发布的 Swift 计划表，只是不停的写博客，预测这个吐槽那个。</p>
-<p>我个人可以明确表示，Swift 近期内没有加入动态特性的计划。凡事有轻重缓急，我们得先处理其他事情，比如并发模型，比如在系统端上的优化，比如脚本的适配。不过以后如果有时间，Swift 会加入动态特性的，前提是我们计划表里的事情都做完了。</p>
-<p><strong>24</strong>. 你不担心没有动态特性，很多 <strong>Objective-C</strong> 的程序员会各种不适应 <strong>Swift</strong>，然后就放弃用 <strong>Swift</strong> 了吗？</p>
-<p>我不担心啊。Swift 本身支持 Objective-C 上的所有特性，你只需要那部分代码使用 Objective-C 兼容，然后把它们加入到 runtime 中即可。</p>
-<p>虽然有很多人说，我就是想写纯粹的 Swift 代码，但其实我不觉得这是一种倒退。你可以使用 reflection 模型，要用这个功能你用就是了，自己设计的代码结构自己负责。在写代码这事上，从来没有非黑即白一说，我们要做最重要的事，而不是天天在推特上开听证会。Swift 核心组做的工作就是把关 Swift 开发，把这门语言导向一个正确的方向。</p>
-<h3 id="Swift-编程规范"><a href="#Swift-编程规范" class="headerlink" title="Swift 编程规范"></a>Swift 编程规范</h3><p><strong>25</strong>. Swift 现在好多语法糖。怎样避免写出奇怪和低效的 Swift 代码？你觉得现在 Swift 可以称得上成熟吗？</p>
-<p>现在正是 Swift 成熟之时。Swift 1 和 Swift 2 的时候，确实语言的变化很大，大家很头疼。但是 Swift 3.0 是一个稳定成熟的版本，它真的不错。之后的工作是在 Swift 3.0 的基础上增加新的函数库或者功能，而不是修改现有的架构。</p>
-<p>其实 Swift 开发者也在纠结语法糖太多的问题。我听说一些人出了一些 Swift 的书籍，这很好。其实我们在设计 Swift 的时候，就考虑到语法糖的问题了。比如你写代码，把所有变量都用 var，这时候编译器会提醒你对常量使用 let。这说明一点，Swift 是鼓励 immutable 数据类型的，并且 Xcode 也会自动督促你写出更规范的代码。不过目前对于“是该用 class 还是 struct？”这类比较困难的问题，编译器还没智能到能自动检测并纠正。</p>
-<p><strong>26</strong>. 有些语言一开始就有设定好的语法糖和规范。为什么 Swift 没有这样，而是让开源社区去讨论？你个人对 Swift 有没有一些编程规范？</p>
-<p>作为一个程序员，我骨子里流淌着编程规范的血液。但在 Swift 的开发过程中，我还是改变了一些固有观念。比如说，我认为所有代码代码段都应该是一个地方输入，一个地方输出。但我后来发现这样设计语言很难维护，可读性也不佳。 比如说我们设计的 guard else 语句，你一定要在末尾写上 return 之类的结束语。这就导致了一个函数有多个地方输出：你在 guard else 里 return，在其他地方也 return，不符合我原来的设想。但是如此设计会令安全性提高，因为我们把一些特殊情况给提前处理掉了。</p>
-<p>对于空格这种格式问题，我个人倾向于空 2 格。我知道有些人喜欢空 4 格，还有人喜欢 3 格（因为他们觉得文件中不应该有 tab）。这完全是萝卜青菜各有所爱，大家对此争论不休，哪一种都有一定道理。所以我们最后也没有对 Swift 提出固定的格式要求，大家写出自己喜欢的代码就行。但是这也造成了一定程度的混乱 – 你写的代码格式会与同事的完全不同。但是我觉得这并不会影响语言的多样性。</p>
-<p>Go 当年强行推广了一套编程规范，结果到现在仍有争议。我们现在的工作不是做语法上面的规范，而且我们也不希望推出一套规范后大家好不买账。开源的另一个好处是，大家可以自行决定什么是好的语法规范。就算有时间我个人或者 Apple 也不会去写 Swift Style Guide。比起规范我更愿意去回答理论和语言设计上的问题。</p>
-<p>有一件趣事我想分享，我一直担心别人会问，为什么 Swift 的函数名叫 func？而不叫 function 或者 fn？这其实颇有争议。不过现在已经是 Swift 3.0 时代了，大家这样用得很顺，我们也不会去更改了，所以争论于此没有意义。</p>
-<h3 id="RxSwift-以及响应式编程"><a href="#RxSwift-以及响应式编程" class="headerlink" title="RxSwift 以及响应式编程"></a>RxSwift 以及响应式编程</h3><p><strong>27</strong>.很多开发者用 RxSwift 或者其他响应式编程。你在开发 Swift 过程中有没有仔细研究过响应式编程这些？</p>
-<p>我已经开始关注 RxSwift 了。但是我自己没用响应式编程来开发过产品，所以我对它们的理解来自于博客。RxSwift 看起来很棒，你可以少写很多代码，而且似乎开发效率也会更高。但听说维护和测试起来也很难，有优点也有缺点。</p>
-<p>如果我有空写一个 App 的话，我肯定回去试试 RxSwift，然后再过来发表观点。我现在不敢说”强烈推荐”，或者“强烈不推荐”之类的话。</p>
-<h3 id="Garbage-Collection-vs-ARC"><a href="#Garbage-Collection-vs-ARC" class="headerlink" title="Garbage Collection vs. ARC"></a>Garbage Collection vs. ARC</h3><p><strong>28</strong>. 我们都知道 <strong>Garbage Collection</strong> 和 <strong>ARC</strong> 各有千秋。<strong>Objective-C</strong> 有 <strong>Garbage Collection</strong>，后来加入了 <strong>ARC</strong> 的机制。<strong>Swift</strong> 则是完全 <strong>ARC</strong>。你能说说为什么你们那么看好 ARC 吗？</p>
-<p>Objective-C 最开始是基于 Libauto 系统开发的，而 Libauto 本身就有诸多限制，所以我们当时采用了 Garbage Collection。我个人觉得 ARC 完全要优于 Garbage Collection，因为后者经常在内存上回收一下我们不想回收的变量。所以我们在 Objective-C 上采用了引用计数和 ARC。</p>
-<p>ARC 最重要的一个优势就是，它很好的处理了 final 这类参数。如果你用 Garbage Collection，比如 java 吧，final 参数就是那些不被回收一直在跑的东西，这样展开讲问题是一箩筐。我举个最简单的例子，当有个 final 变量运行在一个错误的线程上时，它会多次重跑，导致实例被不停的创建。ARC 则是从根本上解决了这个问题。</p>
-<p>目前反对 ARC 的理由主要有两个，一是人们觉得 ARC 引入了额外的开销，因为你要维护引用计数嘛。另一个是 ARC 容易造成循环引用。</p>
-<p>我个人要强调的是，这些毛病 Garbage Collection 也有。除此之外 Garbage Collection 还不能终止所有的线程，或者在特定的一个时间点终止一个线程。这是因为 Garbage Collection 引入了安全指针（safepoint），这同样也是一笔额外的开销。</p>
-<p>ARC 中引用计数的开销在实际开发中影响不大。而且我们对对象的整个生命流程都有掌控，而这是 Garbage Collection 不具备的。实际上我觉得 ARC 中有些额外开销是必须的，那些不必须的开销以后也会慢慢改进的。</p>
-<p>至于循环引用的问题。相比于你必须在具体的一行说明，retain/malloc 这个变量，然后再在后面某一行说明，release/free这个变量这种麻烦事，你只需要用 strong 或者 weak 表示你对对象的所有权，你省去了大量思考内存分配的担忧和操作，这难道不是一个巨大的进步吗？</p>
-<h3 id="身后之事"><a href="#身后之事" class="headerlink" title="身后之事"></a>身后之事</h3><div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/1721232-02b9bf7896c1d0be.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/650" alt="image8"><br></div>
-
-<p><strong>29</strong>.把 <strong>Swift</strong> 交给 <strong>Ted</strong> 你放心吗？</p>
-<p>完全不用担心。</p>
-<p>Ted 这人实力非常强。斯坦佛的博士生毕业，苹果十年工作经验，曾经以一己之力完成了 Clang 的静态分析器。Ted 在管理方面也很优秀。我有时候会突发奇想，让手下一个人或者一个组去做“我认为有意义”的项目。Ted 则是非常稳健的管理者，他总会领导组员去做最重要的事情，这就是我跟他的不同。</p>
-<p>另外我们的小组也很强，核心团队的几个人：<strong>Doug Gregor</strong>, <strong>John McCall</strong>, <strong>Joe Groff</strong>, <strong>Dave Abrahams</strong>。这几个人都是极其优秀的极客。Swift 其他团队的工程师也很给力。有他们在，没有任何理由 Swift 不会成功。</p>
-<p><strong>30</strong>. 你为什么去做电动车？</p>
-<p>首先我个人非常喜欢车。但我又懒得自己老是去加油啊、开车，我更喜欢一种更可靠的方式，最好我自己啥也不用做，车子就可以把我送到目的地。我也不需要担心维护啊什么的。我其实是特斯拉最早的一批客户，我觉得特斯拉驾驶起来很开心。</p>
-<p>不过我重来没想过我会去一家汽车公司任职，因为我觉得我是个程序员，这跟汽车有啥关系？不过特斯拉让我去做自动驾驶系统，这个就很对我胃口了。因为这也是世界级的难题，我想尝试挑战一下。</p>
-<h2 id="补充-1"><a href="#补充-1" class="headerlink" title="补充"></a>补充</h2><p><strong>Chris Lattner</strong> 提到的语言</p>
-<ul>
-<li>Go</li>
-</ul>
-<p>主页：<a href="http://golang.org/" target="_blank" rel="external">http://golang.org/</a></p>
-<p>Google发布的开源语言。编译速度媲美 C，安全性有过之而无不及。学习曲线也与 Java 类似，比较简单。目前主要用于网络服务器，存储系统，和数据库中。</p>
-<ul>
-<li>Dart</li>
-</ul>
-<p>主页：<a href="https://www.dartlang.org/" target="_blank" rel="external">https://www.dartlang.org/</a></p>
-<p>Google 开发的语言。基于类，只能单一继承，风格上偏向 C。目标在于成为下一代网络开发语言。目前 Google 正在尝试用 Dart 开发 Android 应用，达到去 java 化的目标。</p>
-<ul>
-<li>Haskell</li>
-</ul>
-<p>主页：<a href="https://www.haskell.org/" target="_blank" rel="external">https://www.haskell.org/</a></p>
-<p>函数式编程语言，支持惰性求值、模式匹配、列表内包、类型类和类型多态。用户很少，普遍认为难学难用。主要用于金融系统及安全性和性能要求抛高的产品。</p>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
-<li><a href="http://www.infoq.com/cn/news/2016/05/swift-3-no-stable-abi" target="_blank" rel="external">Swift 3 将不包含稳定的ABI</a></li>
-<li><a href="https://www.douban.com/group/topic/42170443/" target="_blank" rel="external">转载 为什么业界很少使用 Haskell？</a></li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> Swift </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Swift </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[大神技术博客]]></title>
-      <url>/post/%E5%A4%A7%E7%A5%9E%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2.html</url>
-      <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><blockquote>
-<p>闲散收集的一些不错的网站</p>
-</blockquote>
-<h3 id="mrpeak"><a href="#mrpeak" class="headerlink" title="mrpeak"></a><a href="http://mrpeak.cn" target="_blank" rel="external">mrpeak</a></h3><h3 id="onevcat"><a href="#onevcat" class="headerlink" title="onevcat"></a><a href="https://onevcat.com/#blog" target="_blank" rel="external">onevcat</a></h3><a id="more"></a>
-<h3 id="kittenyang"><a href="#kittenyang" class="headerlink" title="kittenyang"></a><a href="http://kittenyang.com" target="_blank" rel="external">kittenyang</a></h3><h3 id="philon"><a href="#philon" class="headerlink" title="philon"></a><a href="http://www.jianshu.com/u/f835e076a43d" target="_blank" rel="external">philon</a></h3><h3 id="天猫技术-苹果核"><a href="#天猫技术-苹果核" class="headerlink" title="天猫技术-苹果核"></a><a href="http://pingguohe.net" target="_blank" rel="external">天猫技术-苹果核</a></h3><h3 id="微读书团队"><a href="#微读书团队" class="headerlink" title="微读书团队"></a><a href="http://wereadteam.github.io" target="_blank" rel="external">微读书团队</a></h3><h3 id="sunnyxx"><a href="#sunnyxx" class="headerlink" title="sunnyxx"></a><a href="http://blog.sunnyxx.com" target="_blank" rel="external">sunnyxx</a></h3><h3 id="唐巧-http-blog-devtang-com-《iOS-开发如何提高》-http-blog-devtang-com-2014-07-27-ios-levelup-tips"><a href="#唐巧-http-blog-devtang-com-《iOS-开发如何提高》-http-blog-devtang-com-2014-07-27-ios-levelup-tips" class="headerlink" title="[唐巧] (http://blog.devtang.com)   [《iOS 开发如何提高》] (http://blog.devtang.com/2014/07/27/ios-levelup-tips/)"></a>[唐巧] (<a href="http://blog.devtang.com" target="_blank" rel="external">http://blog.devtang.com</a>)   [《iOS 开发如何提高》] (<a href="http://blog.devtang.com/2014/07/27/ios-levelup-tips/" target="_blank" rel="external">http://blog.devtang.com/2014/07/27/ios-levelup-tips/</a>)</h3><h3 id="ibireme-YYIKit作者-全是黑暗料理"><a href="#ibireme-YYIKit作者-全是黑暗料理" class="headerlink" title="ibireme  YYIKit作者,全是黑暗料理"></a><a href="https://blog.ibireme.com" target="_blank" rel="external">ibireme</a>  YYIKit作者,全是黑暗料理</h3><h3 id="人人都是产品经理-以产品经理、互联网运营为核心的学习、交流网站"><a href="#人人都是产品经理-以产品经理、互联网运营为核心的学习、交流网站" class="headerlink" title="人人都是产品经理  以产品经理、互联网运营为核心的学习、交流网站"></a><a href="http://www.woshipm.com" target="_blank" rel="external">人人都是产品经理</a>  以产品经理、互联网运营为核心的学习、交流网站</h3>]]></content>
-      
-        
-        <tags>
-            
-            <tag> 大神技术博客 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[cocoapods出现linker command failed with exit code 1 (use -v to see invocation) 解决方法]]></title>
-      <url>/post/Cocoapods/cocoapods%E5%87%BA%E9%94%99.html</url>
-      <content type="html"><![CDATA[<h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><blockquote>
-<p>最近要把项目里的以前手动拖进去的第三方改为cocoapods管理 出现了一个编译问题</p>
-</blockquote>
-<a id="more"></a>
-<p><img src="http://upload-images.jianshu.io/upload_images/5107708-0fa807ce9d5617b5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image-1"></p>
-<h5 id="把原来的拖进去的库删了也会出现"><a href="#把原来的拖进去的库删了也会出现" class="headerlink" title="把原来的拖进去的库删了也会出现"></a>把原来的拖进去的库删了也会出现</h5><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">linker command failed with exit code 1 (use -v to see invocation)</div></pre></td></tr></table></figure>
-<h5 id="此时你用cocoapods导入库的时候命令行会有"><a href="#此时你用cocoapods导入库的时候命令行会有" class="headerlink" title="此时你用cocoapods导入库的时候命令行会有"></a>此时你用cocoapods导入库的时候命令行会有</h5><p><img src="http://upload-images.jianshu.io/upload_images/5107708-c0a58aa3b12f02e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image-2"></p>
-<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><h4 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h4><p>去xcode设置<br><img src="http://upload-images.jianshu.io/upload_images/5107708-f2fd57d83799fcad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image-3"></p>
-<h4 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h4><p><img src="http://upload-images.jianshu.io/upload_images/5107708-01a9487e90ed04e4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image-4"></p>
-]]></content>
-      
-        <categories>
-            
-            <category> Cocoapods </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Cocoapods </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Hexo添加音乐]]></title>
-      <url>/post/Hexo/Hexo%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90.html</url>
-      <content type="html"><![CDATA[<h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><blockquote>
-<p>在hexo文章添加网易音乐插件</p>
-</blockquote>
-<h3 id="生成音乐链接"><a href="#生成音乐链接" class="headerlink" title="生成音乐链接"></a>生成音乐链接</h3><p>打开<a href="http://music.163.com" target="_blank" rel="external">网易云音乐</a>,搜索想要的音乐,点击生成外部链接播放器<br><a id="more"></a><br><img src="http://ou344372s.bkt.clouddn.com/csummerblog/image/wangyiyinyue1.png" alt="生成外部播放器链接"></p>
-<h3 id="获取html代码"><a href="#获取html代码" class="headerlink" title="获取html代码"></a>获取html代码</h3><p><img src="http://ou344372s.bkt.clouddn.com/csummerblog/image/wangyiyinyue2.png" alt="获取html代码"></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">frameborder</span>=<span class="string">"no"</span> <span class="attr">border</span>=<span class="string">"0"</span> <span class="attr">marginwidth</span>=<span class="string">"0"</span> <span class="attr">marginheight</span>=<span class="string">"0"</span> <span class="attr">width</span>=<span class="string">330</span> <span class="attr">height</span>=<span class="string">86</span> <span class="attr">src</span>=<span class="string">"//music.163.com/outchain/player?type=2&amp;id=436514312&amp;auto=1&amp;height=66"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="添加在文章中"><a href="#添加在文章中" class="headerlink" title="添加在文章中"></a>添加在文章中</h3><p>这里是音乐播放器<br><img src="http://ou344372s.bkt.clouddn.com/csummerblog/image/wangyiyinyue3.png" alt="音乐"></p>
-<h3 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h3><blockquote>
-<p>带上耳机欣赏一首我最喜欢的 《成都》</p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=436514312&auto=1&height=66"></iframe></blockquote>
-]]></content>
-      
-        <categories>
-            
-            <category> Hexo </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[NexT主题添加ShareSDK的分享]]></title>
-      <url>/post/Hexo/NexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0ShareSDK%E7%9A%84%E5%88%86%E4%BA%AB.html</url>
-      <content type="html"><![CDATA[<blockquote>
-<p>原文地址: <a href="http://blog.magicer.xyz/2016/04/add-sharesdk/" target="_blank" rel="external">http://blog.magicer.xyz/2016/04/add-sharesdk/</a></p>
-<p>今天发现一个分享的的sdk,可以在各个平台使用。由于不太喜欢主题提供的几个分享的样式。就试了试怎么这个。发现还是不错滴。。下面是分享的按钮和分享的样式：</p>
-</blockquote>
-<p>效果见下面—-<br>传送门：<a href="http://sharesdk.mob.com" target="_blank" rel="external">ShareSDK</a></p>
-<p><a href="http://wiki.mob.com/sharesdk-for-web快速集成/" target="_blank" rel="external">Web集成官方文档</a><br><a id="more"></a><br>下面是在网页上分享按钮的代码，只需要将以下代码添加到想要显示的位置即可。appkey是你自己的appkey。<br><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!--MOB SHARE BEGIN--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"-mob-share-ui-button -mob-share-open"</span>&gt;</span>分享<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"-mob-share-ui"</span> <span class="attr">style</span>=<span class="string">"display: none"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"-mob-share-list"</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"-mob-share-qzone"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>QQ空间<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"-mob-share-qq"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>QQ好友<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"-mob-share-weixin"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>微信<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"-mob-share-weibo"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>新浪微博<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"-mob-share-tencentweibo"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>腾讯微博<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"-mob-share-douban"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>豆瓣<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"-mob-share-renren"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>人人网<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"-mob-share-kaixin"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>开心网<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"-mob-share-facebook"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>Facebook<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"-mob-share-twitter"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>Twitter<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"-mob-share-pocket"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>Pocket<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"-mob-share-google"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>Google+<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"-mob-share-youdao"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>有道云笔记<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"-mob-share-mingdao"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>明道<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"-mob-share-pengyou"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>朋友网<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"-mob-share-tumblr"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>Tumblr<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"-mob-share-instapaper"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>Instapaper<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"-mob-share-linkedin"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>LinkedIn<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"-mob-share-close"</span>&gt;</span>取消<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"-mob-share-ui-bg"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">id</span>=<span class="string">"-mob-share"</span> <span class="attr">src</span>=<span class="string">"http://f1.webshare.mob.com/code/mob-share.js?appkey=你的appkey"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="comment">&lt;!--MOB SHARE END--&gt;</span></div></pre></td></tr></table></figure></p>
-<h3 id="添加到NexT中"><a href="#添加到NexT中" class="headerlink" title="添加到NexT中"></a>添加到NexT中</h3><p>那么怎么添加到next主题上呢。步骤如下</p>
-<h4 id="1-创建文件"><a href="#1-创建文件" class="headerlink" title="1.创建文件"></a>1.创建文件</h4><p>我们首先要在主题文件夹下的layout文件夹找到_partials下的share文件夹，之后添加一个名为sharesdk.swig的文件。我们可以看出来。这个文件夹下放的全部是分享的配置文件.添加的内容为上面的那一大段代码。只需要修改一部分。修改的部分为：<br><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">id</span>=<span class="string">"-mob-share"</span> <span class="attr">src</span>=<span class="string">"http://f1.webshare.mob.com/code/mob-share.js?appkey=&#123;&#123; theme.shareSDKappkey &#125;&#125;"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>修改这写的目的是为了让我们能够在主题的配置文件中添加appkey。（只需要在主题的配置文件中添加一个shareSDKappkey并为其附上值即可）。</p>
-<h4 id="2添加可选配置"><a href="#2添加可选配置" class="headerlink" title="2添加可选配置"></a>2添加可选配置</h4><p>虽然我们添加了sharesdk的分享的按钮了，但是如果有一天我们不想使用了呢。当然，很简单。只需要修改配置文件就可以了。那么如何实现呢？</p>
-<p>首先，找到主题文件夹下的layout文件夹下的<code>post.swig</code></p>
-<p>大概在16行左右添加</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;div class=&quot;post-spread&quot;&gt;</div><div class="line">  &#123;% if theme.jiathis %&#125;</div><div class="line">    &#123;% include &apos;_partials/share/jiathis.swig&apos; %&#125;</div><div class="line">  &#123;% elseif theme.baidushare %&#125;</div><div class="line">    &#123;% include &apos;_partials/share/baidushare.swig&apos; %&#125;</div><div class="line">  &#123;% elseif theme.add_this_id %&#125;</div><div class="line">    &#123;% include &apos;_partials/share/add-this.swig&apos; %&#125;</div><div class="line">  &#123;% elseif theme.duoshuo_shortname and theme.duoshuo_share %&#125;</div><div class="line">    &#123;% include &apos;_partials/share/duoshuo_share.swig&apos; %&#125;</div><div class="line">    &#123;% elseif theme.sharesdk %&#125;</div><div class="line">    &#123;% include &apos;_partials/share/sharesdk.swig&apos; %&#125;</div><div class="line">  &#123;% endif %&#125;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<p>添加了代码<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&#123;% elseif theme.sharesdk %&#125;</div><div class="line">        &#123;% include &apos;_partials/share/sharesdk.swig&apos; %&#125;</div></pre></td></tr></table></figure></p>
-<p>这段代码就是根据主题文件的配置，来为文档添加相应的swig文件。要想实现在配置文件中选择性的使用分享功能，只需要在配置文件中修改即可。</p>
-<h3 id="修改-config-yml"><a href="#修改-config-yml" class="headerlink" title="修改_config.yml"></a>修改_config.yml</h3><p>接下来就是修改项目的配置文件了。<br>在主题的配置文件中添加：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><div class="line"><span class="comment">#Share</span></div><div class="line"><span class="attr">sharesdk:</span> <span class="literal">true</span></div><div class="line"><span class="attr">shareSDKappkey:</span> <span class="string">appkey</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>这里要说明的是如果没有绑定个人域名分享样式是出不来的,只有用hexo s查看本地才能看到分享远程的是没有的.</p>
-</blockquote>
-]]></content>
-      
-        <categories>
-            
-            <category> Hexo </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[hexo域名优化网页]]></title>
-      <url>/post/Hexo/hexo%E5%9F%9F%E5%90%8D%E4%BC%98%E5%8C%96%E7%BD%91%E9%A1%B5.html</url>
-      <content type="html"><![CDATA[<blockquote>
-<p>原文地址:<a href="http://www.joryhe.com/2016-06-03-dnspod_NameSilolo_double_line_analysis.html" target="_blank" rel="external">Dnspod+Namesilo域名结合实现域名选路解析</a></p>
-</blockquote>
-<h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><blockquote>
-<p>上面的地址采用Dnspod+Namesilo实现国内国外解析,我用的是阿里的万网注册域名<a href="https://wanwang.aliyun.com/domain/?spm=5176.8142029.735711.56.715c4636LuLJSG" target="_blank" rel="external">阿里云域名注册</a></p>
-</blockquote>
-<a id="more"></a>
-<p>注册流程阿里有很简单跟着走一遍就可以了,最好能实名认证一下.</p>
-<h3 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h3><p>我是直接用的阿里的解析的域名,如果想用DNSPOD解析要改一下解析DNS</p>
-<p>DNSPOD的把下面的两个解析地址填到图中:</p>
-<ol>
-<li>f1g1ns1.dnspod.net</li>
-<li>f1g1ns2.dnspod.net</li>
-</ol>
-<p><img src="http://ou344372s.bkt.clouddn.com/csummerblog/image/aliyunjiexi1.png" alt=""></p>
-<h4 id="添加设置记录"><a href="#添加设置记录" class="headerlink" title="添加设置记录"></a>添加设置记录</h4><p>进入您的域名管理界面，添加别名</p>
-<p>留意的部分有：</p>
-<p><code>主机记录</code>：域名主机位（如；如果你的域名是xx.com,主机记录是mm,测mm.xx.com）</p>
-<p> <code>记录值</code>：是那个域名的别名（如xx.coding.me，侧mm.xx.com的解析将转向xx.coding.me，即访问mm.xx.com等于访问xx.coding.me）</p>
-<p><code>线路类型</code>：指你的域名是针对哪些线路解析（国内，国外，联通等等，DNSPOD的优势就在这里，<code>选路</code>）</p>
-<p>先添加两个github的链接<br><img src="http://ou344372s.bkt.clouddn.com/csummerblog/image/aliyunjiexi2.png" alt="title"></p>
-<h4 id="coding-me实现别名"><a href="#coding-me实现别名" class="headerlink" title="coding me实现别名"></a>coding me实现别名</h4><p>在<a href="https://coding.net" target="_blank" rel="external">coding</a>添加一个私有博客项目<br><img src="http://ou344372s.bkt.clouddn.com/csummerblog/image/codingme3.png" alt="title"></p>
-<p>创建好了后coding.me实现别名,点击Pages 服务->修改域名绑定为你在将要解析到阿里云的别名<br><img src="http://ou344372s.bkt.clouddn.com/csummerblog/image/codingme1.png" alt="title"></p>
-<h4 id="gitHub实现别名"><a href="#gitHub实现别名" class="headerlink" title="gitHub实现别名"></a>gitHub实现别名</h4><p>在Hexo目录下的Source下建立CNAME(注意必须为大写且只允许输入一个别名记录到此文件),并填入你在DNSPOD添加的CNAME到文件CNAME。如何查看是否生效？</p>
-<blockquote>
-<p>链接到你的Git如：<a href="https://github.com/yourname/yourname.github.io" target="_blank" rel="external">https://github.com/yourname/yourname.github.io</a> -> 点击导航栏部Settings</p>
-</blockquote>
-<p><img src="http://ou344372s.bkt.clouddn.com/csummerblog/image/github1.png" alt="title"></p>
-<h4 id="添加coding-me-和github地址解析"><a href="#添加coding-me-和github地址解析" class="headerlink" title="添加coding me 和github地址解析"></a>添加coding me 和github地址解析</h4><p><img src="http://ou344372s.bkt.clouddn.com/csummerblog/image/aliyunjiexi3.png" alt="title"></p>
-<h4 id="添加coding-me的SSH公钥"><a href="#添加coding-me的SSH公钥" class="headerlink" title="添加coding me的SSH公钥"></a>添加coding me的SSH公钥</h4><p><img src="http://ou344372s.bkt.clouddn.com/csummerblog/image/codingme2.png" alt="title"></p>
-<h4 id="设置站点-config-yml文件"><a href="#设置站点-config-yml文件" class="headerlink" title="设置站点_config.yml文件"></a>设置站点_config.yml文件</h4><p>设置站点_config.yml是为了每次改变同步都可以同步到github和codingme上的文件<br><figure class="highlight yml"><table><tr><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> <span class="string">git</span></div><div class="line"><span class="attr">  repo:</span> </div><div class="line">	<span class="attr">github:</span> <span class="string">git@github.com:fanglinwei/fanglinwei.github.io.git</span>  <span class="comment">#github地址</span></div><div class="line">	<span class="attr">codingme:</span> <span class="string">git@git.coding.net:CSummer/CSummer-blog.git</span>      <span class="comment">#codingme地址</span></div><div class="line"><span class="attr">  branch:</span> <span class="string">master</span></div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>设置到这里基本上就可以达到域名访问国内资源了使用codingme绑定的page域名看看,是不是感觉快很多,而使用github绑定的page域名访问会慢一些</p>
-</blockquote>
-]]></content>
-      
-        <categories>
-            
-            <category> Hexo </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[hexo优化系列]]></title>
-      <url>/post/Hexo/hexo%E4%BC%98%E5%8C%96%E7%B3%BB%E5%88%97.html</url>
-      <content type="html"><![CDATA[<h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><blockquote>
-<p>这段时间产品上线没啥事做,所以就看了网上的一些博客试着搭建一个自己的<a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a>博客.基础搭建就不说了网上百度hexo+github多得是推荐一个<a href="http://www.joryhe.com/2016-05-12-git_and_hexo_create_blog.html" target="_blank" rel="external">基础搭建</a>,格式各样的主题也很多</p>
-</blockquote>
-<h3 id="推荐主题"><a href="#推荐主题" class="headerlink" title="推荐主题"></a>推荐主题</h3><p> 这里推荐几个好用的</p>
-<ol>
-<li><a href="http://theme-next.iissnan.com" target="_blank" rel="external">next</a> 我用的就是这个 因为这个是由官方团队维护的后续添加新功能很方便</li>
-<li><a href="http://litten.me" target="_blank" rel="external">Yilia</a> 简洁大气！</li>
-<li><a href="http://moxfive.xyz" target="_blank" rel="external">Yelee</a> 该主题是作者基于Yilia修改而来，改变了大量的样式。</li>
-<li><a href="https://hexo.io/themes/" target="_blank" rel="external">Hexo官网主题推荐</a><a id="more"></a>
-<h3 id="优化网页速度"><a href="#优化网页速度" class="headerlink" title="优化网页速度"></a>优化网页速度</h3>这里先贴个地址 <a href="http://www.joryhe.com/categories/ittech/网站技术/hexo/HEXO优化/" target="_blank" rel="external">joryHe优化</a> 这里面写了一大系列的相关优化.</li>
-</ol>
-<h4 id="静态文件加载优化"><a href="#静态文件加载优化" class="headerlink" title="静态文件加载优化."></a>静态文件加载优化.</h4><blockquote>
-<p>静态文件就是一些Js,css等文件，通常网站都会调用一大堆这些文件，我们可以合理的将静态资源放到CDN服务器（七牛CDN等），如果你的一些静态资源文件是一些通用的文件，如jquery、fancybox等js或者css，你完全可以使用一些外部免费的开源项目CDN网站，如<a href="http://www.bootcdn.cn" target="_blank" rel="external">BootCDN</a>是个很好的选择 ,但是个人觉得在CDN你的静态文件，你应该合理考虑哪些文件才应该进行CDN加速，因为你要CDN加速静态文件的原因是,CDN是以合理的服务器节点返回相关静态资源给你。或许有些情况，你的网站本身的服务器的速度或许比你的CDN更要快速（特别是一些免费的CDN服务）。</p>
-</blockquote>
-<h4 id="外部CDN"><a href="#外部CDN" class="headerlink" title="外部CDN"></a>外部CDN</h4><p>这是我添加的外部CDN链接</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><div class="line"><span class="comment"># Script Vendors.</span></div><div class="line"><span class="comment"># Set a CDN address for the vendor you want to customize.</span></div><div class="line"><span class="comment"># For example</span></div><div class="line"><span class="comment">#    jquery: https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js</span></div><div class="line"><span class="comment"># Be aware that you should use the same version as internal ones to avoid potential problems.</span></div><div class="line"><span class="comment"># Please use the https protocol of CDN files when you enable https on your site.</span></div><div class="line"><span class="attr">vendors:</span></div><div class="line">  <span class="comment"># Internal path prefix. Please do not edit it.</span></div><div class="line"><span class="attr">  _internal:</span> <span class="string">lib</span></div><div class="line"></div><div class="line">  <span class="comment"># Internal version: 2.1.3</span></div><div class="line"><span class="attr">  jquery:</span> </div><div class="line"></div><div class="line">  <span class="comment"># 以下都是我在bootCDN里引入的 外部CDN链接 可以去http://www.bootcdn.cn 找最新的版本</span></div><div class="line">  <span class="comment"># Internal version: 2.1.5</span></div><div class="line">  <span class="comment"># See: http://fancyapps.com/fancybox/</span></div><div class="line"><span class="attr">  fancybox:</span> </div><div class="line"><span class="attr">  fancybox_css:</span> <span class="string">//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.css</span>  <span class="comment">#3.1.20是版本号</span></div><div class="line"></div><div class="line">  <span class="comment"># Internal version: 1.0.6</span></div><div class="line">  <span class="comment"># See: https://github.com/ftlabs/fastclick</span></div><div class="line"><span class="attr">  fastclick:</span> <span class="string">//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js</span></div><div class="line"></div><div class="line">  <span class="comment"># Internal version: 1.9.7</span></div><div class="line">  <span class="comment"># See: https://github.com/tuupola/jquery_lazyload</span></div><div class="line"><span class="attr">  lazyload:</span> <span class="string">//cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js</span></div><div class="line"></div><div class="line">  <span class="comment"># Internal version: 1.2.1</span></div><div class="line">  <span class="comment"># See: http://VelocityJS.org</span></div><div class="line"><span class="attr">  velocity:</span> <span class="string">//cdn.bootcss.com/velocity/1.5.0/velocity.min.js</span></div><div class="line"></div><div class="line">  <span class="comment"># Internal version: 1.2.1</span></div><div class="line">  <span class="comment"># See: http://VelocityJS.org</span></div><div class="line"><span class="attr">  velocity_ui:</span> <span class="string">//cdn.bootcss.com/velocity/1.5.0/velocity.ui.min.js</span></div><div class="line"></div><div class="line">  <span class="comment"># Internal version: 0.7.9</span></div><div class="line">  <span class="comment"># See: https://faisalman.github.io/ua-parser-js/</span></div><div class="line"><span class="attr">  ua_parser:</span></div><div class="line"></div><div class="line">  <span class="comment"># Internal version: 4.6.2</span></div><div class="line">  <span class="comment"># See: http://fontawesome.io/</span></div><div class="line"><span class="attr">  fontawesome:</span></div><div class="line"></div><div class="line">  <span class="comment"># Internal version: 1</span></div><div class="line">  <span class="comment"># https://www.algolia.com</span></div><div class="line"><span class="attr">  algolia_instant_js:</span> <span class="string">//cdn.bootcss.com/instantsearch.js/2.1.0-beta.2/instantsearch.min.js</span></div><div class="line"><span class="attr">  algolia_instant_css:</span> <span class="string">//cdn.bootcss.com/instantsearch.js/2.1.0-beta.2/instantsearch.min.css</span></div><div class="line"></div><div class="line">  <span class="comment"># Internal version: 1.0.2</span></div><div class="line">  <span class="comment"># See: https://github.com/HubSpot/pace</span></div><div class="line">  <span class="comment"># Or use direct links below:</span></div><div class="line"><span class="attr">  pace:</span> <span class="string">//cdn.bootcss.com/pace/1.0.2/pace.min.js</span></div><div class="line"><span class="attr">  pace_css:</span> <span class="string">//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css</span></div></pre></td></tr></table></figure>
-<p>从以上看出，很多Next插件已经可以自定义CDN链接，但是如果存在一些没有在上面列出的呢，也有办法，如果想要了解操作方式，请访问<a href="http://www.joryhe.com/2016-05-22-create_the_custom_status_file.html" target="_blank" rel="external">NEXT 加载您自定以的静态文件</a>,如果你还需要进行图片的CDN，点击<a href="http://www.joryhe.com/2016-05-21-jory_cdn_lazyload.html" target="_blank" rel="external">CDN图片加速，实现图片慢加载</a>,以上都可以实现CDN。这里要注意的是如果要引用自己CDN资源(七牛或者阿里云)最好申请注册个个人域名和博客绑定起来.不然会出问题.</p>
-<h4 id="字体引用"><a href="#字体引用" class="headerlink" title="字体引用"></a>字体引用</h4><p>修改站内引用的字体</p>
-<p>实现方法:到主题的_config.yml中设置不从google加载字体（默认会加载本地字体） </p>
-<pre><code class="yml"><span class="attr">font:</span>
-<span class="attr">  enable:</span> <span class="literal">true</span>
-  <span class="comment"># Uri of fonts host. E.g. //fonts.googleapis.com (Default) //fonts.css.network</span>
-<span class="attr">  host:</span> <span class="string">//fonts.css.network</span>    <span class="comment">#这里把这里改成  //fonts.css.network</span>
-</code></pre>
-<p>优化到这里你会感觉你的博客网页已经快一些了但是还是会有点慢,那么久就要用域名来优化了<a href="https://www.csummer.top/post/Hexo/hexo域名优化网页.html">hexo域名优化网页</a></p>
-]]></content>
-      
-        <categories>
-            
-            <category> Hexo </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[懒加载]]></title>
-      <url>/post/%E6%87%92%E5%8A%A0%E8%BD%BD.html</url>
-      <content type="html"><![CDATA[<h1 id="定义一个懒加载的宏"><a href="#定义一个懒加载的宏" class="headerlink" title="定义一个懒加载的宏"></a>定义一个懒加载的宏</h1><figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="meta">#define DYJ_LAZY(object, assignment) (object = object ?: assignment)</span></div></pre></td></tr></table></figure>
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="built_in">UINavigationBar</span> *)navBar</div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> DYJ_LAZY(_navBar, (&#123;</div><div class="line">        </div><div class="line">        <span class="built_in">UINavigationBar</span> *bar = [[<span class="built_in">UINavigationBar</span> alloc] init];</div><div class="line">        bar.barStyle = <span class="built_in">UINavigationBar</span>.appearance.barStyle;</div><div class="line">        bar.translucent = <span class="literal">YES</span>;</div><div class="line">        [<span class="keyword">self</span>.view addSubview:bar];</div><div class="line">        [bar setFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, SCREEN_WIDTH, <span class="number">64</span>)];</div><div class="line">        bar;</div><div class="line">    &#125;));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<a id="more"></a>
-]]></content>
-      
-        <categories>
-            
-            <category> iOS </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> iOS </tag>
-            
-            <tag> OC </tag>
-            
-        </tags>
-        
-    </entry>
-    
-  
-  
+<search>
+  <entry>
+    <title><![CDATA[美团点评技术年货]]></title>
+    <url>%2Fpost%2F%E7%BE%8E%E5%9B%A2%E6%8A%80%E6%9C%AF%E6%94%B6%E8%97%8F.html</url>
+    <content type="text"><![CDATA[摘要春节已近，年味渐浓，美团点评技术年货来啦！《2018年美团点评技术年货（上）》 《2018年美团点评技术年货（中）》 《2018年美团点评技术年货（下）》 《2018年美团点评技术年货（合辑）》 温馨提醒： 上册约22M，中册约23M，下册约36M，合辑约70M； 文件较大，缓存需要时间，请耐心等候； 请注意流量，建议通过WIFI下载，或者将地址复制到PC端，使用浏览器下载。]]></content>
+      <tags>
+        <tag>美团点评技术年货</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Python 开发工具安装]]></title>
+    <url>%2Fpost%2Fpython%2FPython%20%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85.html</url>
+    <content type="text"><![CDATA[PyCharm 下载链接：【PyCharm】 Python 3.x 最新版安装教程：brew install python3brew linkappsexport PATH=/usr/local/bin:$PATHsource ~/.bash_profilepython3 --version 最佳推荐 Python 开发工具，使用 PyCharm，附上 PyCharm 2017 最新激活链接： PyCharm 2017 最新激活链接]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[mac连上wifi,上网慢卡,打不开appStore问题]]></title>
+    <url>%2Fpost%2FMac%2Fmac%E8%BF%9E%E4%B8%8Awifi%2C%E4%B8%8A%E7%BD%91%E6%85%A2%E5%8D%A1.html</url>
+    <content type="text"><![CDATA[今天拿出好久没用的mac发现有好多软件可以更新，于是乎，打开 Mac App Store ，显示无法连接,请重试,然后发现软件能上网,Safari上网慢 ,要么就是打不开网页。 上网查了半天，猜测到可能是用代理导致的。由于众所周知的原因，为了方便查询资料，我就在香港弄了一个服务器，提供一个 SOCKS 代理来用。苹果官方论坛中也有提到 哇皮嗯、代理会影响。 然后，去掉代理，依然不行。重启，依然不行，换 DNS 依然不行。 据说和钥匙串有关系，于是乎，修复钥匙串，删除 crls 的缓存，去掉代理，就 OK 了。 修复钥匙串。打开“钥匙串访问”应用，然后菜单“钥匙串访问” &gt; “钥匙串急救”，进行修复，果然发现几个有问题的项目 删除 crls 的缓存。在 Finder command+shift+G 或者命令行前往 “/var/db/crls/”，删除 几个文件：crlcache.db,crlcache2.db 和 ocspcache.db 去掉代理然后重启，然后就好了。]]></content>
+      <categories>
+        <category>Mac</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[关于Xcode9的坑]]></title>
+    <url>%2Fpost%2FiOS11%2F%E5%85%B3%E4%BA%8EXcode9%E7%9A%84%E5%9D%91.html</url>
+    <content type="text"><![CDATA[Xcode9的添加图片的坑 最近更新了Xcode9,在做项目迭代的时候发现图片拖进项目加载不出来.苹果爸爸这又是在搞事情啊,经过一番折腾后终于发现原因了. 示例 运行结果: 图片加载不出来的原因图片加载不出来的原因是因为Xcode9图片直接拖进项目,并没有将图片真正的放进项目. 检查一下项目资源文件,原来我们的图片根本没有添加进来. 假如我们把TagetMembership的对勾勾上呢 B一下,就会发现项目报错了 但是项目还是能运行起来,还是没有图片.后来我又尝试直接把图片放进了Assets.xcassets蓝色文件夹里面 运行项目,图片出来了 jpg格式图片后面我又对jpg格式的图片尝试添加项目,然后把对勾打上. 运行项目 没有问题,可以加载出图片 后来我又发现jpg格式图片通过Add Files to这种方式也是可以正常添加图片的 查看一下图片资源 所以如果是jpg格式图片大可以通过Add Files to这种方式添加,png图片则需要添加到Assets.xcassets蓝色文件夹里面.拖拽方式拖不进去这确实是一个坑,对于png格式图片苹果更加严格限制开发者的存放位置.也是为了app图片资源的安全性着想. 举一反三 既然图片资源是这样,那么其他资源文件呢,例如json文件,音频,文件,(.h.m)文件,是不是应该也是这样.]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>iOS 11</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[程序员需要看什么书]]></title>
+    <url>%2Fpost%2F%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9C%80%E8%A6%81%E7%9C%8B%E4%BB%80%E4%B9%88%E4%B9%A6.html</url>
+    <content type="text"><![CDATA[做程序员，要看什么书?&emsp;&emsp;第一阶段: 《程序员的修炼之道–从小工到专家》 &emsp;&emsp;第二阶段: 《莫生气》《圣经》《老子》《轮持久战》 &emsp;&emsp;第三阶段: 《颈椎病康复指南》《腰椎间盘突出日常护理》《心脏病的预防与治疗》《高血压降压宝典》《强迫症的自我恢复》《精神病症状学》 &emsp;&emsp;第四阶段: 《活着》 每一个程序猿都不容易,大家珍惜身体.]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[如何正确看待Swift]]></title>
+    <url>%2Fpost%2FSwift%2F%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E7%9C%8B%E5%BE%85Swift.html</url>
+    <content type="text"><![CDATA[原文 【硅谷问道】Chris Lattner 访谈录 话题 Chris Lattner 是谁？ Xcode 的编译器 LLVM 背后有怎样的故事？ Swift 诞生的前世今生，封闭的苹果为何要拥抱开源？ 说好的 ABI 稳定性何时能推出？ Chris Lattner 是谁 教育背景 伊利诺伊大学 PHD 工作经历 2005年 - 2017年供职苹果，前开发部高级总监，架构师 2017年开始，担任特斯拉副总裁，负责自动驾驶 主要成就 Swift 之父，主要作者 LLVM 之父，主要作者 Clang 主要贡献者 荣誉 2013年获得 ACM 系统设计大奖 2016年被评为“创造未来的25位当世天才” 访谈实录自我介绍1. 你怎么看待自己？ 我是个程序员。我喜欢写代码。我编程有很长时间了。 我在读博的时候就开始写 LLVM 了。当时 LLVM 是我的博士研究项目，我想把它做成工业界中颠覆性的产品。当时我异想天开，尝试了各种架构设计，想解决以往编译器所有的弊端 – 结果当然没有如愿。我毕业后，就希望能接着搞 LLVM ，当时只有苹果允许我入职之后继续设计并实现 LLVM 。我想都没想就加入了苹果。 LLVM 2. 说说 LLVM（Low Level Virtual Machine）到底是什么吧 先说编译器：编译器是把程序员的代码翻译成机器可以理解的语言的工具； 再谈 LLVM：一个模块化和可重用的编译器和工具链技术的集合，Clang 是 LLVM 的子项目，是 C，C++ 和 Objective-C 编译器，因为多模块的复用，所以提供了惊人的快速编译，比 GCC 快3倍。 3.LLVM是一开始就作为一个完整的编译工具来使用的吗？还是有什么其他故事 LLVM 当时是为了解决一个小问题而开发的：当使用OpenGL 函数库的时候（Mac OS 10.4 和 10.5环境下），比如你要调用这个函数，glVertex3f()，编译器必须将其转化为特定的GPU可以理解的数据。但是这带来一个问题：市面上有海量的GPU，每个GPU的性能和参数也不尽相同，所要求的数据格式也不同。这时 LLVM 可以产生很小的一部分代码去解决这个问题，这是 LLVM 诞生的初衷。 4. LLVM 的 bytecode 和 Apple 现在的 bitcode 有什么不同？ 这是历史遗留问题。一开始 LLVM 是开源的，所有代码在转成二进制时就叫做 bytecode – 因为 java 当年就是这么叫的。当时这一部分有很多问题：比如不能扩展，无法兼容，非常脆弱 然后就到了 LLVM 2.0，当时我重新设计了架构，采用的就是 Bitcode 机制。LLVM 2.0 将所有代码以比特流(bit stream)而不是字节流(byte stream)的形式来编码。这就是 bitcode 这一术语的由来。 主要的工作流程就是现将代码转成比特流，然后相应处理。处理完后再将编码传到其他地方去。 5. Bitcode 这个机制比直接传输二进制有什么好处 好处那是多了去了。首先 编译器工作起来会越来越好。因为通过Bitcode机制，它可以通过编译不同代码来存储各种优化方法，这样下次碰到类似代码，它就会自动启动相关优化机制，使得效率提升。还有个好处是 LLVM 可以让芯片的兼容性变得很好。因为 Apple 每年都在芯片上推陈出新，它们转化为二进制的规则都不尽相同，LLVM 只要每次重新编码并传输成比特流就好了。 当然 Bitcode 也不是万能的。比如它不能解决 32位的 APP 在64位机器上的兼容问题。这个问题其实应该依靠代码逻辑。 谈管理6. 在职业生涯中，你在 LLVM上鞠躬尽瘁，但我们发现这几年你更多的工作是在管理上，你自己怎么看这种转变的？ 我虽然做管理了，但是我依然喜欢写代码，而且我每天都写，因为我就是个极客嘛。而且，其实我很早就开始做管理的工作了。不过我一直是作为技术领导人的角色带 2 到 3 个人的，我只是在写代码方面把把关，给他们提提建议这样。 后来带的人多了，队伍也大了。我不仅管程序员，还管小组经理和其他技术领导人。虽然我一直喜欢写代码，但是管理对我来说是一个必须要去做的事。现在回过头来，我觉得干得还不错。跟大家一起工作之后我知道很多事协同工作效果更好，和同事交流你就会理解他们的想法，这样我就可以制定更好的计划路线。 其实我没感觉整个过程有什么不同。直到今天我还夜以继日、废寝忘食得写代码，我并不是坐那边动动嘴皮子，指挥别人干活的老板。我其实每个周末都在写代码，我很忙的。 Swift7. Swift 是如何诞生的？在苹果这样一个大厂，决定做出如此巨大的变革，同时还是在封闭的环境下，你是如何一步步实现的？ 首先，苹果内部所有的项目都不尽相同 – 工作流程、战略规划、实施细节，到最后发布。Swift 也一样，没有可比性。因为苹果本身就是小组单兵作战模式 – 每个组负责不同的大方向，组里自己计划和工作，甚至招人都是各自招。 言归正传，契机发生在2010年了。当时好像是我们刚刚完成了 Clang 对 C++的支持。你也知道 C++ 写起来有多丑，但是做个编辑器支持 C++，完善 C++ 这门语言就是另一回事了，我们当时搞了好久终于完成的时候特别有成就感。当然 Clang 远没有到达完美的地步。 我又扯远了。除了做 Clang 以外，无论是 C语言，C++，还是 Objective-C，都有一些我不是很满意的地方。所以我就想要不我们搞个新的语言来吧。新的语言要越简单越好。一开始大家都没认真，后来我跟很多同事聊了之后觉得新语言的计划可行，而且大家都很亦可赛艇。于是我们就用业余时间开始顶层设计和写代码。 现在问题来了，因为我们已经有 Objective-C 了。虽然它有几个地方很丑，比如老是用 “@”，每句结束了还要打分号，但是这些并不妨碍它是一门伟大的语言。所以，我们为什么要开发新语言，而不是把精力花在优化 Objective - C 上？ 原因有三。 第一，如果我们大幅优化 Objective - C，把很多 Swift 的特性加进去，这对开发者来说是灾难性的，因为他们要对原来的 APP 要进行大幅修改； 第二，Objective - C 很多特性积重难返，比如它安全性上的问题； 第三，Objective - C 是基于 C 开发的语言，所以你无论怎么优化，它必然有 C 语言自身的缺陷。 于是我们就动手做 Swift 了，它的背后有着数百人的努力: 支持 Xcode，开发 Playground，兼容调试器和编译器。我个人感到最骄傲的一点是，我们并不打算自己内部把它做到完美 – 我们开源、我们依靠社区，这样一门语言才能在无数开发者的实战中得到检验和改进，我想这才是 Swift 最棒的地方。 8. 你之前在优化 Objective-C 的时候，有没有想到什么地方是未来 Swift 可以用得到的？ ARC。我们其实一直都在争论是用垃圾回收机制（garbage collection）还是 ARC，后来决定了是 ARC。 另一个是模块化，我们也将这一部分的经验带到了 Swift 开发中。 其实，很多数组和字典方面的语法优化本来是计划在 Objective - C 上面的。但是后来我们开发了 Swift，于是这些改进被直接用在了新语言上，所以大家会在写 Swift 的时候觉得似曾相识，因为本来这些就是 Objective-C 的升级版本嘛。 我可以透露一个有意思的事情。我们在做 Swift 的时候，很多 iOS 开发者，包括苹果内部的工程师，都在吐槽我们这几年在 Objective - C 上毫无建树，都在说你们为什么不做这个那个。我们当然不能告诉他们我们在全力开发 Swift，而他们所要的语法功能我们都会给。 9. 苹果内部对于 Swift 的使用情况和开发是怎么看得？ Swift 团队对于开发上有明确的目标和计划，应用二进制接口（ABI）的稳定性一直是我们的首要目标。很多人很喜欢我们开源的 Swift Playground。同时 iOS 系统内置的 Music App 也是 Swift 写的。其实用不用 Swift 主要是技术和开发方面的考量，苹果内部同时得兼顾稳定性和开发效率，这不是说大家喜不喜欢这个语言的问题。 Swift 刚发布的时候，内部很多组都很惊讶：我们已经有了 Objective-C，为什么还要搞新的 Swift？而且 Objective-C 本身就很不错，开发起来也很顺手。后来渐渐 Swift 成熟了，大家也爱上了这个新生儿。 内部其实对于 Swift 一个很大的顾虑在于，苹果的所有开发必须兼容32位机器，而32位的应用都采用了 Objective-C 的 runtime 机制。这就要求 Swift 团队也弄出个类似的机制，或者弄个兼容的方案，否则 Swift 无法与 AppKit 适配。 10. 开源后的 Swift 发展态势喜人，你对此有什么看法？ 开源之后，Swift 发展之好让我咋舌，然而这也是问题所在。 当年我们开源了 LLVM 和 Clang，它们也发展喜人。我们的对手 AMD 们完全跟不上我们。但是跟 Swift 比起来，它们的发展也太慢了，LLVM 和 Clang 开源后完全没有 Swift 这么火。 Swift 就不同了，开源一年之后，我们就有了上百万的开发者在使用这门语言 – 我和很多有丰富开源经验的老工程师都吓了一跳，这简直了！然后我们每天收到无数的邮件和 pull requests，要求更新这个、要求优化那个，我们的节奏完全被打乱了。我们如何规划开发？我们如何把 Swift 的开发导向一个正确的方向？这些问题随着时间的推移和经验的积累，慢慢找到了解决之道。 我现在觉得开源这个决定至关重要。一来大家会帮着优化；二来我们有个巨大的论坛，在那里大家可以畅所欲言，全世界的人都在帮着 Swift 进步，这真的很棒。我们虽然没有一开始就具体计划要开源，但是苹果内部当时都觉得 Swift 肯定有一天要开源。 苹果与特斯拉 11. 苹果好像一直是个封闭的公司，你们内部对于开源怎么看？ 苹果其实有开源的传统。 LLVM 虽然不是始于苹果，但是最终是苹果完成并将其开源。Clang 则完完全全是生于斯开源于斯。还有其他工具，比如 LLDB，libc+，以及compiler-rt 都是如此。 所以对于 Swift 来说，开源只是时间问题。当年从 Swift 1.0 到 Swift 2.0，一切都乱七八糟。当时我们重点在开发错误处理机制，还有协议、拓展等一系列重要的功能。所以开源 Swift 1.0，并不是一个好选择，因为这些重要的东西都没有，而这些开发是当务之急。当 Swift 2.0 到来的时候，我们才有空去开源、去做社区拓展和论坛搭建。开源社区可以帮我们修复细节，我们这时候可以更多的投入在架构设计上。 12. 苹果最让你怀念的是什么？ 苹果是这样一个公司，你可以选择你喜欢的东西，然后努力工作去实现它，最终你的工作会落实在产品上，影响亿万计的人。 有很多公司，你可以努力工作，但是不一定能做你喜欢的东西；你做出来东西，可能会被束之高阁；你做的产品，也许最后很幸运的发布，但是并不一定有很多人会用。在苹果，你的工作可以真正改变世界，很有成就感。 13. 你觉得到特斯拉之后，还会努力为 Swift 做出贡献吗？ 特斯拉的工作非常有挑战性，这是我最开心的地方。我现在还没入职，所以也不知道我之后对 Swift 能做多少工作。也许我还会夜以继日的发 Pull Request，也许我就周末写写 Swift 代码。我应该会从各个方面 – 无论是顶层设计还是具体代码实现，与苹果的核心团队合作，为这个语言做贡献。 其实我一直想说，Swift 只是我在苹果工作的一小部分，我花了大量的时间在其他事情上。实际上在苹果我也就晚上或者周末有空写写 Swift。我希望到了特斯拉之后我还能花同样的精力和时间在 Swift 上，毕竟我对这门语言统治世界充满期待。 ABI 稳定性14. 现在 Swift 已经到了第3个版本了。我们也知道ABI稳定性的追求一直是你们的目标，但是它也一直被各种事情拖延。你对此有什么计划吗？或者说你从拖延中学到了什么经验教训吗？ ABI 推迟有两个原因。 第一是因为 Swift 的开发进程中有很多不确定性。当 Swift 开源之时，一堆人对我们提 pull request，提各种各样的 issue。这样我们就不得不去花大量的时间去维护开源社区，而不是专心去做计划内的工作。 第二个原因是，尽管稳定的 ABI 很重要，但是对于开发者来说，稳定的 ABI 对他们来说没有明显的好处，他们更关心是语法和兼容上的稳定和优化。所以我们后来修改了计划，语法和兼容上的稳定性被定为是最先要实现的目标。这样当 Swift 3.1 或者 Swift 4.0 出来的时候，大家不用担心语言上的转化会让 Xcode 崩溃，或是需要大家整个重构 APP。Swift 3.0 主要就是实现这个目标。 15. 稳定的 ABI 什么时候推出？他会赶在异步和并发模型之前吗？ Swift 现有的内存管理机制对 ABI 稳定性造成了不小的影响。有些底层逻辑还需要调整，比如 getter 和 setter 的生成以及属性的内存分配问题，苹果内部正在做这件事，这之后我们才能完成 ABI。至于并发模型啥的就跟 ABI 没有关系了。 很多人担心 Swift 4.0 的时候苹果能不能推出稳定的 ABI，因为毕竟工作量太大。ABI 的工作正在井然有序得进行，而且对于开源社区来讲推出稳定的 ABI 至关重要。Ted （Chris Lattner 之后的 Swift 领导人）有一件事说对了，现在 Swift 当务之急就是让编译器更稳定，让错误处理更方便，提高编译速度，并且将 Swift 拓展到大规模系统中。 我在想 Swift 4.0 的时候究竟能看到什么。也许没有稳定的 ABI，但是一定会有重要的新功能加入。 ABI 将允许未来 Swift 版本开发的应用程序和编译库可以在二进制层次上与 Swift 3.0 版本的应用程序和编译库相互调用。这样，ABI的稳定性将保证一定程度的二进制兼容性，并且第三方更容易发布二进制库。另外，ABI 将允许删除需要的 Swift 标准库和二进制文件，就像目前情况下通过Xcode创建的 iOS 和 OS X 应用程序一样。 补充 LLVM的三层结构 第一层：Clang 编译器，负责编译各种语言 第二层：代码优化器，通过模块化操作优化代码，是 Bitcode 逻辑的主要部分 第三层：代码翻译器，针对不同平台和 GPU 将代码翻译成机器语言 补充：LLDB，llbc++，compile rt LLDB: 一个有着 REPL 的特性和 C++ ,Python 插件的开源调试器。LLDB 绑定在 Xcode 内部，存在于主窗口底部的控制台中； libc++，libc++ ABI: 高性能 C++ 标准库实现，支持 C++ 11 compiler-rt：为 LLVM 和 Clang 设计的编译器扩展函数库。针对 __fixunsdfdi 和其他目标机器上没有一个核心 IR (intermediate representation) 对应的短原生指令序列时，提供高度调优过的底层代码生成支持。 ABI 是什么？ Application Binary Interface，中文名：应用二进制接口。是 APP 和 操作系统、其他应用之间的二进制接口。它包括以下细节： 数据类型的大小、布局和对齐; 调用约定（控制着函数的参数如何传送以及如何接受返回值），例如，是所有的参数都通过栈传递，还是部分参数通过寄存器传递；哪个寄存器用于哪个函数参数；通过栈传递的第一个函数参数是最先push到栈上还是最后； 系统调用的编码和一个应用如何向操作系统进行系统调用； 以及在一个完整的操作系统ABI中，目标文件的二进制格式、程序库等等。 (下) 话题 Swift 在 Server 和操作系统方面有着怎样的雄心抱负？ Swift 与 Objective-C 的爱恨情仇？ Swift 之父对于 RxSwift 和 ARC 有什么独到的见解？ 随着 Swift 之父的出走，这门语言还会继续高歌猛进吗？ 访谈实录Swift 在系统、服务器、网页端的发展16. Swift 在服务器，或者 Linux 上可以说运行得不错。你们是一开始就计划在服务器或者系统端运行 Swift，还是说你们更希望 Swift 专注于 iOS 开发，而不是去与 python 或 Rails 竞争？ 你如果去看苹果官方的 Swift 书，里面有这样一句：Swift 的目标是，上能写应用程序，下能写操作系统（Swift was designed to scale from hello world to an entire operating system）。所以我们一开始，就是要将它创作成为一门一统天下的语言。 这也许有点痴人说梦，但是大家等着，过几年就知道了。无论是我还是苹果的其他人，都把 Swift 当成是未来世界的主流语言来看的，它将会超越 Python，甚至有一天取代 C。那么我们是怎么实现这一步的呢？ 开源是重要的一环。你不开源，别的平台就不大想用这个语言。当各种各样的开发都采用 Swift ，Swift 一统天下的目标也就越来越现实。现在很多学校的计算机基础教育就在教 Swift，它越来越流行了。 所以嘛，第一步我们就是让这个语言流行起来，让大家使用它。我对“流行”的定义是，Swift 必须要有一个杀手级的产品，这样大家就会知道 Swift 有多好，大家都会使用它。现在 iOS 平台和 Mac OS 平台有很多非常棒的 Swift 应用。这样我们开始第二步，开源。第三步，我们要走得更远。 什么叫走得更远？我觉得现在我们要做的就是把 Swift 应用到服务器端。其实服务器和移动应用开发颇有类似，比如架构设计和函数库调用上。但是，唯一的麻烦就是我们得让 Swift 能在 Lunix 上流畅运行。同时构建大量服务器端的库函数。现在 Swift.org 上已经有专门的版块讨论服务器端上的开发了，大家集思广益的感觉非常好。 再接下来，Swift 要取代 Java，无论是脚本语言还是底层的系统设计，Swift 最终都应该能应付自如。 脚本语言上，开源社区和我们苹果内部都在尝试将正则表达式、多行字符串等脚本语言的特征都加入到 Swift 当中，虽然工作量很大，但我认为它们最终都将成为 Swift 的一个部分。 系统开发方面，我觉得取代 Java 最重要的一点就是 Swift 一定要有自己的特色。我觉得 Rust 是一个不错的语言，虽然现在没多少人用。Swift 在某些顶层开发上要明显优于 Rust。再等过些年，当 Swift 在系统开发上真正流行起来之时，Swift 就离一统天下不远了。 17. 对于 Swift 在服务器上的发展，你觉得交给开源社区去做就足够了吗？苹果自己会不会推出面向服务器端的 Swift 函数库？ 首先我觉得若要成为服务器端的流行语言，这几个部分 Swift 必须具备：编码和解码，网络传输协议，HTTP。这些部分我觉得要成为标准函数库，因为它们是最基本的东西，苹果内部自己来做也许更好，因为能确保质量。对于具体的网络应用函数库，我觉得短期内没必要。这是因为业界内部对此就争议很大，如同 Ruby on Rails 那样的王者框架还没有出现。 我觉得对开源社区而言，最重要是两个工作。第一，是 Swift 的包管理器（Package Manager）。这个可以让我们在多个平台、不同函数库之间协同工作，大幅提高兼容性和效率；第二，是并发模型（Concurrency Model）。Go 语言之所以在服务器和云端开发这么受欢迎，就是因为并发模型做得好。并发模型应该会集成在 Swift 5 中。 18. 现在 Swift 在服务器端还不是那么成熟。有人说 Swift 不过是写 App 的一门语言。现在已经 3.0 版本了，大家貌似都还只是将 Swift 用来写写 iOS 应用。你怎么看？ 我现在根本不担心 Swift 在服务器端最后不会成功。很多人写了几年 Swift，自以为很懂这门语言。当 Swift 具备服务器端特性的时候，苹果一定会跟大家说，你看 Swift 能做这个那个，你用其他语言来写就要麻烦得多。 现在最大的问题是大家还觉得 Swift 只是苹果自己搞出来的东西。他们觉得 Swift 不过是苹果自己的玩具，只能用在苹果自己的 iOS 系统和 Mac OS 系统上。所以我们应该加大开源和构建社区的力度。现在外行对于 Swift 的态度还可以接受，慢慢地 Swift 就会在系统开发领域追上来。 19. 大家似乎都在期待 Swift 能在网页开发上有所建树。现在网页或者网络程序开发方面，一般是多种语言混用，前端和后端可能语言逻辑完全不一样，你对此怎么看？ 这可能要花很长时间，要是能取代 Javascript 那就简直了。现在 Dart 在网页开发上做的不错。我个人看好 asm.js 和 WebAssembly，它们都是通过 LLVM 编译的，跟 Swift 一样。如果这两个今后做得足够好，也许就没 Swift 什么事了。未来之事，都很难说。 而且我现在发现，Javascript 已经变成一门基础语言了。我看很多脚本语言现在都直接编译成 Javascript，Javascript 就像比特一样成为一个最基本的表达方式。我觉得五年之后，很有可能 asm.js 会一统网页端。虽然大家说 Javascript 不好 debug，但其实就算你写 C 这么成熟的语言，debug 起来依然很头疼。这也是我们为什么不在 Swift 中加入宏定义，因为那个给编译和 debug 增加了难度。 Swift 语言设计20. Swift 好像一开始就设计得简单易懂、而同时又有很多高阶的复杂操作。经验丰富的程序员可以写出漂亮的语法糖，对编程一窍不通的小孩也可以玩转 Playground。你认为 Swift 是一门将复杂和简易融为一体的语言吗？ Swift 在这点上目前做得还不错。但我担心开源之后大量的新功能添加进来，使得 Swift 不再简单。我一直致力于让 Swift 成为一门简单易学的语言，同时又足够强大。你想我们为什么不支持内联汇编 (inline assembly support) 这样的功能，就是只有极少数极客会喜欢。以后我们也要秉持这个原则。 一个不会写 Swift 的人。打开 Playground，敲下 “print(“Hello World”)”，旁边就会显示出来，这点跟 python 很像，你不用去打”\n”这样的换行符号。也就是说 Swift 对于新手来说非常友好，我们可以从 Hello World 开始逐步深入，从简单慢慢过渡到复杂。 对于系统开发而言，Swift 相比 Rust，会更好的自动控制内存分配，因为我们可以借鉴开发 ARC 时的经验。你想内存分配这种底层的东西，也只有少数大牛能精通。那为什么不把 ARC 引入到底层来简化开发呢？我觉得这是 Swift 开发的另一个方向。 21. 有人说 Swift 是大杂烩，一部分借鉴 C#，一部分借鉴 Javascript，一部分借鉴 Objective-C，你是怎么看的？ Swift 确实是大杂烩。但是它并不是简单的模仿其他语言，而是借鉴，然后创造出一个伟大的语言。我们确实参考了大量其他的语言设计。比如 Haskell 很多概念就被引入到 Swift 中。Swift 中的 Protocol，就是从 Haskell 的 construct 中得到启发的。 还有其他部分长得像 Dart，亦或是借鉴了 Go 和 C#。这样做也有另一个好处，开发者拿到 Swift 的时候会有种似曾相识的感觉，这样大家也更愿意用 Swift 开发。 Swift vs. Objective-C 22. 给我个现在就学习 Swift 的理由？ 这个其实无所谓。我个人不觉得 Objective-C 会短期内被取代，苹果依然支持 C 和 C++，而且放弃 Objective-C 对苹果来说有百害而无一利。你不必一定要学习 Swift，Swift 只是一门更好的语言。 说到 Swift，我们给它取这个名字就意味着我们希望这门语言非常得高效。它本身设计的目的不是让你短时间内写大量代码，而是用最少的时间、最简洁的代码来完成工作。 编程其实包括方方面面，不仅仅是写代码，还有 debug，给各种系统适配，以及其他各种事情。其实开发的时间短，找 bug 的时间一般都会很长。比如在 Objective-C 中，你会花不少时间修 unrecognized-selector error，但是 Swift 从顶层设计中就排除了这类 bug。 Swift 还有其他一些好处。比如可以对字符串使用 switch…case…语句；可以使用 functional programming；可以用 enum 和 protocol。Swift 其实是一门包罗万象的语言，菜鸟和老手写出来的 Swift 可以完全不一样，这取决于经验。 我最近发现，很多 iOS 开发者会把 Swift 当 Objective-C 来写，逻辑结构完全一样，只是换个语法。其实这就意味着他们没有意识到 Swift 的价值 – 认为 Swift 不过是 Objective-C 的替代品。当开发者深究 Swift 的语法后，他们才会意识到这是一门多么高效的语言。 23. 会不会像 Objective-C 一样，在未来 Swift 添加一些动态特性？ Swift 目前没有加入动态特性的计划。很多人问为什么 Swift 不能有响应，reflection这些特性。甚至有人写博客说，“迟早有一天，苹果要重写 Swift 的所有架构”，我每次在 WWDC 前看到这些博客都会呵呵。很多人不明白什么叫动态性，也不关心我们发布的 Swift 计划表，只是不停的写博客，预测这个吐槽那个。 我个人可以明确表示，Swift 近期内没有加入动态特性的计划。凡事有轻重缓急，我们得先处理其他事情，比如并发模型，比如在系统端上的优化，比如脚本的适配。不过以后如果有时间，Swift 会加入动态特性的，前提是我们计划表里的事情都做完了。 24. 你不担心没有动态特性，很多 Objective-C 的程序员会各种不适应 Swift，然后就放弃用 Swift 了吗？ 我不担心啊。Swift 本身支持 Objective-C 上的所有特性，你只需要那部分代码使用 Objective-C 兼容，然后把它们加入到 runtime 中即可。 虽然有很多人说，我就是想写纯粹的 Swift 代码，但其实我不觉得这是一种倒退。你可以使用 reflection 模型，要用这个功能你用就是了，自己设计的代码结构自己负责。在写代码这事上，从来没有非黑即白一说，我们要做最重要的事，而不是天天在推特上开听证会。Swift 核心组做的工作就是把关 Swift 开发，把这门语言导向一个正确的方向。 Swift 编程规范25. Swift 现在好多语法糖。怎样避免写出奇怪和低效的 Swift 代码？你觉得现在 Swift 可以称得上成熟吗？ 现在正是 Swift 成熟之时。Swift 1 和 Swift 2 的时候，确实语言的变化很大，大家很头疼。但是 Swift 3.0 是一个稳定成熟的版本，它真的不错。之后的工作是在 Swift 3.0 的基础上增加新的函数库或者功能，而不是修改现有的架构。 其实 Swift 开发者也在纠结语法糖太多的问题。我听说一些人出了一些 Swift 的书籍，这很好。其实我们在设计 Swift 的时候，就考虑到语法糖的问题了。比如你写代码，把所有变量都用 var，这时候编译器会提醒你对常量使用 let。这说明一点，Swift 是鼓励 immutable 数据类型的，并且 Xcode 也会自动督促你写出更规范的代码。不过目前对于“是该用 class 还是 struct？”这类比较困难的问题，编译器还没智能到能自动检测并纠正。 26. 有些语言一开始就有设定好的语法糖和规范。为什么 Swift 没有这样，而是让开源社区去讨论？你个人对 Swift 有没有一些编程规范？ 作为一个程序员，我骨子里流淌着编程规范的血液。但在 Swift 的开发过程中，我还是改变了一些固有观念。比如说，我认为所有代码代码段都应该是一个地方输入，一个地方输出。但我后来发现这样设计语言很难维护，可读性也不佳。 比如说我们设计的 guard else 语句，你一定要在末尾写上 return 之类的结束语。这就导致了一个函数有多个地方输出：你在 guard else 里 return，在其他地方也 return，不符合我原来的设想。但是如此设计会令安全性提高，因为我们把一些特殊情况给提前处理掉了。 对于空格这种格式问题，我个人倾向于空 2 格。我知道有些人喜欢空 4 格，还有人喜欢 3 格（因为他们觉得文件中不应该有 tab）。这完全是萝卜青菜各有所爱，大家对此争论不休，哪一种都有一定道理。所以我们最后也没有对 Swift 提出固定的格式要求，大家写出自己喜欢的代码就行。但是这也造成了一定程度的混乱 – 你写的代码格式会与同事的完全不同。但是我觉得这并不会影响语言的多样性。 Go 当年强行推广了一套编程规范，结果到现在仍有争议。我们现在的工作不是做语法上面的规范，而且我们也不希望推出一套规范后大家好不买账。开源的另一个好处是，大家可以自行决定什么是好的语法规范。就算有时间我个人或者 Apple 也不会去写 Swift Style Guide。比起规范我更愿意去回答理论和语言设计上的问题。 有一件趣事我想分享，我一直担心别人会问，为什么 Swift 的函数名叫 func？而不叫 function 或者 fn？这其实颇有争议。不过现在已经是 Swift 3.0 时代了，大家这样用得很顺，我们也不会去更改了，所以争论于此没有意义。 RxSwift 以及响应式编程27.很多开发者用 RxSwift 或者其他响应式编程。你在开发 Swift 过程中有没有仔细研究过响应式编程这些？ 我已经开始关注 RxSwift 了。但是我自己没用响应式编程来开发过产品，所以我对它们的理解来自于博客。RxSwift 看起来很棒，你可以少写很多代码，而且似乎开发效率也会更高。但听说维护和测试起来也很难，有优点也有缺点。 如果我有空写一个 App 的话，我肯定回去试试 RxSwift，然后再过来发表观点。我现在不敢说”强烈推荐”，或者“强烈不推荐”之类的话。 Garbage Collection vs. ARC28. 我们都知道 Garbage Collection 和 ARC 各有千秋。Objective-C 有 Garbage Collection，后来加入了 ARC 的机制。Swift 则是完全 ARC。你能说说为什么你们那么看好 ARC 吗？ Objective-C 最开始是基于 Libauto 系统开发的，而 Libauto 本身就有诸多限制，所以我们当时采用了 Garbage Collection。我个人觉得 ARC 完全要优于 Garbage Collection，因为后者经常在内存上回收一下我们不想回收的变量。所以我们在 Objective-C 上采用了引用计数和 ARC。 ARC 最重要的一个优势就是，它很好的处理了 final 这类参数。如果你用 Garbage Collection，比如 java 吧，final 参数就是那些不被回收一直在跑的东西，这样展开讲问题是一箩筐。我举个最简单的例子，当有个 final 变量运行在一个错误的线程上时，它会多次重跑，导致实例被不停的创建。ARC 则是从根本上解决了这个问题。 目前反对 ARC 的理由主要有两个，一是人们觉得 ARC 引入了额外的开销，因为你要维护引用计数嘛。另一个是 ARC 容易造成循环引用。 我个人要强调的是，这些毛病 Garbage Collection 也有。除此之外 Garbage Collection 还不能终止所有的线程，或者在特定的一个时间点终止一个线程。这是因为 Garbage Collection 引入了安全指针（safepoint），这同样也是一笔额外的开销。 ARC 中引用计数的开销在实际开发中影响不大。而且我们对对象的整个生命流程都有掌控，而这是 Garbage Collection 不具备的。实际上我觉得 ARC 中有些额外开销是必须的，那些不必须的开销以后也会慢慢改进的。 至于循环引用的问题。相比于你必须在具体的一行说明，retain/malloc 这个变量，然后再在后面某一行说明，release/free这个变量这种麻烦事，你只需要用 strong 或者 weak 表示你对对象的所有权，你省去了大量思考内存分配的担忧和操作，这难道不是一个巨大的进步吗？ 身后之事 29.把 Swift 交给 Ted 你放心吗？ 完全不用担心。 Ted 这人实力非常强。斯坦佛的博士生毕业，苹果十年工作经验，曾经以一己之力完成了 Clang 的静态分析器。Ted 在管理方面也很优秀。我有时候会突发奇想，让手下一个人或者一个组去做“我认为有意义”的项目。Ted 则是非常稳健的管理者，他总会领导组员去做最重要的事情，这就是我跟他的不同。 另外我们的小组也很强，核心团队的几个人：Doug Gregor, John McCall, Joe Groff, Dave Abrahams。这几个人都是极其优秀的极客。Swift 其他团队的工程师也很给力。有他们在，没有任何理由 Swift 不会成功。 30. 你为什么去做电动车？ 首先我个人非常喜欢车。但我又懒得自己老是去加油啊、开车，我更喜欢一种更可靠的方式，最好我自己啥也不用做，车子就可以把我送到目的地。我也不需要担心维护啊什么的。我其实是特斯拉最早的一批客户，我觉得特斯拉驾驶起来很开心。 不过我重来没想过我会去一家汽车公司任职，因为我觉得我是个程序员，这跟汽车有啥关系？不过特斯拉让我去做自动驾驶系统，这个就很对我胃口了。因为这也是世界级的难题，我想尝试挑战一下。 补充Chris Lattner 提到的语言 Go 主页：http://golang.org/ Google发布的开源语言。编译速度媲美 C，安全性有过之而无不及。学习曲线也与 Java 类似，比较简单。目前主要用于网络服务器，存储系统，和数据库中。 Dart 主页：https://www.dartlang.org/ Google 开发的语言。基于类，只能单一继承，风格上偏向 C。目标在于成为下一代网络开发语言。目前 Google 正在尝试用 Dart 开发 Android 应用，达到去 java 化的目标。 Haskell 主页：https://www.haskell.org/ 函数式编程语言，支持惰性求值、模式匹配、列表内包、类型类和类型多态。用户很少，普遍认为难学难用。主要用于金融系统及安全性和性能要求抛高的产品。 参考链接 Swift 3 将不包含稳定的ABI 转载 为什么业界很少使用 Haskell？]]></content>
+      <categories>
+        <category>Swift</category>
+      </categories>
+      <tags>
+        <tag>Swift</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[大神技术博客]]></title>
+    <url>%2Fpost%2F%E5%A4%A7%E7%A5%9E%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2.html</url>
+    <content type="text"><![CDATA[摘要 闲散收集的一些不错的网站 mrpeakonevcat kittenyangphilon天猫技术-苹果核微读书团队sunnyxx[唐巧] (http://blog.devtang.com) [《iOS 开发如何提高》] (http://blog.devtang.com/2014/07/27/ios-levelup-tips/)ibireme YYIKit作者,全是黑暗料理人人都是产品经理 以产品经理、互联网运营为核心的学习、交流网站]]></content>
+      <tags>
+        <tag>大神技术博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[cocoapods出现linker command failed with exit code 1 (use -v to see invocation) 解决方法]]></title>
+    <url>%2Fpost%2FCocoapods%2Fcocoapods%E5%87%BA%E9%94%99.html</url>
+    <content type="text"><![CDATA[摘要 最近要把项目里的以前手动拖进去的第三方改为cocoapods管理 出现了一个编译问题 把原来的拖进去的库删了也会出现linker command failed with exit code 1 (use -v to see invocation) 此时你用cocoapods导入库的时候命令行会有 解决方法第一步去xcode设置 第二步]]></content>
+      <categories>
+        <category>Cocoapods</category>
+      </categories>
+      <tags>
+        <tag>Cocoapods</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo添加音乐]]></title>
+    <url>%2Fpost%2FHexo%2FHexo%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90.html</url>
+    <content type="text"><![CDATA[摘要 在hexo文章添加网易音乐插件 生成音乐链接打开网易云音乐,搜索想要的音乐,点击生成外部链接播放器 获取html代码 &lt;iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&amp;id=436514312&amp;auto=1&amp;height=66"&gt;&lt;/iframe&gt; 添加在文章中这里是音乐播放器 结尾 带上耳机欣赏一首我最喜欢的 《成都》]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[NexT主题添加ShareSDK的分享]]></title>
+    <url>%2Fpost%2FHexo%2FNexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0ShareSDK%E7%9A%84%E5%88%86%E4%BA%AB.html</url>
+    <content type="text"><![CDATA[原文地址: http://blog.magicer.xyz/2016/04/add-sharesdk/ 今天发现一个分享的的sdk,可以在各个平台使用。由于不太喜欢主题提供的几个分享的样式。就试了试怎么这个。发现还是不错滴。。下面是分享的按钮和分享的样式： 效果见下面—-传送门：ShareSDK Web集成官方文档下面是在网页上分享按钮的代码，只需要将以下代码添加到想要显示的位置即可。appkey是你自己的appkey。&lt;!--MOB SHARE BEGIN--&gt;&lt;div class="-mob-share-ui-button -mob-share-open"&gt;分享&lt;/div&gt;&lt;div class="-mob-share-ui" style="display: none"&gt; &lt;ul class="-mob-share-list"&gt; &lt;li class="-mob-share-qzone"&gt;&lt;p&gt;QQ空间&lt;/p&gt;&lt;/li&gt; &lt;li class="-mob-share-qq"&gt;&lt;p&gt;QQ好友&lt;/p&gt;&lt;/li&gt; &lt;li class="-mob-share-weixin"&gt;&lt;p&gt;微信&lt;/p&gt;&lt;/li&gt; &lt;li class="-mob-share-weibo"&gt;&lt;p&gt;新浪微博&lt;/p&gt;&lt;/li&gt; &lt;li class="-mob-share-tencentweibo"&gt;&lt;p&gt;腾讯微博&lt;/p&gt;&lt;/li&gt; &lt;li class="-mob-share-douban"&gt;&lt;p&gt;豆瓣&lt;/p&gt;&lt;/li&gt; &lt;li class="-mob-share-renren"&gt;&lt;p&gt;人人网&lt;/p&gt;&lt;/li&gt; &lt;li class="-mob-share-kaixin"&gt;&lt;p&gt;开心网&lt;/p&gt;&lt;/li&gt; &lt;li class="-mob-share-facebook"&gt;&lt;p&gt;Facebook&lt;/p&gt;&lt;/li&gt; &lt;li class="-mob-share-twitter"&gt;&lt;p&gt;Twitter&lt;/p&gt;&lt;/li&gt; &lt;li class="-mob-share-pocket"&gt;&lt;p&gt;Pocket&lt;/p&gt;&lt;/li&gt; &lt;li class="-mob-share-google"&gt;&lt;p&gt;Google+&lt;/p&gt;&lt;/li&gt; &lt;li class="-mob-share-youdao"&gt;&lt;p&gt;有道云笔记&lt;/p&gt;&lt;/li&gt; &lt;li class="-mob-share-mingdao"&gt;&lt;p&gt;明道&lt;/p&gt;&lt;/li&gt; &lt;li class="-mob-share-pengyou"&gt;&lt;p&gt;朋友网&lt;/p&gt;&lt;/li&gt; &lt;li class="-mob-share-tumblr"&gt;&lt;p&gt;Tumblr&lt;/p&gt;&lt;/li&gt; &lt;li class="-mob-share-instapaper"&gt;&lt;p&gt;Instapaper&lt;/p&gt;&lt;/li&gt; &lt;li class="-mob-share-linkedin"&gt;&lt;p&gt;LinkedIn&lt;/p&gt;&lt;/li&gt; &lt;/ul&gt; &lt;div class="-mob-share-close"&gt;取消&lt;/div&gt;&lt;/div&gt;&lt;div class="-mob-share-ui-bg"&gt;&lt;/div&gt;&lt;script id="-mob-share" src="http://f1.webshare.mob.com/code/mob-share.js?appkey=你的appkey"&gt;&lt;/script&gt;&lt;!--MOB SHARE END--&gt; 添加到NexT中那么怎么添加到next主题上呢。步骤如下 1.创建文件我们首先要在主题文件夹下的layout文件夹找到_partials下的share文件夹，之后添加一个名为sharesdk.swig的文件。我们可以看出来。这个文件夹下放的全部是分享的配置文件.添加的内容为上面的那一大段代码。只需要修改一部分。修改的部分为：&lt;script id="-mob-share" src="http://f1.webshare.mob.com/code/mob-share.js?appkey=&#123;&#123; theme.shareSDKappkey &#125;&#125;"&gt;&lt;/script&gt; 修改这写的目的是为了让我们能够在主题的配置文件中添加appkey。（只需要在主题的配置文件中添加一个shareSDKappkey并为其附上值即可）。 2添加可选配置虽然我们添加了sharesdk的分享的按钮了，但是如果有一天我们不想使用了呢。当然，很简单。只需要修改配置文件就可以了。那么如何实现呢？ 首先，找到主题文件夹下的layout文件夹下的post.swig 大概在16行左右添加 &lt;div class=&quot;post-spread&quot;&gt; &#123;% if theme.jiathis %&#125; &#123;% include &apos;_partials/share/jiathis.swig&apos; %&#125; &#123;% elseif theme.baidushare %&#125; &#123;% include &apos;_partials/share/baidushare.swig&apos; %&#125; &#123;% elseif theme.add_this_id %&#125; &#123;% include &apos;_partials/share/add-this.swig&apos; %&#125; &#123;% elseif theme.duoshuo_shortname and theme.duoshuo_share %&#125; &#123;% include &apos;_partials/share/duoshuo_share.swig&apos; %&#125; &#123;% elseif theme.sharesdk %&#125; &#123;% include &apos;_partials/share/sharesdk.swig&apos; %&#125; &#123;% endif %&#125;&lt;/div&gt; 添加了代码&#123;% elseif theme.sharesdk %&#125; &#123;% include &apos;_partials/share/sharesdk.swig&apos; %&#125; 这段代码就是根据主题文件的配置，来为文档添加相应的swig文件。要想实现在配置文件中选择性的使用分享功能，只需要在配置文件中修改即可。 修改_config.yml接下来就是修改项目的配置文件了。在主题的配置文件中添加： #Sharesharesdk: trueshareSDKappkey: appkey 这里要说明的是如果没有绑定个人域名分享样式是出不来的,只有用hexo s查看本地才能看到分享远程的是没有的.]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo域名优化网页]]></title>
+    <url>%2Fpost%2FHexo%2Fhexo%E5%9F%9F%E5%90%8D%E4%BC%98%E5%8C%96%E7%BD%91%E9%A1%B5.html</url>
+    <content type="text"><![CDATA[原文地址:Dnspod+Namesilo域名结合实现域名选路解析 摘要 上面的地址采用Dnspod+Namesilo实现国内国外解析,我用的是阿里的万网注册域名阿里云域名注册 注册流程阿里有很简单跟着走一遍就可以了,最好能实名认证一下. 域名解析我是直接用的阿里的解析的域名,如果想用DNSPOD解析要改一下解析DNS DNSPOD的把下面的两个解析地址填到图中: f1g1ns1.dnspod.net f1g1ns2.dnspod.net 添加设置记录进入您的域名管理界面，添加别名 留意的部分有： 主机记录：域名主机位（如；如果你的域名是xx.com,主机记录是mm,测mm.xx.com） 记录值：是那个域名的别名（如xx.coding.me，侧mm.xx.com的解析将转向xx.coding.me，即访问mm.xx.com等于访问xx.coding.me） 线路类型：指你的域名是针对哪些线路解析（国内，国外，联通等等，DNSPOD的优势就在这里，选路） 先添加两个github的链接 coding me实现别名在coding添加一个私有博客项目 创建好了后coding.me实现别名,点击Pages 服务->修改域名绑定为你在将要解析到阿里云的别名 gitHub实现别名在Hexo目录下的Source下建立CNAME(注意必须为大写且只允许输入一个别名记录到此文件),并填入你在DNSPOD添加的CNAME到文件CNAME。如何查看是否生效？ 链接到你的Git如：https://github.com/yourname/yourname.github.io -> 点击导航栏部Settings 添加coding me 和github地址解析 添加coding me的SSH公钥 设置站点_config.yml文件设置站点_config.yml是为了每次改变同步都可以同步到github和codingme上的文件deploy: type: git repo: github: git@github.com:fanglinwei/fanglinwei.github.io.git #github地址 codingme: git@git.coding.net:CSummer/CSummer-blog.git #codingme地址 branch: master 设置到这里基本上就可以达到域名访问国内资源了使用codingme绑定的page域名看看,是不是感觉快很多,而使用github绑定的page域名访问会慢一些]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo优化系列]]></title>
+    <url>%2Fpost%2FHexo%2Fhexo%E4%BC%98%E5%8C%96%E7%B3%BB%E5%88%97.html</url>
+    <content type="text"><![CDATA[摘要 这段时间产品上线没啥事做,所以就看了网上的一些博客试着搭建一个自己的Hexo博客.基础搭建就不说了网上百度hexo+github多得是推荐一个基础搭建,格式各样的主题也很多 推荐主题 这里推荐几个好用的 next 我用的就是这个 因为这个是由官方团队维护的后续添加新功能很方便 Yilia 简洁大气！ Yelee 该主题是作者基于Yilia修改而来，改变了大量的样式。 Hexo官网主题推荐 优化网页速度这里先贴个地址 joryHe优化 这里面写了一大系列的相关优化. 静态文件加载优化. 静态文件就是一些Js,css等文件，通常网站都会调用一大堆这些文件，我们可以合理的将静态资源放到CDN服务器（七牛CDN等），如果你的一些静态资源文件是一些通用的文件，如jquery、fancybox等js或者css，你完全可以使用一些外部免费的开源项目CDN网站，如BootCDN是个很好的选择 ,但是个人觉得在CDN你的静态文件，你应该合理考虑哪些文件才应该进行CDN加速，因为你要CDN加速静态文件的原因是,CDN是以合理的服务器节点返回相关静态资源给你。或许有些情况，你的网站本身的服务器的速度或许比你的CDN更要快速（特别是一些免费的CDN服务）。 外部CDN这是我添加的外部CDN链接 # Script Vendors.# Set a CDN address for the vendor you want to customize.# For example# jquery: https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js# Be aware that you should use the same version as internal ones to avoid potential problems.# Please use the https protocol of CDN files when you enable https on your site.vendors: # Internal path prefix. Please do not edit it. _internal: lib # Internal version: 2.1.3 jquery: # 以下都是我在bootCDN里引入的 外部CDN链接 可以去http://www.bootcdn.cn 找最新的版本 # Internal version: 2.1.5 # See: http://fancyapps.com/fancybox/ fancybox: fancybox_css: //cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.css #3.1.20是版本号 # Internal version: 1.0.6 # See: https://github.com/ftlabs/fastclick fastclick: //cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js # Internal version: 1.9.7 # See: https://github.com/tuupola/jquery_lazyload lazyload: //cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js # Internal version: 1.2.1 # See: http://VelocityJS.org velocity: //cdn.bootcss.com/velocity/1.5.0/velocity.min.js # Internal version: 1.2.1 # See: http://VelocityJS.org velocity_ui: //cdn.bootcss.com/velocity/1.5.0/velocity.ui.min.js # Internal version: 0.7.9 # See: https://faisalman.github.io/ua-parser-js/ ua_parser: # Internal version: 4.6.2 # See: http://fontawesome.io/ fontawesome: # Internal version: 1 # https://www.algolia.com algolia_instant_js: //cdn.bootcss.com/instantsearch.js/2.1.0-beta.2/instantsearch.min.js algolia_instant_css: //cdn.bootcss.com/instantsearch.js/2.1.0-beta.2/instantsearch.min.css # Internal version: 1.0.2 # See: https://github.com/HubSpot/pace # Or use direct links below: pace: //cdn.bootcss.com/pace/1.0.2/pace.min.js pace_css: //cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css 从以上看出，很多Next插件已经可以自定义CDN链接，但是如果存在一些没有在上面列出的呢，也有办法，如果想要了解操作方式，请访问NEXT 加载您自定以的静态文件,如果你还需要进行图片的CDN，点击CDN图片加速，实现图片慢加载,以上都可以实现CDN。这里要注意的是如果要引用自己CDN资源(七牛或者阿里云)最好申请注册个个人域名和博客绑定起来.不然会出问题. 字体引用修改站内引用的字体 实现方法:到主题的_config.yml中设置不从google加载字体（默认会加载本地字体） font: enable: true # Uri of fonts host. E.g. //fonts.googleapis.com (Default) //fonts.css.network host: //fonts.css.network #这里把这里改成 //fonts.css.network 优化到这里你会感觉你的博客网页已经快一些了但是还是会有点慢,那么久就要用域名来优化了hexo域名优化网页]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[懒加载]]></title>
+    <url>%2Fpost%2F%E6%87%92%E5%8A%A0%E8%BD%BD.html</url>
+    <content type="text"><![CDATA[定义一个懒加载的宏#define DYJ_LAZY(object, assignment) (object = object ?: assignment) 使用- (UINavigationBar *)navBar&#123; return DYJ_LAZY(_navBar, (&#123; UINavigationBar *bar = [[UINavigationBar alloc] init]; bar.barStyle = UINavigationBar.appearance.barStyle; bar.translucent = YES; [self.view addSubview:bar]; [bar setFrame:CGRectMake(0, 0, SCREEN_WIDTH, 64)]; bar; &#125;));&#125;]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>iOS</tag>
+        <tag>OC</tag>
+      </tags>
+  </entry>
 </search>
