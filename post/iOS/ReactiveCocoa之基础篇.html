@@ -67,21 +67,21 @@
 
 
 
-<meta name="description" content="1.ReactiveCocoa简介ReactiveCocoa（简称为RAC）,是由Github开源的一个应用于iOS和OS开发的新框架,Cocoa是苹果整套框架的简称，因此很多苹果框架喜欢以Cocoa结尾。 2.ReactiveCocoa作用 在我们iOS开发过程中，当某些事件响应的时候，需要处理某些业务逻辑,这些事件都用不同的方式来处理。 比如按钮的点击使用action，ScrollView滚动">
+<meta name="description" content="ReactiveCocoa之基础篇 ReactiveCocoa之进阶篇 1.ReactiveCocoa简介ReactiveCocoa（简称为RAC）,是由Github开源的一个应用于iOS和OS开发的新框架,Cocoa是苹果整套框架的简称，因此很多苹果框架喜欢以Cocoa结尾。 2.ReactiveCocoa作用 在我们iOS开发过程中，当某些事件响应的时候，需要处理某些业务逻辑,这些事件都用不同">
 <meta name="keywords" content="ReactiveCocoa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ReactiveCocoa之基础篇">
-<meta property="og:url" content="http://www.csummer.top/post/iOS/ReactiveCocoa之基础篇.html">
+<meta property="og:url" content="http://www.calm1993.com/post/iOS/ReactiveCocoa之基础篇.html">
 <meta property="og:site_name" content="CSummer&#39;s Blog">
-<meta property="og:description" content="1.ReactiveCocoa简介ReactiveCocoa（简称为RAC）,是由Github开源的一个应用于iOS和OS开发的新框架,Cocoa是苹果整套框架的简称，因此很多苹果框架喜欢以Cocoa结尾。 2.ReactiveCocoa作用 在我们iOS开发过程中，当某些事件响应的时候，需要处理某些业务逻辑,这些事件都用不同的方式来处理。 比如按钮的点击使用action，ScrollView滚动">
+<meta property="og:description" content="ReactiveCocoa之基础篇 ReactiveCocoa之进阶篇 1.ReactiveCocoa简介ReactiveCocoa（简称为RAC）,是由Github开源的一个应用于iOS和OS开发的新框架,Cocoa是苹果整套框架的简称，因此很多苹果框架喜欢以Cocoa结尾。 2.ReactiveCocoa作用 在我们iOS开发过程中，当某些事件响应的时候，需要处理某些业务逻辑,这些事件都用不同">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/304825-e684a824ac51a74c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/304825-311191366a0b0972.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/304825-1e8effc941c8498a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700">
-<meta property="og:updated_time" content="2018-03-13T02:15:43.000Z">
+<meta property="og:image" content="http://www.calm1993.com/post/iOS/Snip20150926_3.png">
+<meta property="og:updated_time" content="2018-03-13T02:26:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ReactiveCocoa之基础篇">
-<meta name="twitter:description" content="1.ReactiveCocoa简介ReactiveCocoa（简称为RAC）,是由Github开源的一个应用于iOS和OS开发的新框架,Cocoa是苹果整套框架的简称，因此很多苹果框架喜欢以Cocoa结尾。 2.ReactiveCocoa作用 在我们iOS开发过程中，当某些事件响应的时候，需要处理某些业务逻辑,这些事件都用不同的方式来处理。 比如按钮的点击使用action，ScrollView滚动">
+<meta name="twitter:description" content="ReactiveCocoa之基础篇 ReactiveCocoa之进阶篇 1.ReactiveCocoa简介ReactiveCocoa（简称为RAC）,是由Github开源的一个应用于iOS和OS开发的新框架,Cocoa是苹果整套框架的简称，因此很多苹果框架喜欢以Cocoa结尾。 2.ReactiveCocoa作用 在我们iOS开发过程中，当某些事件响应的时候，需要处理某些业务逻辑,这些事件都用不同">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/304825-e684a824ac51a74c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700">
 
 
@@ -110,7 +110,7 @@
 
 
 
-  <link rel="canonical" href="http://www.csummer.top/post/iOS/ReactiveCocoa之基础篇.html"/>
+  <link rel="canonical" href="http://www.calm1993.com/post/iOS/ReactiveCocoa之基础篇.html"/>
 
 
 
@@ -166,7 +166,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">技术分享</p>
+        <p class="site-subtitle">闲散杂货铺</p>
       
   </div>
 
@@ -263,7 +263,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.csummer.top/post/iOS/ReactiveCocoa之基础篇.html">
+    <link itemprop="mainEntityOfPage" href="http://www.calm1993.com/post/iOS/ReactiveCocoa之基础篇.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="CSummer">
@@ -352,7 +352,7 @@
              <i class="fa fa-calendar-o"></i>
            </span>
            <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">4,900(字)</span>
+           <span class="post-count">4,902(字)</span>
            
          </span>
 	  
@@ -383,7 +383,9 @@
       
 
       
-        <h3 id="1-ReactiveCocoa简介"><a href="#1-ReactiveCocoa简介" class="headerlink" title="1.ReactiveCocoa简介"></a>1.ReactiveCocoa简介</h3><p>ReactiveCocoa（简称为<code>RAC</code>）,是由<code>Github</code>开源的一个应用于iOS和OS开发的新框架,Cocoa是苹果整套框架的简称，因此很多苹果框架喜欢以Cocoa结尾。</p>
+        <p><a href="http://www.calm1993.com/post/iOS/ReactiveCocoa之基础篇.html">ReactiveCocoa之基础篇</a></p>
+<p><a href="http://www.calm1993.com/post/iOS/ReactiveCocoa之进阶篇.html">ReactiveCocoa之进阶篇</a></p>
+<h3 id="1-ReactiveCocoa简介"><a href="#1-ReactiveCocoa简介" class="headerlink" title="1.ReactiveCocoa简介"></a>1.ReactiveCocoa简介</h3><p>ReactiveCocoa（简称为<code>RAC</code>）,是由<code>Github</code>开源的一个应用于iOS和OS开发的新框架,Cocoa是苹果整套框架的简称，因此很多苹果框架喜欢以Cocoa结尾。</p>
 <h3 id="2-ReactiveCocoa作用"><a href="#2-ReactiveCocoa作用" class="headerlink" title="2.ReactiveCocoa作用"></a>2.ReactiveCocoa作用</h3><ul>
 <li>在我们iOS开发过程中，当某些事件响应的时候，需要处理某些业务逻辑,这些事件都用不同的方式来处理。</li>
 <li>比如按钮的点击使用action，ScrollView滚动使用delegate，属性值改变使用KVO等系统提供的方式。</li>
@@ -425,10 +427,9 @@
 <ul>
 <li>podfile如果只描述pod ‘ReactiveCocoa’, ‘~&gt; 4.0.2-alpha-1’，会导入不成功<br><img src="https://upload-images.jianshu.io/upload_images/304825-e684a824ac51a74c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt=""></li>
 <li>报错信息<br><img src="https://upload-images.jianshu.io/upload_images/304825-311191366a0b0972.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt=""></li>
-<li>需要在podfile加上use_frameworks，重新pod install 才能导入成功。<br><img src="https://upload-images.jianshu.io/upload_images/304825-1e8effc941c8498a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt=""></li>
+<li>需要在podfile加上use_frameworks，重新pod install 才能导入成功。<br><img src="Snip20150926_3.png" alt=""></li>
 </ul>
 <h3 id="6-ReactiveCocoa常见类。"><a href="#6-ReactiveCocoa常见类。" class="headerlink" title="6.ReactiveCocoa常见类。"></a>6.ReactiveCocoa常见类。</h3><p>学习框架首要之处:个人认为先要搞清楚框架中常用的类，在RAC中最核心的类RACSiganl,搞定这个类就能用ReactiveCocoa开发了。</p>
-<p><code>练习五</code>:介绍常见类</p>
 <p><code>RACSiganl</code>:信号类,一般表示将来有数据传递，只要有数据改变，信号内部接收到数据，就会马上发出数据。</p>
 <ul>
 <li><p>信号类(RACSiganl)，只是表示当数据改变时，信号内部会发出数据，它本身不具备发送信号的能力，而是交给内部一个订阅者去发出。</p>
@@ -584,8 +585,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/post/美团技术收藏.html" rel="next" title="美团点评技术年货">
-                <i class="fa fa-chevron-left"></i> 美团点评技术年货
+              <a href="/post/iOS/ReactiveCocoa之进阶篇.html" rel="next" title="ReactiveCocoa之进阶篇">
+                <i class="fa fa-chevron-left"></i> ReactiveCocoa之进阶篇
               </a>
             
           </div>
@@ -593,10 +594,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/post/iOS/ReactiveCocoa之进阶篇.html" rel="prev" title="ReactiveCocoa之进阶篇">
-                ReactiveCocoa之进阶篇 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

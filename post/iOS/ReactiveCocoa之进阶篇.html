@@ -67,18 +67,18 @@
 
 
 
-<meta name="description" content="1.ReactiveCocoa常见操作方法介绍。 1.1 ReactiveCocoa操作须知  所有的信号（RACSignal）都可以进行操作处理，因为所有操作方法都定义在RACStream.h中，而RACSignal继承RACStream。   1.2 ReactiveCocoa操作思想  运用的是Hook（钩子）思想，Hook是一种用于改变API(应用程序编程接口：方法)执行结果的技术. Ho">
+<meta name="description" content="ReactiveCocoa之基础篇 ReactiveCocoa之进阶篇 1.ReactiveCocoa常见操作方法介绍。 1.1 ReactiveCocoa操作须知  所有的信号（RACSignal）都可以进行操作处理，因为所有操作方法都定义在RACStream.h中，而RACSignal继承RACStream。   1.2 ReactiveCocoa操作思想  运用的是Hook（钩子）思想，Ho">
 <meta name="keywords" content="ReactiveCocoa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ReactiveCocoa之进阶篇">
-<meta property="og:url" content="http://www.csummer.top/post/iOS/ReactiveCocoa之进阶篇.html">
+<meta property="og:url" content="http://www.calm1993.com/post/iOS/ReactiveCocoa之进阶篇.html">
 <meta property="og:site_name" content="CSummer&#39;s Blog">
-<meta property="og:description" content="1.ReactiveCocoa常见操作方法介绍。 1.1 ReactiveCocoa操作须知  所有的信号（RACSignal）都可以进行操作处理，因为所有操作方法都定义在RACStream.h中，而RACSignal继承RACStream。   1.2 ReactiveCocoa操作思想  运用的是Hook（钩子）思想，Hook是一种用于改变API(应用程序编程接口：方法)执行结果的技术. Ho">
+<meta property="og:description" content="ReactiveCocoa之基础篇 ReactiveCocoa之进阶篇 1.ReactiveCocoa常见操作方法介绍。 1.1 ReactiveCocoa操作须知  所有的信号（RACSignal）都可以进行操作处理，因为所有操作方法都定义在RACStream.h中，而RACSignal继承RACStream。   1.2 ReactiveCocoa操作思想  运用的是Hook（钩子）思想，Ho">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-13T02:11:38.000Z">
+<meta property="og:updated_time" content="2018-03-13T02:28:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ReactiveCocoa之进阶篇">
-<meta name="twitter:description" content="1.ReactiveCocoa常见操作方法介绍。 1.1 ReactiveCocoa操作须知  所有的信号（RACSignal）都可以进行操作处理，因为所有操作方法都定义在RACStream.h中，而RACSignal继承RACStream。   1.2 ReactiveCocoa操作思想  运用的是Hook（钩子）思想，Hook是一种用于改变API(应用程序编程接口：方法)执行结果的技术. Ho">
+<meta name="twitter:description" content="ReactiveCocoa之基础篇 ReactiveCocoa之进阶篇 1.ReactiveCocoa常见操作方法介绍。 1.1 ReactiveCocoa操作须知  所有的信号（RACSignal）都可以进行操作处理，因为所有操作方法都定义在RACStream.h中，而RACSignal继承RACStream。   1.2 ReactiveCocoa操作思想  运用的是Hook（钩子）思想，Ho">
 
 
 
@@ -106,7 +106,7 @@
 
 
 
-  <link rel="canonical" href="http://www.csummer.top/post/iOS/ReactiveCocoa之进阶篇.html"/>
+  <link rel="canonical" href="http://www.calm1993.com/post/iOS/ReactiveCocoa之进阶篇.html"/>
 
 
 
@@ -162,7 +162,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">技术分享</p>
+        <p class="site-subtitle">闲散杂货铺</p>
       
   </div>
 
@@ -259,7 +259,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.csummer.top/post/iOS/ReactiveCocoa之进阶篇.html">
+    <link itemprop="mainEntityOfPage" href="http://www.calm1993.com/post/iOS/ReactiveCocoa之进阶篇.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="CSummer">
@@ -348,7 +348,7 @@
              <i class="fa fa-calendar-o"></i>
            </span>
            <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">5,614(字)</span>
+           <span class="post-count">5,624(字)</span>
            
          </span>
 	  
@@ -379,7 +379,9 @@
       
 
       
-        <h3 id="1-ReactiveCocoa常见操作方法介绍。"><a href="#1-ReactiveCocoa常见操作方法介绍。" class="headerlink" title="1.ReactiveCocoa常见操作方法介绍。"></a>1.ReactiveCocoa常见操作方法介绍。</h3><ul>
+        <p><a href="http://www.calm1993.com/post/iOS/ReactiveCocoa之基础篇.html">ReactiveCocoa之基础篇</a></p>
+<p><a href="http://www.calm1993.com/post/iOS/ReactiveCocoa之进阶篇.html">ReactiveCocoa之进阶篇</a></p>
+<h3 id="1-ReactiveCocoa常见操作方法介绍。"><a href="#1-ReactiveCocoa常见操作方法介绍。" class="headerlink" title="1.ReactiveCocoa常见操作方法介绍。"></a>1.ReactiveCocoa常见操作方法介绍。</h3><ul>
 <li><p>1.1 ReactiveCocoa操作须知</p>
 <ul>
 <li>所有的信号（RACSignal）都可以进行操作处理，因为所有操作方法都定义在RACStream.h中，而RACSignal继承RACStream。</li>
@@ -640,8 +642,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/post/iOS/ReactiveCocoa之基础篇.html" rel="next" title="ReactiveCocoa之基础篇">
-                <i class="fa fa-chevron-left"></i> ReactiveCocoa之基础篇
+              <a href="/post/美团技术收藏.html" rel="next" title="美团点评技术年货">
+                <i class="fa fa-chevron-left"></i> 美团点评技术年货
               </a>
             
           </div>
@@ -649,6 +651,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/post/iOS/ReactiveCocoa之基础篇.html" rel="prev" title="ReactiveCocoa之基础篇">
+                ReactiveCocoa之基础篇 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
