@@ -78,7 +78,7 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/304825-e684a824ac51a74c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/304825-311191366a0b0972.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700">
 <meta property="og:image" content="http://www.calm1993.com/post/iOS/Snip20150926_3.png">
-<meta property="og:updated_time" content="2018-03-13T02:26:44.000Z">
+<meta property="og:updated_time" content="2018-03-14T03:03:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ReactiveCocoa之基础篇">
 <meta name="twitter:description" content="ReactiveCocoa之基础篇 ReactiveCocoa之进阶篇 1.ReactiveCocoa简介ReactiveCocoa（简称为RAC）,是由Github开源的一个应用于iOS和OS开发的新框架,Cocoa是苹果整套框架的简称，因此很多苹果框架喜欢以Cocoa结尾。 2.ReactiveCocoa作用 在我们iOS开发过程中，当某些事件响应的时候，需要处理某些业务逻辑,这些事件都用不同">
@@ -352,7 +352,7 @@
              <i class="fa fa-calendar-o"></i>
            </span>
            <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">4,902(字)</span>
+           <span class="post-count">4,918(字)</span>
            
          </span>
 	  
@@ -518,6 +518,7 @@
 <p><code>基本用法</code></p>
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">[RACObserve(<span class="keyword">self</span>.view, center) subscribeNext:^(<span class="keyword">id</span> x) &#123;</div><div class="line"></div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>,x);</div><div class="line">    &#125;];</div></pre></td></tr></table></figure>
 <p>8.3  <code>@weakify(Obj)和@strongify(Obj)</code>,一般两个都是配套使用,解决循环引用问题.</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"></div><div class="line">@weakify(<span class="keyword">self</span>);</div><div class="line"></div><div class="line">RACSignal *signal = [RACSignal createSignal:^RACDisposable *(<span class="keyword">id</span>&lt;RACSubscriber&gt; subscriber) &#123;</div><div class="line">   </div><div class="line">    @strongify(<span class="keyword">self</span>)</div><div class="line">    </div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>,<span class="keyword">self</span>);</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> <span class="literal">nil</span>;</div><div class="line">&#125;];</div></pre></td></tr></table></figure>
 <p>8.4 <code>RACTuplePack</code>：把数据包装成RACTuple（元组类）</p>
 <p><code>基本用法</code><br><figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 把参数中的数据包装成元组</span></div><div class="line">   RACTuple *tuple = RACTuplePack(@<span class="number">10</span>,@<span class="number">20</span>);</div></pre></td></tr></table></figure></p>
 <p>8.5 <code>RACTupleUnpack</code>：把RACTuple（元组类）解包成对应的数据。</p>
