@@ -3,6 +3,45 @@
   
     
     <entry>
+      <title><![CDATA[Swift语法糖---初始化Then]]></title>
+      <url>/post/Swift/Swift%E8%AF%AD%E6%B3%95%E7%B3%96---%E5%88%9D%E5%A7%8B%E5%8C%96Then.html</url>
+      <content type="html"><![CDATA[<blockquote>
+<p><a href="https://github.com/devxoul/Then" target="_blank" rel="external">Then</a>是一个swift初始化库,只有80几行的代码库,确可以让初始化变得很优雅</p>
+</blockquote>
+<ul>
+<li>使用then初始化AnyObject,这里以初始化控件为例<figure class="highlight swift"><table><tr><td class="code"><pre><div class="line"><span class="built_in">lazy</span> <span class="keyword">var</span> label = <span class="type">UILabel</span>().then(&#123;</div><div class="line">    $<span class="number">0</span>.text = <span class="string">"label"</span></div><div class="line">    $<span class="number">0</span>.textColor = .blue</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="code"><pre><div class="line"><span class="keyword">let</span> redView = <span class="type">UIView</span>().then &#123; (make) <span class="keyword">in</span></div><div class="line">    make.backgroundColor = .red</div><div class="line">    make.frame = <span class="type">CGRect</span>(x: <span class="number">50</span>, y: <span class="number">50</span>, width: <span class="number">100</span>, height: <span class="number">100</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="code"><pre><div class="line"><span class="keyword">let</span> button = <span class="type">UIButton</span>().then (&#123;</div><div class="line">        $<span class="number">0</span>.setTitle(<span class="string">"点我"</span>, <span class="keyword">for</span>: .normal)</div><div class="line">        $<span class="number">0</span>.setTitleColor(.red, <span class="keyword">for</span>: .normal)</div><div class="line">    &#125;)</div></pre></td></tr></table></figure>
+<ul>
+<li>如果布局这样还不简单那就只能来骚的了,<code>Then</code>和<code>SnapKit</code>一起使用的方式<figure class="highlight swift"><table><tr><td class="code"><pre><div class="line"><span class="keyword">let</span> button1 = <span class="type">UIButton</span>().then &#123; (make) <span class="keyword">in</span></div><div class="line">        make.setTitle(<span class="string">"登录"</span>, <span class="keyword">for</span>: .normal)</div><div class="line">        make.setTitleColor(.black, <span class="keyword">for</span>: .normal)</div><div class="line">        view.addSubview(make)</div><div class="line">        </div><div class="line">        make.snp.makeConstraints(&#123; (make) <span class="keyword">in</span></div><div class="line">            make.top.<span class="keyword">left</span>.<span class="keyword">right</span>.equalTo(<span class="number">0</span>)</div><div class="line">            make.height.equalTo(<span class="number">100</span>)</div><div class="line">        &#125;)</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>或者你还可以这样<br><figure class="highlight swift"><table><tr><td class="code"><pre><div class="line"><span class="keyword">let</span> button2 = <span class="type">UIButton</span>().then(&#123;</div><div class="line">    $<span class="number">0</span>.setTitle(<span class="string">"登录"</span>, <span class="keyword">for</span>: .normal)</div><div class="line">    $<span class="number">0</span>.setTitleColor(.black, <span class="keyword">for</span>: .normal)</div><div class="line">    view.addSubview($<span class="number">0</span>)</div><div class="line">    </div><div class="line">    $<span class="number">0</span>.snp.makeConstraints(&#123;</div><div class="line">        $<span class="number">0</span>.top.equalTo(button1.snp.bottom)</div><div class="line">        $<span class="number">0</span>.<span class="keyword">left</span>.<span class="keyword">right</span>.equalTo(<span class="number">0</span>)</div><div class="line">        $<span class="number">0</span>.height.equalTo(<span class="number">50</span>)</div><div class="line">    &#125;)</div><div class="line">  &#125;)</div></pre></td></tr></table></figure></p>
+<ul>
+<li>其他用法</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="code"><pre><div class="line"><span class="keyword">let</span> newFrame = oldFrame.with &#123;</div><div class="line">      $<span class="number">0</span>.size.width = <span class="number">200</span></div><div class="line">      $<span class="number">0</span>.size.height = <span class="number">100</span></div><div class="line">&#125;</div><div class="line">newFrame.width <span class="comment">// 200</span></div><div class="line">newFrame.height <span class="comment">// 100</span></div></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="code"><pre><div class="line"><span class="type">UserDefaults</span>.standard.<span class="keyword">do</span> &#123;</div><div class="line">    $<span class="number">0</span>.<span class="keyword">set</span>(<span class="string">"devxoul"</span>, forKey: <span class="string">"username"</span>)</div><div class="line">    $<span class="number">0</span>.<span class="keyword">set</span>(<span class="string">"devxoul@gmail.com"</span>, forKey: <span class="string">"email"</span>)</div><div class="line">    $<span class="number">0</span>.synchronize()</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+      
+        <categories>
+            
+            <category> Swift语法糖 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Swift </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Swift学习---UserDefaults]]></title>
       <url>/post/Swift/Swift%E5%AD%A6%E4%B9%A0---UserDefaults.html</url>
       <content type="html"><![CDATA[<blockquote>
