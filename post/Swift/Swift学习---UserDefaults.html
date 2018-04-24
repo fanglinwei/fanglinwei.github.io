@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Swift," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="UserDefaults的三种优雅使用方式">
+<meta name="keywords" content="Swift">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Swift学习---UserDefaults">
+<meta property="og:url" content="http://www.calm1993.com/post/Swift/Swift学习---UserDefaults.html">
+<meta property="og:site_name" content="CSummer&#39;s Blog">
+<meta property="og:description" content="UserDefaults的三种优雅使用方式">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-24T03:15:25.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Swift学习---UserDefaults">
+<meta name="twitter:description" content="UserDefaults的三种优雅使用方式">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.calm1993.com/post/Swift/Swift学习---UserDefaults.html"/>
+
+
+
+
+
+  <title>Swift学习---UserDefaults | CSummer's Blog</title>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=63321563";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">CSummer's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">闲散杂货铺</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+    
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.calm1993.com/post/Swift/Swift学习---UserDefaults.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CSummer">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ou344372s.bkt.clouddn.com/csummer_icon.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CSummer's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Swift学习---UserDefaults</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-24T10:42:59+08:00">
+                2018-04-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Swift/" itemprop="url" rel="index">
+                    <span itemprop="name">Swift</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/post/Swift/Swift学习---UserDefaults.html" class="leancloud_visitors" data-flag-title="Swift学习---UserDefaults">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+           
+
+          
+         <span class="post-time">
+	   &nbsp; | &nbsp;
+           <span class="post-meta-item-icon">
+             <i class="fa fa-calendar-o"></i>
+           </span>
+           <span class="post-meta-item-text">字数统计:</span>
+           <span class="post-count">887(字)</span>
+           
+         </span>
+	  
+      <span class="post-time">
+	   &nbsp; | &nbsp;
+           <span class="post-meta-item-icon">
+             <i class="fa fa-calendar-o"></i>
+           </span>
+           <span class="post-meta-item-text">阅读时长:</span>
+           <span class="post-count">5(分)</span>
+           
+         </span>
+    
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>UserDefaults的三种优雅使用方式</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="第一种"><a href="#第一种" class="headerlink" title="第一种"></a>第一种</h3><h4 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h4><ul>
+<li><p>首先定义一个<code>UserDefaultsSettable</code>的协议</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">UserDefaultsSettable</span> </span>&#123;</div><div class="line">    associatedtype defaultKeys: <span class="type">RawRepresentable</span></div><div class="line">    <span class="keyword">static</span> <span class="keyword">var</span> token: <span class="type">String</span>? &#123; <span class="keyword">get</span> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>然后对协议进行拓展</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><div class="line"></div><div class="line"><span class="class"><span class="keyword">extension</span> <span class="title">UserDefaultsSettable</span> <span class="title">where</span> <span class="title">defaultKeys</span>.<span class="title">RawValue</span> == <span class="title">String</span> </span>&#123;</div><div class="line">    </div><div class="line">    <span class="keyword">static</span> <span class="keyword">var</span> token: <span class="type">String</span>? &#123; <span class="keyword">return</span> <span class="literal">nil</span> &#125;</div><div class="line">    </div><div class="line">    <span class="comment">/// 对key加密</span></div><div class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">forKey</span><span class="params">(<span class="number">_</span> key: defaultKeys)</span></span> -&gt; <span class="type">String</span> &#123;</div><div class="line">        <span class="keyword">var</span> string = <span class="type">String</span>(format: <span class="string">"%@_%@"</span>, arguments: [<span class="type">String</span>(describing: <span class="keyword">self</span>),</div><div class="line">                                                         key.rawValue])</div><div class="line">        <span class="keyword">if</span> <span class="keyword">let</span> token = token &#123;</div><div class="line">            string += <span class="type">String</span>(format: <span class="string">"_%@"</span>, token)</div><div class="line">        &#125;</div><div class="line"><span class="comment">//        return string.md5</span></div><div class="line">        <span class="keyword">return</span> string</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    </div><div class="line">    <span class="comment">// setter</span></div><div class="line">    </div><div class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">set</span><span class="params">(<span class="number">_</span> value: String?, forKey key: defaultKeys)</span></span> &#123;</div><div class="line">        <span class="type">UserDefaults</span>.standard.<span class="keyword">set</span>(value, forKey: forKey(key))</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">set</span><span class="params">(<span class="number">_</span> value: Bool, forKey key: defaultKeys)</span></span> &#123;</div><div class="line">        <span class="type">UserDefaults</span>.standard.<span class="keyword">set</span>(value, forKey: forKey(key))</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">set</span><span class="params">(<span class="number">_</span> value: Int, forKey key: defaultKeys)</span></span> &#123;</div><div class="line">        <span class="type">UserDefaults</span>.standard.<span class="keyword">set</span>(value, forKey: forKey(key))</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">set</span><span class="params">(<span class="number">_</span> value: Float, forKey key: defaultKeys)</span></span> &#123;</div><div class="line">        <span class="type">UserDefaults</span>.standard.<span class="keyword">set</span>(value, forKey: forKey(key))</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">set</span><span class="params">(<span class="number">_</span> value: Double, forKey key: defaultKeys)</span></span> &#123;</div><div class="line">        <span class="type">UserDefaults</span>.standard.<span class="keyword">set</span>(value, forKey: forKey(key))</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">set</span><span class="params">(<span class="number">_</span> value: URL?, forKey key: defaultKeys)</span></span> &#123;</div><div class="line">        <span class="type">UserDefaults</span>.standard.<span class="keyword">set</span>(value, forKey: forKey(key))</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">set</span><span class="params">(<span class="number">_</span> value: Any?, forKey key: defaultKeys)</span></span> &#123;</div><div class="line">        <span class="type">UserDefaults</span>.standard.<span class="keyword">set</span>(value, forKey: forKey(key))</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">set</span>&lt;T: Encodable&gt;<span class="params">(model: T?, forKey key: defaultKeys)</span></span> &#123;</div><div class="line">        <span class="type">UserDefaults</span>.standard.<span class="keyword">set</span>(model: model, forKey: forKey(key))</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">/// getter</span></div><div class="line">    </div><div class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">string</span><span class="params">(forKey key: defaultKeys)</span></span> -&gt; <span class="type">String</span>? &#123;</div><div class="line">        <span class="keyword">return</span> <span class="type">UserDefaults</span>.standard.string(forKey: forKey(key))</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">bool</span><span class="params">(forKey key: defaultKeys)</span></span> -&gt; <span class="type">Bool</span> &#123;</div><div class="line">        <span class="keyword">return</span> <span class="type">UserDefaults</span>.standard.bool(forKey: forKey(key))</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">integer</span><span class="params">(forKey key: defaultKeys)</span></span> -&gt; <span class="type">Int</span> &#123;</div><div class="line">        <span class="keyword">return</span> <span class="type">UserDefaults</span>.standard.integer(forKey: forKey(key))</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">float</span><span class="params">(forKey key: defaultKeys)</span></span> -&gt; <span class="type">Float</span> &#123;</div><div class="line">        <span class="keyword">return</span> <span class="type">UserDefaults</span>.standard.float(forKey: forKey(key))</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">double</span><span class="params">(forKey key: defaultKeys)</span></span> -&gt; <span class="type">Double</span> &#123;</div><div class="line">        <span class="keyword">return</span> <span class="type">UserDefaults</span>.standard.double(forKey: forKey(key))</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">url</span><span class="params">(forKey key: defaultKeys)</span></span> -&gt; <span class="type">URL</span>? &#123;</div><div class="line">        <span class="keyword">return</span> <span class="type">UserDefaults</span>.standard.url(forKey: forKey(key))</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">object</span><span class="params">(forKey key: defaultKeys)</span></span> -&gt; <span class="type">Any</span>? &#123;</div><div class="line">        <span class="keyword">return</span> <span class="type">UserDefaults</span>.standard.object(forKey: forKey(key))</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">model</span>&lt;T: Decodable&gt;<span class="params">(forKey key: defaultKeys)</span></span> -&gt; <span class="type">T</span>? &#123;</div><div class="line">        <span class="keyword">return</span> <span class="type">UserDefaults</span>.standard.model(forKey: forKey(key))</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">/// remove</span></div><div class="line">    </div><div class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">remove</span><span class="params">(forKey key: defaultKeys)</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="type">UserDefaults</span>.standard.removeObject(forKey: forKey(key))</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/// 对UserDefaults扩展支持model存储</span></div><div class="line"><span class="class"><span class="keyword">extension</span> <span class="title">UserDefaults</span> </span>&#123;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">set</span>&lt;T: Encodable&gt;<span class="params">(model: T?, forKey key: String)</span></span> &#123;</div><div class="line">        <span class="keyword">if</span> <span class="keyword">let</span> model = model &#123;</div><div class="line">            <span class="keyword">let</span> encoded = <span class="keyword">try</span>? <span class="type">JSONEncoder</span>().encode(model)</div><div class="line">            <span class="type">UserDefaults</span>.standard.<span class="keyword">set</span>(encoded, forKey: key)</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="type">UserDefaults</span>.standard.removeObject(forKey: key)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">model</span>&lt;T: Decodable&gt;<span class="params">(forKey key: String)</span></span> -&gt; <span class="type">T</span>? &#123;</div><div class="line">        <span class="keyword">if</span> <span class="keyword">let</span> data = <span class="type">UserDefaults</span>.standard.data(forKey: key) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">try</span>? <span class="type">JSONDecoder</span>().decode(<span class="type">T</span>.<span class="keyword">self</span>, from: data)</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="literal">nil</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h4><ul>
+<li><p>首先定义使用的defaultKeys枚举</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">extension</span> <span class="title">UserDefaults</span> </span>&#123;</div><div class="line">    </div><div class="line">    <span class="comment">// 设置信息</span></div><div class="line">    <span class="class"><span class="keyword">enum</span> <span class="title">SettingInfo</span>: <span class="title">UserDefaultsSettable</span> </span>&#123;</div><div class="line">        </div><div class="line">        <span class="class"><span class="keyword">enum</span> <span class="title">defaultKeys</span>: <span class="title">String</span> </span>&#123;</div><div class="line">            <span class="keyword">case</span> dxva</div><div class="line">            <span class="keyword">case</span> background</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// 用户信息</span></div><div class="line">    <span class="class"><span class="keyword">enum</span> <span class="title">UserInfo</span>: <span class="title">UserDefaultsSettable</span> </span>&#123;</div><div class="line">        </div><div class="line">        <span class="class"><span class="keyword">enum</span> <span class="title">defaultKeys</span>: <span class="title">String</span> </span>&#123;</div><div class="line">            <span class="keyword">case</span> isLogin</div><div class="line">            <span class="keyword">case</span> name</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>存取</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><div class="line"><span class="comment">//存储</span></div><div class="line">  <span class="type">UserDefaults</span>.<span class="type">UserInfo</span>.<span class="keyword">set</span>(<span class="string">"XXX"</span>, forKey: .name)</div><div class="line">  <span class="type">UserDefaults</span>.<span class="type">SettingInfo</span>.<span class="keyword">set</span>(<span class="literal">false</span>, forKey: .background)</div><div class="line">  </div><div class="line">  <span class="comment">//取出</span></div><div class="line">  <span class="type">UserDefaults</span>.<span class="type">UserInfo</span>.string(forKey: .name)</div><div class="line">  <span class="type">UserDefaults</span>.<span class="type">SettingInfo</span>.bool(forKey: .background)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="第二种方式"><a href="#第二种方式" class="headerlink" title="第二种方式"></a>第二种方式</h3><h4 id="实现方式-1"><a href="#实现方式-1" class="headerlink" title="实现方式"></a>实现方式</h4><ul>
+<li>同样首先定义一个<code>UserDefaultSettable</code>的协议<figure class="highlight swift"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">protocol</span> <span class="title">UserDefaultSettable</span> </span>&#123;</div><div class="line">    </div><div class="line">    <span class="keyword">var</span> rawValueKey: <span class="type">String</span> &#123; <span class="keyword">get</span> &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">static</span> <span class="keyword">var</span> token: <span class="type">String</span>? &#123; <span class="keyword">get</span> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="code"><pre><div class="line"><span class="comment">// MARK: - 生成rawValueKey</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">extension</span> <span class="title">UserDefaultSettable</span> <span class="title">where</span> <span class="title">Self</span>: <span class="title">RawRepresentable</span>, <span class="title">Self</span>.<span class="title">RawValue</span> == <span class="title">String</span> </span>&#123;</div><div class="line">    <span class="keyword">static</span> <span class="keyword">var</span> token: <span class="type">String</span>? &#123; <span class="keyword">return</span> <span class="literal">nil</span> &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">fileprivate</span> <span class="function"><span class="keyword">func</span> <span class="title">forKey</span><span class="params">(<span class="number">_</span> key: String)</span></span> -&gt; <span class="type">String</span> &#123;</div><div class="line">        <span class="keyword">var</span> string = <span class="type">String</span>(format: <span class="string">"%@"</span>, arguments: [key])</div><div class="line">        <span class="keyword">if</span> <span class="keyword">let</span> token = <span class="type">Self</span>.token &#123;</div><div class="line">            string += <span class="type">String</span>(format: <span class="string">"_%@"</span>, token)</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> string</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    </div><div class="line">    <span class="keyword">public</span> <span class="keyword">var</span> rawValueKey: <span class="type">String</span> &#123;</div><div class="line">        </div><div class="line">        <span class="keyword">return</span> forKey(<span class="string">"\(Self.self).\(rawValue)"</span>)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// MARK: - setter</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">extension</span> <span class="title">UserDefaultSettable</span> <span class="title">where</span> <span class="title">Self</span>: <span class="title">RawRepresentable</span>, <span class="title">Self</span>.<span class="title">RawValue</span> == <span class="title">String</span> </span>&#123;</div><div class="line">    </div><div class="line">    </div><div class="line">    </div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">store</span><span class="params">(<span class="number">_</span> value: Any?)</span></span>&#123;</div><div class="line">        <span class="type">UserDefaults</span>.standard.<span class="keyword">set</span>(value, forKey: rawValueKey)</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">store</span><span class="params">(<span class="number">_</span> value: String?)</span></span> &#123;</div><div class="line">        <span class="type">UserDefaults</span>.standard.<span class="keyword">set</span>(value, forKey: rawValueKey)</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">store</span><span class="params">(<span class="number">_</span> value: Bool?)</span></span> &#123;</div><div class="line">        <span class="type">UserDefaults</span>.standard.<span class="keyword">set</span>(value, forKey: rawValueKey)</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">store</span><span class="params">(<span class="number">_</span> value: Int?)</span></span> &#123;</div><div class="line">        <span class="type">UserDefaults</span>.standard.<span class="keyword">set</span>(value, forKey: rawValueKey)</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">store</span><span class="params">(<span class="number">_</span> value: Float?)</span></span> &#123;</div><div class="line">        <span class="type">UserDefaults</span>.standard.<span class="keyword">set</span>(value, forKey: rawValueKey)</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">store</span><span class="params">(<span class="number">_</span> value: Double?)</span></span> &#123;</div><div class="line">        <span class="type">UserDefaults</span>.standard.<span class="keyword">set</span>(value, forKey: rawValueKey)</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">store</span><span class="params">(<span class="number">_</span> value: URL?)</span></span> &#123;</div><div class="line">        <span class="type">UserDefaults</span>.standard.<span class="keyword">set</span>(value, forKey: rawValueKey)</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">store</span>&lt;T: Encodable&gt;<span class="params">(<span class="number">_</span> value: T?)</span></span> &#123;</div><div class="line">        <span class="type">UserDefaults</span>.standard.<span class="keyword">set</span>(model: value, forKey: rawValueKey)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// MARK: - getter</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">extension</span> <span class="title">UserDefaultSettable</span> <span class="title">where</span> <span class="title">Self</span>: <span class="title">RawRepresentable</span>, <span class="title">Self</span>.<span class="title">RawValue</span> == <span class="title">String</span> </span>&#123;</div><div class="line"></div><div class="line"><span class="comment">//    typealias T = Decodable</span></div><div class="line">    </div><div class="line">    <span class="keyword">public</span> <span class="keyword">var</span> value: <span class="type">Any</span>? &#123;</div><div class="line">        <span class="keyword">return</span> <span class="type">UserDefaults</span>.standard.value(forKey: rawValueKey)</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">public</span> <span class="keyword">var</span> string: <span class="type">String</span>? &#123;</div><div class="line">        <span class="keyword">return</span> value <span class="keyword">as</span>? <span class="type">String</span></div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">public</span> <span class="keyword">var</span> bool: <span class="type">Bool</span>? &#123;</div><div class="line">        <span class="keyword">return</span> <span class="type">UserDefaults</span>.standard.bool(forKey: rawValueKey)</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">public</span> <span class="keyword">var</span> int: <span class="type">Int</span>? &#123;</div><div class="line">        <span class="keyword">return</span> <span class="type">UserDefaults</span>.standard.integer(forKey: rawValueKey)</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">public</span> <span class="keyword">var</span> float: <span class="type">Float</span>? &#123;</div><div class="line">        <span class="keyword">return</span> <span class="type">UserDefaults</span>.standard.float(forKey: rawValueKey)</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">public</span> <span class="keyword">var</span> double: <span class="type">Double</span>? &#123;</div><div class="line">        <span class="keyword">return</span> <span class="type">UserDefaults</span>.standard.double(forKey: rawValueKey)</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">public</span> <span class="keyword">var</span> url: <span class="type">URL</span>? &#123;</div><div class="line">        <span class="keyword">return</span> <span class="type">UserDefaults</span>.standard.url(forKey: rawValueKey)</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">model</span>&lt;T: Decodable&gt;<span class="params">()</span></span> -&gt; <span class="type">T</span>? &#123;</div><div class="line">        <span class="keyword">return</span> <span class="type">UserDefaults</span>.standard.model(forKey: rawValueKey)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// MARK: - removed</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">extension</span> <span class="title">UserDefaultSettable</span> <span class="title">where</span> <span class="title">Self</span>: <span class="title">RawRepresentable</span>, <span class="title">Self</span>.<span class="title">RawValue</span> == <span class="title">String</span> </span>&#123;</div><div class="line">    </div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">removed</span><span class="params">()</span></span> &#123;</div><div class="line">        <span class="type">UserDefaults</span>.standard.removeObject(forKey: rawValueKey)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="如何使用-1"><a href="#如何使用-1" class="headerlink" title="如何使用"></a>如何使用</h4><ul>
+<li><p>同样首先定义key的枚举</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">extension</span> <span class="title">UserDefaults</span> </span>&#123;</div><div class="line">    </div><div class="line">    <span class="class"><span class="keyword">enum</span> <span class="title">UserInfo</span>: <span class="title">String</span>,<span class="title">UserDefaultSettable</span> </span>&#123;</div><div class="line">        </div><div class="line">        <span class="keyword">case</span> name</div><div class="line">        <span class="keyword">case</span> url</div><div class="line">        <span class="keyword">case</span> isLogin</div><div class="line">        <span class="keyword">case</span> jump</div><div class="line">        </div><div class="line">        <span class="keyword">static</span> <span class="keyword">var</span> token: <span class="type">String</span> &#123; <span class="keyword">return</span> <span class="string">"11111111"</span> &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>存取</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><div class="line"><span class="comment">//存储</span></div><div class="line"><span class="type">UserDefaults</span>.<span class="type">UserInfo</span>.name.store(<span class="string">"小明"</span>)</div><div class="line"><span class="type">UserDefaults</span>.<span class="type">UserInfo</span>.isLogin.store(<span class="literal">false</span>)</div><div class="line"></div><div class="line"><span class="comment">//取出</span></div><div class="line"><span class="keyword">let</span> name = <span class="type">UserDefaults</span>.<span class="type">UserInfo</span>.name.string</div><div class="line"><span class="keyword">let</span> isLogin = <span class="type">UserDefaults</span>.<span class="type">UserInfo</span>.isLogin.bool</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="第三中方式"><a href="#第三中方式" class="headerlink" title="第三中方式"></a>第三中方式</h3><p>一个github上的第三方库也可以很优雅的写UserDefaults</p>
+<ul>
+<li><a href="https://github.com/radex/SwiftyUserDefaults" target="_blank" rel="external">SwiftyUserDefaults</a></li>
+</ul>
+<blockquote>
+<p><a href="https://www.lee1994.com" target="_blank" rel="external">LEE</a> <br><a href="https://www.jianshu.com/p/332ea092188e" target="_blank" rel="external">Swift里我用这个姿势写UserDefaults</a></p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://ou344372s.bkt.clouddn.com/wechat-reward-image1.png" alt="CSummer WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://ou344372s.bkt.clouddn.com/alipay-reward-image.png" alt="CSummer Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Swift/" rel="tag"># Swift</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/post/iOS/ReactiveCocoa之进阶篇.html" rel="next" title="ReactiveCocoa之进阶篇">
+                <i class="fa fa-chevron-left"></i> ReactiveCocoa之进阶篇
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!--MOB SHARE BEGIN-->
+ <div class="-mob-share-ui-button -mob-share-open">分享</div>
+ <div class="-mob-share-ui" style="display: none">
+     <ul class="-mob-share-list">
+         <li class="-mob-share-qzone"><p>QQ空间</p></li>
+         <li class="-mob-share-qq"><p>QQ好友</p></li>
+         <li class="-mob-share-weixin"><p>微信</p></li>
+         <li class="-mob-share-weibo"><p>新浪微博</p></li>
+         <li class="-mob-share-tencentweibo"><p>腾讯微博</p></li>
+         <li class="-mob-share-douban"><p>豆瓣</p></li>
+         <li class="-mob-share-renren"><p>人人网</p></li>
+         <li class="-mob-share-kaixin"><p>开心网</p></li>
+         <li class="-mob-share-facebook"><p>Facebook</p></li>
+         <li class="-mob-share-twitter"><p>Twitter</p></li>
+         <li class="-mob-share-pocket"><p>Pocket</p></li>
+         <li class="-mob-share-google"><p>Google+</p></li>
+         <li class="-mob-share-youdao"><p>有道云笔记</p></li>
+         <li class="-mob-share-mingdao"><p>明道</p></li>
+         <li class="-mob-share-pengyou"><p>朋友网</p></li>
+         <li class="-mob-share-tumblr"><p>Tumblr</p></li>
+         <li class="-mob-share-instapaper"><p>Instapaper</p></li>
+         <li class="-mob-share-linkedin"><p>LinkedIn</p></li>
+     </ul>
+    <div class="-mob-share-close">取消</div>
+ </div>
+ <div class="-mob-share-ui-bg"></div>
+<script id="-mob-share" src="http://f1.webshare.mob.com/code/mob-share.js?appkey=1fef7f3708c89"></script>
+ <!--MOB SHARE END-->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTk0My82NTA4"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ou344372s.bkt.clouddn.com/csummer_icon.png"
+               alt="CSummer" />
+          <p class="site-author-name" itemprop="name">CSummer</p>
+           
+              <p class="site-description motion-element" itemprop="description">一个有趣的博客</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/fanglinwei" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/u/67619f30ccdd" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-heartbeat"></i>
+                  
+                  简书
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/csummer66" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.lee1994.com" title="LEE" target="_blank">LEE</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.joryhe.com" title="joryhe" target="_blank">joryhe</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一种"><span class="nav-number">1.</span> <span class="nav-text">第一种</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实现方式"><span class="nav-number">1.1.</span> <span class="nav-text">实现方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何使用"><span class="nav-number">1.2.</span> <span class="nav-text">如何使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二种方式"><span class="nav-number">2.</span> <span class="nav-text">第二种方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实现方式-1"><span class="nav-number">2.1.</span> <span class="nav-text">实现方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何使用-1"><span class="nav-number">2.2.</span> <span class="nav-text">如何使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三中方式"><span class="nav-number">3.</span> <span class="nav-text">第三中方式</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CSummer</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/velocity/1.2.1/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/velocity/1.2.1/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("RhqqP1NqMVuDNbJrlqcgFzYt-gzGzoHsz", "fJ4zB8r7YqJwkER2O4eJicYW");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+
+<script type="text/javascript">
+      jQuery(function() {  
+	  	  
+          jQuery("img.jory_lazyimg").lazyload({
+			  delay:5000
+              effect:"fadeIn"
+            });	
+		
+		
+          });
+
+</script>
