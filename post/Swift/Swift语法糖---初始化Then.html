@@ -75,7 +75,7 @@
 <meta property="og:site_name" content="CSummer&#39;s Blog">
 <meta property="og:description" content="Then是一个swift初始化库,只有80几行的代码库,确可以让初始化变得很优雅">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-24T04:01:18.000Z">
+<meta property="og:updated_time" content="2018-04-24T04:33:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Swift语法糖---初始化Then">
 <meta name="twitter:description" content="Then是一个swift初始化库,只有80几行的代码库,确可以让初始化变得很优雅">
@@ -348,7 +348,7 @@
              <i class="fa fa-calendar-o"></i>
            </span>
            <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">234(字)</span>
+           <span class="post-count">235(字)</span>
            
          </span>
 	  
@@ -384,16 +384,19 @@
 </blockquote>
 <a id="more"></a>
 <ul>
-<li>使用then初始化AnyObject,这里以初始化控件为例<figure class="highlight swift"><table><tr><td class="code"><pre><div class="line"><span class="built_in">lazy</span> <span class="keyword">var</span> label = <span class="type">UILabel</span>().then(&#123;</div><div class="line">    $<span class="number">0</span>.text = <span class="string">"label"</span></div><div class="line">    $<span class="number">0</span>.textColor = .blue</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-</li>
+<li>使用then初始化AnyObject,这里以初始化控件为例</li>
 </ul>
+<figure class="highlight swift"><table><tr><td class="code"><pre><div class="line"><span class="built_in">lazy</span> <span class="keyword">var</span> label = <span class="type">UILabel</span>().then(&#123;</div><div class="line">    $<span class="number">0</span>.text = <span class="string">"label"</span></div><div class="line">    $<span class="number">0</span>.textColor = .blue</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <figure class="highlight swift"><table><tr><td class="code"><pre><div class="line"><span class="keyword">let</span> redView = <span class="type">UIView</span>().then &#123; (make) <span class="keyword">in</span></div><div class="line">    make.backgroundColor = .red</div><div class="line">    make.frame = <span class="type">CGRect</span>(x: <span class="number">50</span>, y: <span class="number">50</span>, width: <span class="number">100</span>, height: <span class="number">100</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight swift"><table><tr><td class="code"><pre><div class="line"><span class="keyword">let</span> button = <span class="type">UIButton</span>().then (&#123;</div><div class="line">        $<span class="number">0</span>.setTitle(<span class="string">"点我"</span>, <span class="keyword">for</span>: .normal)</div><div class="line">        $<span class="number">0</span>.setTitleColor(.red, <span class="keyword">for</span>: .normal)</div><div class="line">    &#125;)</div></pre></td></tr></table></figure>
 <ul>
-<li>如果布局这样还不简单那就只能来骚的了,<code>Then</code>和<code>SnapKit</code>一起使用的方式<figure class="highlight swift"><table><tr><td class="code"><pre><div class="line"><span class="keyword">let</span> button1 = <span class="type">UIButton</span>().then &#123; (make) <span class="keyword">in</span></div><div class="line">        make.setTitle(<span class="string">"登录"</span>, <span class="keyword">for</span>: .normal)</div><div class="line">        make.setTitleColor(.black, <span class="keyword">for</span>: .normal)</div><div class="line">        view.addSubview(make)</div><div class="line">        </div><div class="line">        make.snp.makeConstraints(&#123; (make) <span class="keyword">in</span></div><div class="line">            make.top.<span class="keyword">left</span>.<span class="keyword">right</span>.equalTo(<span class="number">0</span>)</div><div class="line">            make.height.equalTo(<span class="number">100</span>)</div><div class="line">        &#125;)</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-</li>
+<li>如果布局这样还不简单那就只能来骚的了,<code>Then</code>和<code>SnapKit</code>一起使用的方式</li>
 </ul>
-<p>或者你还可以这样<br><figure class="highlight swift"><table><tr><td class="code"><pre><div class="line"><span class="keyword">let</span> button2 = <span class="type">UIButton</span>().then(&#123;</div><div class="line">    $<span class="number">0</span>.setTitle(<span class="string">"登录"</span>, <span class="keyword">for</span>: .normal)</div><div class="line">    $<span class="number">0</span>.setTitleColor(.black, <span class="keyword">for</span>: .normal)</div><div class="line">    view.addSubview($<span class="number">0</span>)</div><div class="line">    </div><div class="line">    $<span class="number">0</span>.snp.makeConstraints(&#123;</div><div class="line">        $<span class="number">0</span>.top.equalTo(button1.snp.bottom)</div><div class="line">        $<span class="number">0</span>.<span class="keyword">left</span>.<span class="keyword">right</span>.equalTo(<span class="number">0</span>)</div><div class="line">        $<span class="number">0</span>.height.equalTo(<span class="number">50</span>)</div><div class="line">    &#125;)</div><div class="line">  &#125;)</div></pre></td></tr></table></figure></p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><div class="line"><span class="keyword">let</span> button1 = <span class="type">UIButton</span>().then &#123; (make) <span class="keyword">in</span></div><div class="line">        make.setTitle(<span class="string">"登录"</span>, <span class="keyword">for</span>: .normal)</div><div class="line">        make.setTitleColor(.black, <span class="keyword">for</span>: .normal)</div><div class="line">        view.addSubview(make)</div><div class="line">        </div><div class="line">        make.snp.makeConstraints(&#123; (make) <span class="keyword">in</span></div><div class="line">            make.top.<span class="keyword">left</span>.<span class="keyword">right</span>.equalTo(<span class="number">0</span>)</div><div class="line">            make.height.equalTo(<span class="number">100</span>)</div><div class="line">        &#125;)</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>或者你还可以这样</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="code"><pre><div class="line"><span class="keyword">let</span> button2 = <span class="type">UIButton</span>().then(&#123;</div><div class="line">    $<span class="number">0</span>.setTitle(<span class="string">"登录"</span>, <span class="keyword">for</span>: .normal)</div><div class="line">    $<span class="number">0</span>.setTitleColor(.black, <span class="keyword">for</span>: .normal)</div><div class="line">    view.addSubview($<span class="number">0</span>)</div><div class="line">    </div><div class="line">    $<span class="number">0</span>.snp.makeConstraints(&#123;</div><div class="line">        $<span class="number">0</span>.top.equalTo(button1.snp.bottom)</div><div class="line">        $<span class="number">0</span>.<span class="keyword">left</span>.<span class="keyword">right</span>.equalTo(<span class="number">0</span>)</div><div class="line">        $<span class="number">0</span>.height.equalTo(<span class="number">50</span>)</div><div class="line">    &#125;)</div><div class="line">  &#125;)</div></pre></td></tr></table></figure>
 <ul>
 <li>其他用法</li>
 </ul>
