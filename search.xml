@@ -9,7 +9,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[swift学习---利用protocol加载Nib]]></title>
+    <title><![CDATA[隐藏系统导航栏手势失效解决方案]]></title>
     <url>%2Fpost%2FiOS%2F%E9%9A%90%E8%97%8F%E7%B3%BB%E7%BB%9F%E5%AF%BC%E8%88%AA%E6%A0%8F%E6%89%8B%E5%8A%BF%E5%A4%B1%E6%95%88%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.html</url>
     <content type="text"><![CDATA[在iOS开发中通常会做的隐藏状态栏或者自定义返回按钮,相应的pop手势也失效了，下面就需要解决下这个问题。 navigationBar.isHidden = true self.navigationItem.leftBarButtonItem = 自定义返回按钮; 解决方案:我们在自定义导航控制器里我们自己的手势 class NavigationController: UINavigationController &#123; override func viewDidLoad() &#123; super.viewDidLoad() navigationBar.isHidden = true setupEdgeGesture() &#125; func setupEdgeGesture() &#123; guard let targets = interactivePopGestureRecognizer!.value(forKey: "_targets") as? [NSObject] else &#123; return &#125; let targetObjc = targets[0] let target = targetObjc.value(forKey: "target") let action = Selector(("handleNavigationTransition:")) //UIPanGestureRecognizer 全屏手势 //UIScreenEdgePanGestureRecognizer 边缘手势 let panGes = UIScreenEdgePanGestureRecognizer(target: target, action: action) panGes.delegate = self; view.addGestureRecognizer(panGes) &#125;&#125;//如果需要监听手势extension NavigationController: UIGestureRecognizerDelegate &#123; func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -&gt; Bool &#123; if let transitioning = value(forKey: "_isTransitioning") as? Bool &#123; if transitioning &#123;return false&#125; &#125; return viewControllers.count &gt; 1 &#125; &#125; 这样就可以有效的解决返回pop手势失效问题 各位看官如果发现有什么不对的，请留言或者加qq：286349583，一起讨论，谢谢！！]]></content>
       <tags>
