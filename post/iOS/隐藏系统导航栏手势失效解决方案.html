@@ -51,7 +51,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="iOS," />
 
 
 
@@ -67,16 +67,18 @@
 
 
 
-<meta name="description" content="一个有趣的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="CSummer&#39;s Blog">
-<meta property="og:url" content="http://www.calm1993.com/archives/index.html">
+<meta name="description" content="在iOS开发中通常会做的隐藏状态栏或者自定义返回按钮,相应的pop手势也失效了，下面就需要解决下这个问题。">
+<meta name="keywords" content="iOS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="swift学习---利用protocol加载Nib">
+<meta property="og:url" content="http://www.calm1993.com/post/iOS/隐藏系统导航栏手势失效解决方案.html">
 <meta property="og:site_name" content="CSummer&#39;s Blog">
-<meta property="og:description" content="一个有趣的博客">
+<meta property="og:description" content="在iOS开发中通常会做的隐藏状态栏或者自定义返回按钮,相应的pop手势也失效了，下面就需要解决下这个问题。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-24T04:43:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSummer&#39;s Blog">
-<meta name="twitter:description" content="一个有趣的博客">
+<meta name="twitter:title" content="swift学习---利用protocol加载Nib">
+<meta name="twitter:description" content="在iOS开发中通常会做的隐藏状态栏或者自定义返回按钮,相应的pop手势也失效了，下面就需要解决下这个问题。">
 
 
 
@@ -104,13 +106,13 @@
 
 
 
-  <link rel="canonical" href="http://www.calm1993.com/archives/"/>
+  <link rel="canonical" href="http://www.calm1993.com/post/iOS/隐藏系统导航栏手势失效解决方案.html"/>
 
 
 
 
 
-  <title>归档 | CSummer's Blog</title>
+  <title>swift学习---利用protocol加载Nib | CSummer's Blog</title>
   
 
 
@@ -144,7 +146,7 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -247,408 +249,244 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 20 篇日志。 继续努力。
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.calm1993.com/post/iOS/隐藏系统导航栏手势失效解决方案.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CSummer">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ou344372s.bkt.clouddn.com/csummer_icon.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CSummer's Blog">
     </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">swift学习---利用protocol加载Nib</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-24T12:43:59+08:00">
+                2018-05-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/post/iOS/隐藏系统导航栏手势失效解决方案.html" class="leancloud_visitors" data-flag-title="swift学习---利用protocol加载Nib">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+           
+
+          
+         <span class="post-time">
+	   &nbsp; | &nbsp;
+           <span class="post-meta-item-icon">
+             <i class="fa fa-calendar-o"></i>
+           </span>
+           <span class="post-meta-item-text">字数统计:</span>
+           <span class="post-count">224(字)</span>
+           
+         </span>
+	  
+      <span class="post-time">
+	   &nbsp; | &nbsp;
+           <span class="post-meta-item-icon">
+             <i class="fa fa-calendar-o"></i>
+           </span>
+           <span class="post-meta-item-text">阅读时长:</span>
+           <span class="post-count">1(分)</span>
+           
+         </span>
+    
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
-      
 
+      
+        <p>在iOS开发中通常会做的隐藏状态栏或者自定义返回按钮,相应的pop手势也失效了，下面就需要解决下这个问题。</p>
+<a id="more"></a>
+<figure class="highlight swift"><table><tr><td class="code"><pre><div class="line">navigationBar.isHidden = <span class="literal">true</span></div></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="code"><pre><div class="line"><span class="keyword">self</span>.navigationItem.leftBarButtonItem = 自定义返回按钮;</div></pre></td></tr></table></figure>
+<p>解决方案:<br>我们在自定义导航控制器里我们自己的手势</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">NavigationController</span>: <span class="title">UINavigationController</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</div><div class="line">        <span class="keyword">super</span>.viewDidLoad()</div><div class="line">        </div><div class="line">        navigationBar.isHidden = <span class="literal">true</span></div><div class="line">        </div><div class="line">        setupEdgeGesture()</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">setupEdgeGesture</span><span class="params">()</span></span>  &#123;</div><div class="line">        </div><div class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> targets = interactivePopGestureRecognizer!.value(forKey:  <span class="string">"_targets"</span>) <span class="keyword">as</span>? [<span class="type">NSObject</span>] <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</div><div class="line">        <span class="keyword">let</span> targetObjc = targets[<span class="number">0</span>]</div><div class="line">        <span class="keyword">let</span> target = targetObjc.value(forKey: <span class="string">"target"</span>)</div><div class="line">        <span class="keyword">let</span> action = <span class="type">Selector</span>((<span class="string">"handleNavigationTransition:"</span>))</div><div class="line">        </div><div class="line">        <span class="comment">//UIPanGestureRecognizer   全屏手势</span></div><div class="line">        <span class="comment">//UIScreenEdgePanGestureRecognizer   边缘手势</span></div><div class="line">        <span class="keyword">let</span> panGes = <span class="type">UIScreenEdgePanGestureRecognizer</span>(target: target, action: action)</div><div class="line">        panGes.delegate = <span class="keyword">self</span>;</div><div class="line"></div><div class="line">        view.addGestureRecognizer(panGes)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//如果需要监听手势</span></div><div class="line"><span class="class"><span class="keyword">extension</span> <span class="title">NavigationController</span>: <span class="title">UIGestureRecognizerDelegate</span> </span>&#123;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">gestureRecognizerShouldBegin</span><span class="params">(<span class="number">_</span> gestureRecognizer: UIGestureRecognizer)</span></span> -&gt; <span class="type">Bool</span> &#123;</div><div class="line">        </div><div class="line">        <span class="keyword">if</span> <span class="keyword">let</span> transitioning = value(forKey: <span class="string">"_isTransitioning"</span>) <span class="keyword">as</span>? <span class="type">Bool</span> &#123;</div><div class="line">            <span class="keyword">if</span> transitioning &#123;<span class="keyword">return</span> <span class="literal">false</span>&#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        </div><div class="line">        <span class="keyword">return</span> viewControllers.<span class="built_in">count</span> &gt; <span class="number">1</span></div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这样就可以有效的解决返回pop手势失效问题</p>
+<p>各位看官如果发现有什么不对的，请留言或者加qq：286349583，一起讨论，谢谢！！</p>
+
+      
+    </div>
+
+    <div>
       
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2018">2018</h2>
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>五一快乐,O(∩_∩)O~~！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://ou344372s.bkt.clouddn.com/wechat-reward-image1.png" alt="CSummer WeChat Pay"/>
+          <p>微信打赏</p>
         </div>
       
       
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/post/Swift/swift学习---优雅的iPhone全尺寸屏幕精准适配工具.html" itemprop="url">
-              
-                <span itemprop="name">swift学习---优雅的iPhone全尺寸屏幕精准适配工具</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-24T13:43:59+08:00"
-              content="2018-05-24" >
-          05-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/post/iOS/隐藏系统导航栏手势失效解决方案.html" itemprop="url">
-              
-                <span itemprop="name">swift学习---利用protocol加载Nib</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-24T12:43:59+08:00"
-              content="2018-05-24" >
-          05-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/post/Swift/swift学习---利用protocol加载Nib.html" itemprop="url">
-              
-                <span itemprop="name">swift学习---利用protocol加载Nib</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-18T11:06:59+08:00"
-              content="2018-05-18" >
-          05-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/post/Swift/Swift语法糖---初始化Then.html" itemprop="url">
-              
-                <span itemprop="name">Swift语法糖---初始化Then</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-24T11:32:59+08:00"
-              content="2018-04-24" >
-          04-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/post/Swift/Swift学习---UserDefaults.html" itemprop="url">
-              
-                <span itemprop="name">Swift学习---UserDefaults</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-24T10:42:59+08:00"
-              content="2018-04-24" >
-          04-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/post/iOS/ReactiveCocoa之进阶篇.html" itemprop="url">
-              
-                <span itemprop="name">ReactiveCocoa之进阶篇</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-13T09:50:38+08:00"
-              content="2018-03-13" >
-          03-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/post/iOS/ReactiveCocoa之基础篇.html" itemprop="url">
-              
-                <span itemprop="name">ReactiveCocoa之基础篇</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-13T09:50:38+08:00"
-              content="2018-03-13" >
-          03-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/post/美团技术收藏.html" itemprop="url">
-              
-                <span itemprop="name">美团点评技术年货</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-02-09T09:44:26+08:00"
-              content="2018-02-09" >
-          02-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://ou344372s.bkt.clouddn.com/alipay-reward-image.png" alt="CSummer Alipay"/>
+          <p>支付宝打赏</p>
         </div>
       
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+        </div>
       
 
       
+      
+      
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/post/Swift/swift学习---利用protocol加载Nib.html" rel="next" title="swift学习---利用protocol加载Nib">
+                <i class="fa fa-chevron-left"></i> swift学习---利用protocol加载Nib
+              </a>
+            
+          </div>
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/post/python/Python 开发工具安装.html" itemprop="url">
-              
-                <span itemprop="name">Python 开发工具安装</span>
-              
-            </a>
-        
-      </h2>
+          <span class="post-nav-divider"></span>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-11-14T11:39:38+08:00"
-              content="2017-11-14" >
-          11-14
-        </time>
-      </div>
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/post/Swift/swift学习---优雅的iPhone全尺寸屏幕精准适配工具.html" rel="prev" title="swift学习---优雅的iPhone全尺寸屏幕精准适配工具">
+                swift学习---优雅的iPhone全尺寸屏幕精准适配工具 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
 
-    </header>
+      
+      
+    </footer>
   </article>
 
 
 
-    
+    <div class="post-spread">
+      
+        <!--MOB SHARE BEGIN-->
+ <div class="-mob-share-ui-button -mob-share-open">分享</div>
+ <div class="-mob-share-ui" style="display: none">
+     <ul class="-mob-share-list">
+         <li class="-mob-share-qzone"><p>QQ空间</p></li>
+         <li class="-mob-share-qq"><p>QQ好友</p></li>
+         <li class="-mob-share-weixin"><p>微信</p></li>
+         <li class="-mob-share-weibo"><p>新浪微博</p></li>
+         <li class="-mob-share-tencentweibo"><p>腾讯微博</p></li>
+         <li class="-mob-share-douban"><p>豆瓣</p></li>
+         <li class="-mob-share-renren"><p>人人网</p></li>
+         <li class="-mob-share-kaixin"><p>开心网</p></li>
+         <li class="-mob-share-facebook"><p>Facebook</p></li>
+         <li class="-mob-share-twitter"><p>Twitter</p></li>
+         <li class="-mob-share-pocket"><p>Pocket</p></li>
+         <li class="-mob-share-google"><p>Google+</p></li>
+         <li class="-mob-share-youdao"><p>有道云笔记</p></li>
+         <li class="-mob-share-mingdao"><p>明道</p></li>
+         <li class="-mob-share-pengyou"><p>朋友网</p></li>
+         <li class="-mob-share-tumblr"><p>Tumblr</p></li>
+         <li class="-mob-share-instapaper"><p>Instapaper</p></li>
+         <li class="-mob-share-linkedin"><p>LinkedIn</p></li>
+     </ul>
+    <div class="-mob-share-close">取消</div>
+ </div>
+ <div class="-mob-share-ui-bg"></div>
+<script id="-mob-share" src="http://f1.webshare.mob.com/code/mob-share.js?appkey=1fef7f3708c89"></script>
+ <!--MOB SHARE END-->
 
       
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/post/Mac/mac连上wifi,上网慢卡.html" itemprop="url">
-              
-                <span itemprop="name">mac连上wifi,上网慢卡,打不开appStore问题</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-18T09:55:38+08:00"
-              content="2017-10-18" >
-          10-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
-
+    </div>
+  </div>
 
 
           </div>
@@ -656,6 +494,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTk0My82NTA4"></div>
+    
+  </div>
+
 
         </div>
         
@@ -911,11 +755,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
 
 
   
@@ -945,6 +787,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
