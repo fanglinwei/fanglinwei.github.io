@@ -75,7 +75,7 @@
 <meta property="og:site_name" content="calm&#39;s Blog">
 <meta property="og:description" content="开发中，为了更好的用户体验或者为了bug跟踪，可能会需要使用腾讯的bugly分析工具.但是要使用bugly分析报错需要从dYSM中取出符号表配置上传.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-27T08:22:45.193Z">
+<meta property="og:updated_time" content="2018-09-27T08:26:03.883Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用shell脚本上传bugly的dSYM文件">
 <meta name="twitter:description" content="开发中，为了更好的用户体验或者为了bug跟踪，可能会需要使用腾讯的bugly分析工具.但是要使用bugly分析报错需要从dYSM中取出符号表配置上传.">
@@ -326,7 +326,7 @@
              <i class="fa fa-calendar-o"></i>
            </span>
            <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">493(字)</span>
+           <span class="post-count">491(字)</span>
            
          </span>
 	  
@@ -361,7 +361,7 @@
 <p>开发中，为了更好的用户体验或者为了bug跟踪，可能会需要使用腾讯的bugly分析工具.但是要使用bugly分析报错需要从dYSM中取出符号表配置上传.</p>
 </blockquote>
 <a id="more"></a>
-<h5 id="符号表说明-Bugly-iOS-符号表配置"><a href="#符号表说明-Bugly-iOS-符号表配置" class="headerlink" title="符号表说明: Bugly iOS 符号表配置"></a>符号表说明: <a href="https://bugly.qq.com/docs/user-guide/symbol-configuration-ios/?v=20180709165613" target="_blank" rel="external">Bugly iOS 符号表配置</a></h5><h2 id="使用"><a href="#使用" class="headerlink" title="使用:"></a>使用:</h2><h3 id="按照bugly官网配置java环境"><a href="#按照bugly官网配置java环境" class="headerlink" title="按照bugly官网配置java环境"></a>按照bugly官网配置java环境</h3><h3 id="准备dSYM文件"><a href="#准备dSYM文件" class="headerlink" title="准备dSYM文件"></a>准备dSYM文件</h3><p>dSYM文件是指具有调试信息的目标文件，文件名通常为：xxx.app.dSYM</p>
+<h3 id="符号表说明-Bugly-iOS-符号表配置"><a href="#符号表说明-Bugly-iOS-符号表配置" class="headerlink" title="符号表说明: Bugly iOS 符号表配置"></a>符号表说明: <a href="https://bugly.qq.com/docs/user-guide/symbol-configuration-ios/?v=20180709165613" target="_blank" rel="external">Bugly iOS 符号表配置</a></h3><h3 id="按照bugly官网配置java环境"><a href="#按照bugly官网配置java环境" class="headerlink" title="按照bugly官网配置java环境"></a>按照bugly官网配置java环境</h3><h3 id="准备dSYM文件"><a href="#准备dSYM文件" class="headerlink" title="准备dSYM文件"></a>准备dSYM文件</h3><p>dSYM文件是指具有调试信息的目标文件，文件名通常为：xxx.app.dSYM</p>
 <p><a href="https://bugly.qq.com/docs/user-guide/symbol-configuration-ios/?v=20180709165613" target="_blank" rel="external">Bugly iOS 符号表配置</a>有说明通过xcode获取或者通过iTunes Connect获取</p>
 <h3 id="下载buglySymboliOS-jar"><a href="#下载buglySymboliOS-jar" class="headerlink" title="下载buglySymboliOS.jar"></a>下载<code>buglySymboliOS.jar</code></h3><p>下载最新版Bugly <a href="https://bugly.qq.com/v2/sdk?id=37f16cf0-2020-4e30-9e8d-0f7de59cfe94" target="_blank" rel="external">iOS符号表工具</a>.里面有一个<code>buglySymboliOS.jar</code>文件,然后把该文件和之前下载的<code>dYSM</code>文件放在同一个文件夹里</p>
 <h3 id="准备脚本"><a href="#准备脚本" class="headerlink" title="准备脚本"></a>准备脚本</h3><p>创建一个<code>buglydSYMTool.sh</code>的脚本文件, 将下面代码拷贝到脚本文件中然后终端命令执行<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$ bash buglydSYMTool.sh</div></pre></td></tr></table></figure></p>
@@ -649,7 +649,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#符号表说明-Bugly-iOS-符号表配置"><span class="nav-number">1.</span> <span class="nav-text">符号表说明: Bugly iOS 符号表配置</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number"></span> <span class="nav-text">使用:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#按照bugly官网配置java环境"><span class="nav-number"></span> <span class="nav-text">按照bugly官网配置java环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#准备dSYM文件"><span class="nav-number"></span> <span class="nav-text">准备dSYM文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载buglySymboliOS-jar"><span class="nav-number"></span> <span class="nav-text">下载buglySymboliOS.jar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#准备脚本"><span class="nav-number"></span> <span class="nav-text">准备脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#脚本代码"><span class="nav-number"></span> <span class="nav-text">脚本代码</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#符号表说明-Bugly-iOS-符号表配置"><span class="nav-number">1.</span> <span class="nav-text">符号表说明: Bugly iOS 符号表配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#按照bugly官网配置java环境"><span class="nav-number">2.</span> <span class="nav-text">按照bugly官网配置java环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#准备dSYM文件"><span class="nav-number">3.</span> <span class="nav-text">准备dSYM文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载buglySymboliOS-jar"><span class="nav-number">4.</span> <span class="nav-text">下载buglySymboliOS.jar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#准备脚本"><span class="nav-number">5.</span> <span class="nav-text">准备脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#脚本代码"><span class="nav-number">6.</span> <span class="nav-text">脚本代码</span></a></li></ol></div>
             
 
           </div>
