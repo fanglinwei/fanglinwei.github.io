@@ -51,7 +51,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Cocoapods," />
+  <meta name="keywords" content="iOS," />
 
 
 
@@ -67,23 +67,18 @@
 
 
 
-<meta name="description" content="摘要 最近要把项目里的以前手动拖进去的第三方改为cocoapods管理 出现了一个编译问题">
-<meta name="keywords" content="Cocoapods">
+<meta name="description" content="开发中，为了更好的用户体验或者为了bug跟踪，可能会需要使用腾讯的bugly分析工具.但是要使用bugly分析报错需要从dYSM中取出符号表配置上传.">
+<meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="cocoapods出现linker command failed with exit code 1 (use -v to see invocation) 解决方法">
-<meta property="og:url" content="http://www.calm1993.com/post/Cocoapods/cocoapods出错.html">
+<meta property="og:title" content="利用shell脚本上传bugly的dSYM文件">
+<meta property="og:url" content="http://www.calm1993.com/post/iOS/利用shell脚本上传bugly的dSYM文件.html">
 <meta property="og:site_name" content="calm&#39;s Blog">
-<meta property="og:description" content="摘要 最近要把项目里的以前手动拖进去的第三方改为cocoapods管理 出现了一个编译问题">
+<meta property="og:description" content="开发中，为了更好的用户体验或者为了bug跟踪，可能会需要使用腾讯的bugly分析工具.但是要使用bugly分析报错需要从dYSM中取出符号表配置上传.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/5107708-0fa807ce9d5617b5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/5107708-c0a58aa3b12f02e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/5107708-f2fd57d83799fcad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/5107708-01a9487e90ed04e4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-08-09T04:52:30.000Z">
+<meta property="og:updated_time" content="2018-09-27T08:09:57.814Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="cocoapods出现linker command failed with exit code 1 (use -v to see invocation) 解决方法">
-<meta name="twitter:description" content="摘要 最近要把项目里的以前手动拖进去的第三方改为cocoapods管理 出现了一个编译问题">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/5107708-0fa807ce9d5617b5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="利用shell脚本上传bugly的dSYM文件">
+<meta name="twitter:description" content="开发中，为了更好的用户体验或者为了bug跟踪，可能会需要使用腾讯的bugly分析工具.但是要使用bugly分析报错需要从dYSM中取出符号表配置上传.">
 
 
 
@@ -111,13 +106,13 @@
 
 
 
-  <link rel="canonical" href="http://www.calm1993.com/post/Cocoapods/cocoapods出错.html"/>
+  <link rel="canonical" href="http://www.calm1993.com/post/iOS/利用shell脚本上传bugly的dSYM文件.html"/>
 
 
 
 
 
-  <title>cocoapods出现linker command failed with exit code 1 (use -v to see invocation) 解决方法 | calm's Blog</title>
+  <title>利用shell脚本上传bugly的dSYM文件 | calm's Blog</title>
   
 
 
@@ -264,7 +259,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.calm1993.com/post/Cocoapods/cocoapods出错.html">
+    <link itemprop="mainEntityOfPage" href="http://www.calm1993.com/post/iOS/利用shell脚本上传bugly的dSYM文件.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="calm">
@@ -281,7 +276,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">cocoapods出现linker command failed with exit code 1 (use -v to see invocation) 解决方法</h1>
+          <h1 class="post-title" itemprop="name headline">利用shell脚本上传bugly的dSYM文件</h1>
         
 
         <div class="post-meta">
@@ -293,8 +288,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-08T15:15:07+08:00">
-                2017-08-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-27T15:10:59+08:00">
+                2018-09-27
               </time>
             
 
@@ -304,28 +299,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Cocoapods/" itemprop="url" rel="index">
-                    <span itemprop="name">Cocoapods</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -333,7 +306,7 @@
 
           
           
-             <span id="/post/Cocoapods/cocoapods出错.html" class="leancloud_visitors" data-flag-title="cocoapods出现linker command failed with exit code 1 (use -v to see invocation) 解决方法">
+             <span id="/post/iOS/利用shell脚本上传bugly的dSYM文件.html" class="leancloud_visitors" data-flag-title="利用shell脚本上传bugly的dSYM文件">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -353,7 +326,7 @@
              <i class="fa fa-calendar-o"></i>
            </span>
            <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">92(字)</span>
+           <span class="post-count">503(字)</span>
            
          </span>
 	  
@@ -363,7 +336,7 @@
              <i class="fa fa-calendar-o"></i>
            </span>
            <span class="post-meta-item-text">阅读时长:</span>
-           <span class="post-count">1(分)</span>
+           <span class="post-count">2(分)</span>
            
          </span>
     
@@ -384,15 +357,18 @@
       
 
       
-        <h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><blockquote>
-<p>最近要把项目里的以前手动拖进去的第三方改为cocoapods管理 出现了一个编译问题</p>
+        <blockquote>
+<p>开发中，为了更好的用户体验或者为了bug跟踪，可能会需要使用腾讯的bugly分析工具.但是要使用bugly分析报错需要从dYSM中取出符号表配置上传.</p>
 </blockquote>
 <a id="more"></a>
-<p><img src="http://upload-images.jianshu.io/upload_images/5107708-0fa807ce9d5617b5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image-1"></p>
-<h5 id="把原来的拖进去的库删了也会出现"><a href="#把原来的拖进去的库删了也会出现" class="headerlink" title="把原来的拖进去的库删了也会出现"></a>把原来的拖进去的库删了也会出现</h5><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">linker command failed with exit code 1 (use -v to see invocation)</div></pre></td></tr></table></figure>
-<h5 id="此时你用cocoapods导入库的时候命令行会有"><a href="#此时你用cocoapods导入库的时候命令行会有" class="headerlink" title="此时你用cocoapods导入库的时候命令行会有"></a>此时你用cocoapods导入库的时候命令行会有</h5><p><img src="http://upload-images.jianshu.io/upload_images/5107708-c0a58aa3b12f02e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image-2"></p>
-<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><h4 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h4><p>去xcode设置<br><img src="http://upload-images.jianshu.io/upload_images/5107708-f2fd57d83799fcad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image-3"></p>
-<h4 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h4><p><img src="http://upload-images.jianshu.io/upload_images/5107708-01a9487e90ed04e4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image-4"></p>
+<h5 id="符号表说明-Bugly-iOS-符号表配置"><a href="#符号表说明-Bugly-iOS-符号表配置" class="headerlink" title="符号表说明: Bugly iOS 符号表配置"></a>符号表说明: <a href="https://bugly.qq.com/docs/user-guide/symbol-configuration-ios/?v=20180709165613" target="_blank" rel="external">Bugly iOS 符号表配置</a></h5><h4 id="使用"><a href="#使用" class="headerlink" title="使用:"></a>使用:</h4><h3 id="1-按照bugly官网配置java环境"><a href="#1-按照bugly官网配置java环境" class="headerlink" title="1. 按照bugly官网配置java环境"></a>1. 按照bugly官网配置java环境</h3><h3 id="2-准备dSYM文件"><a href="#2-准备dSYM文件" class="headerlink" title="2. 准备dSYM文件"></a>2. 准备dSYM文件</h3><p>dSYM文件是指具有调试信息的目标文件，文件名通常为：xxx.app.dSYM</p>
+<p><a href="https://bugly.qq.com/docs/user-guide/symbol-configuration-ios/?v=20180709165613" target="_blank" rel="external">Bugly iOS 符号表配置</a>有说明通过xcode获取或者通过iTunes Connect获取</p>
+<h3 id="3-下载buglySymboliOS-jar"><a href="#3-下载buglySymboliOS-jar" class="headerlink" title="3. 下载buglySymboliOS.jar"></a>3. 下载<code>buglySymboliOS.jar</code></h3><p>下载最新版Bugly <a href="https://bugly.qq.com/v2/sdk?id=37f16cf0-2020-4e30-9e8d-0f7de59cfe94" target="_blank" rel="external">iOS符号表工具</a>.里面有一个<code>buglySymboliOS.jar</code>文件,然后把该文件和之前下载的<code>dYSM</code>文件放在同一个文件夹里</p>
+<h3 id="4-准备脚本"><a href="#4-准备脚本" class="headerlink" title="4. 准备脚本"></a>4. 准备脚本</h3><p>创建一个<code>buglydSYMTool.sh</code>的脚本文件, 将下面代码拷贝到脚本文件中然后终端命令执行<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$ bash buglydSYMTool.sh</div></pre></td></tr></table></figure></p>
+<h3 id="脚本代码"><a href="#脚本代码" class="headerlink" title="脚本代码"></a>脚本代码</h3><figure class="highlight sh"><table><tr><td class="code"><pre><div class="line"><span class="keyword">function</span> printIndroduction &#123;</div><div class="line">    <span class="built_in">echo</span> <span class="string">"Bugly符号表上传工具IOS版 -- dSYM Tool for IOS"</span></div><div class="line">    <span class="built_in">echo</span> <span class="string">"适用平台 -- Applicable platform: Linux"</span></div><div class="line">    <span class="built_in">echo</span> <span class="string">"Copyright 2018 calm. All rights reserved."</span></div><div class="line">    <span class="built_in">echo</span> <span class="string">""</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="title">uploadDsym</span></span>() &#123;</div><div class="line">    </div><div class="line">    files=`find . -name <span class="string">"*.dSYM"</span>`</div><div class="line">    <span class="keyword">for</span> fileName <span class="keyword">in</span> <span class="variable">$files</span>; <span class="keyword">do</span>				</div><div class="line"></div><div class="line">		<span class="built_in">echo</span> <span class="string">"fileName <span class="variable">$fileName</span>"</span></div><div class="line">        <span class="comment"># Appid 1111111111</span></div><div class="line">        <span class="comment"># Appkey 123n12ojn3o12n1o2n312n21p12qw</span></div><div class="line">        <span class="comment"># package com.calm.app</span></div><div class="line">        <span class="comment"># version(build) 2.2.0(0.4.9)</span></div><div class="line">        java -jar buglySymboliOS.jar -i <span class="string">"<span class="variable">$fileName</span>"</span>  -u -id <span class="string">"<span class="variable">$appid</span>"</span> -key <span class="string">"<span class="variable">$appkey</span>"</span> -package <span class="string">"<span class="variable">$bundleId</span>"</span> -version <span class="string">"<span class="variable">$version</span>"</span></div><div class="line"></div><div class="line">    <span class="keyword">done</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment"># main</span></div><div class="line">printIndroduction</div><div class="line"></div><div class="line"><span class="comment">#输入app 信息</span></div><div class="line"><span class="built_in">echo</span> -n <span class="string">"enter the App id: "</span></div><div class="line"><span class="built_in">read</span> appid </div><div class="line"></div><div class="line"><span class="built_in">echo</span> -n <span class="string">"enter the App key: "</span></div><div class="line"><span class="built_in">read</span> appkey </div><div class="line"></div><div class="line"><span class="built_in">echo</span> -n <span class="string">"enter the App bundleId: "</span></div><div class="line"><span class="built_in">read</span> bundleId </div><div class="line"></div><div class="line"><span class="built_in">echo</span> -n <span class="string">"enter the App version: "</span></div><div class="line"><span class="built_in">read</span> version</div><div class="line"></div><div class="line"><span class="comment"># 官网下载的dSYM文件路径</span></div><div class="line"><span class="built_in">echo</span> -n <span class="string">"enter the dsymPath:  "</span></div><div class="line"><span class="built_in">read</span> path</div><div class="line"></div><div class="line"><span class="built_in">cd</span> <span class="string">"<span class="variable">$path</span>"</span></div><div class="line"></div><div class="line"><span class="comment"># Check the Java Environment</span></div><div class="line">CheckJavaVersion=$(java -version 2&gt;&amp;1)</div><div class="line"><span class="built_in">echo</span> <span class="string">"<span class="variable">$CheckJavaVersion</span>"</span> | grep -q <span class="string">"Java(TM)"</span></div><div class="line"><span class="keyword">if</span> [ $? -ne 0 ]</div><div class="line"><span class="keyword">then</span></div><div class="line">    <span class="built_in">echo</span> <span class="string">"----"</span></div><div class="line">    <span class="built_in">echo</span> <span class="string">"系统中未安装Java或者未配置Java环境，请检查！-- Please check if your system has installed Java or configured environment for Java!"</span></div><div class="line">    <span class="built_in">echo</span> <span class="string">"Java官网 -- Java Web Site：www.java.com"</span></div><div class="line">    <span class="built_in">exit</span> 1</div><div class="line"><span class="keyword">fi</span></div><div class="line"></div><div class="line"><span class="comment"># Check the jar</span></div><div class="line"><span class="comment">#ShellDir=$(cd `dirname $0`; pwd)</span></div><div class="line">pathName=$(<span class="built_in">cd</span> `dirname <span class="variable">$0</span>`; <span class="built_in">pwd</span>)</div><div class="line">JarName=<span class="string">"buglySymboliOS.jar"</span></div><div class="line">JarPath=<span class="string">"<span class="variable">$pathName</span>/<span class="variable">$JarName</span>"</span></div><div class="line"><span class="keyword">if</span> [ ! -f <span class="string">"<span class="variable">$JarPath</span>"</span> ]; <span class="keyword">then</span></div><div class="line">    <span class="built_in">echo</span> <span class="string">"----"</span></div><div class="line">    <span class="built_in">echo</span> <span class="string">"未找到\"<span class="variable">$JarName</span>\"！-- Can not find \"<span class="variable">$JarName</span>\"!"</span></div><div class="line">    <span class="built_in">echo</span> <span class="string">"请将\"<span class="variable">$JarName</span>\"复制到\"<span class="variable">$pathName</span>\"中！"</span></div><div class="line">    <span class="built_in">echo</span> <span class="string">" -- Please copy \"<span class="variable">$JarName</span>\" to \"<span class="variable">$pathName</span>\"!"</span></div><div class="line">    <span class="built_in">exit</span> 2</div><div class="line"><span class="keyword">fi</span> </div><div class="line"></div><div class="line"><span class="comment"># call the function to extract symbols</span></div><div class="line">uploadDsym $*</div></pre></td></tr></table></figure>
+<blockquote>
+<p>该脚本已上传<a href="https://github.com/fanglinwei/buglydSYMTool" target="_blank" rel="external">Github</a>直接下载, 只是一个小工具,不喜勿喷.欢迎star</p>
+</blockquote>
 
       
     </div>
@@ -443,7 +419,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Cocoapods/" rel="tag"># Cocoapods</a>
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
           
         </div>
       
@@ -456,8 +432,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/post/Hexo/Hexo添加音乐.html" rel="next" title="Hexo添加音乐">
-                <i class="fa fa-chevron-left"></i> Hexo添加音乐
+              <a href="/post/Swift/swift学习---优雅的iPhone全尺寸屏幕精准适配工具.html" rel="next" title="swift学习---优雅的iPhone全尺寸屏幕精准适配工具">
+                <i class="fa fa-chevron-left"></i> swift学习---优雅的iPhone全尺寸屏幕精准适配工具
               </a>
             
           </div>
@@ -465,10 +441,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/post/大神技术博客.html" rel="prev" title="大神技术博客">
-                大神技术博客 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -677,7 +649,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#把原来的拖进去的库删了也会出现"><span class="nav-number">1.0.1.</span> <span class="nav-text">把原来的拖进去的库删了也会出现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#此时你用cocoapods导入库的时候命令行会有"><span class="nav-number">1.0.2.</span> <span class="nav-text">此时你用cocoapods导入库的时候命令行会有</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法"><span class="nav-number">2.</span> <span class="nav-text">解决方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一步"><span class="nav-number">2.1.</span> <span class="nav-text">第一步</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二步"><span class="nav-number">2.2.</span> <span class="nav-text">第二步</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#符号表说明-Bugly-iOS-符号表配置"><span class="nav-number">1.</span> <span class="nav-text">符号表说明: Bugly iOS 符号表配置</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用"><span class="nav-number"></span> <span class="nav-text">使用:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-按照bugly官网配置java环境"><span class="nav-number"></span> <span class="nav-text">1. 按照bugly官网配置java环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-准备dSYM文件"><span class="nav-number"></span> <span class="nav-text">2. 准备dSYM文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-下载buglySymboliOS-jar"><span class="nav-number"></span> <span class="nav-text">3. 下载buglySymboliOS.jar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-准备脚本"><span class="nav-number"></span> <span class="nav-text">4. 准备脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#脚本代码"><span class="nav-number"></span> <span class="nav-text">脚本代码</span></a></div>
             
 
           </div>
