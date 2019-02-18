@@ -75,19 +75,19 @@
 <meta property="og:site_name" content="calm&#39;s Blog">
 <meta property="og:description" content="原文 【硅谷问道】Chris Lattner 访谈录  话题 Chris Lattner 是谁？ Xcode 的编译器 LLVM 背后有怎样的故事？ Swift 诞生的前世今生，封闭的苹果为何要拥抱开源？ 说好的 ABI 稳定性何时能推出？  Chris Lattner 是谁">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1721232-82036a5c693365c1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/650">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1721232-daeab5554b57f046.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/650">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1721232-648e86dc59a7cf78.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/650">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1721232-a20135128b592275.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/650">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1721232-f5541e6b471e30c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/650">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1721232-97a1247c57b5089c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/650">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1721232-f6b2084f144f48fb.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/650">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1721232-02b9bf7896c1d0be.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/650">
-<meta property="og:updated_time" content="2017-08-11T10:16:50.000Z">
+<meta property="og:image" content="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/swift_image1.jpg">
+<meta property="og:image" content="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/swift_image2.png">
+<meta property="og:image" content="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/swift_image3.jpg">
+<meta property="og:image" content="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/swift_image4.png">
+<meta property="og:image" content="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/swift_image5.png">
+<meta property="og:image" content="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/swift_image6.png">
+<meta property="og:image" content="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/swift_image7.jpeg">
+<meta property="og:image" content="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/swift_image8.jpeg">
+<meta property="og:updated_time" content="2019-02-18T05:32:10.500Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何正确看待Swift">
 <meta name="twitter:description" content="原文 【硅谷问道】Chris Lattner 访谈录  话题 Chris Lattner 是谁？ Xcode 的编译器 LLVM 背后有怎样的故事？ Swift 诞生的前世今生，封闭的苹果为何要拥抱开源？ 说好的 ABI 稳定性何时能推出？  Chris Lattner 是谁">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1721232-82036a5c693365c1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/650">
+<meta name="twitter:image" content="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/swift_image1.jpg">
 
 
 
@@ -397,7 +397,7 @@
 <li>Swift 诞生的前世今生，封闭的苹果为何要拥抱开源？</li>
 <li>说好的 ABI 稳定性何时能推出？</li>
 </ul>
-<h2 id="Chris-Lattner-是谁"><a href="#Chris-Lattner-是谁" class="headerlink" title="Chris Lattner 是谁"></a>Chris Lattner 是谁</h2><div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/1721232-82036a5c693365c1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/650" alt="image1"><br></div>
+<h2 id="Chris-Lattner-是谁"><a href="#Chris-Lattner-是谁" class="headerlink" title="Chris Lattner 是谁"></a>Chris Lattner 是谁</h2><div align="center"><br><br><img src="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/swift_image1.jpg" alt="image1"><br></div>
 
 <a id="more"></a>
 <h3 id="教育背景"><a href="#教育背景" class="headerlink" title="教育背景"></a>教育背景</h3><ul>
@@ -442,7 +442,7 @@
 <p>言归正传，契机发生在2010年了。当时好像是我们刚刚完成了 Clang 对 C++的支持。你也知道 C++ 写起来有多丑，但是做个编辑器支持 C++，完善 C++ 这门语言就是另一回事了，我们当时搞了好久终于完成的时候特别有成就感。当然 Clang 远没有到达完美的地步。</p>
 <p>我又扯远了。除了做 Clang 以外，无论是 C语言，C++，还是 Objective-C，都有一些我不是很满意的地方。所以我就想要不我们搞个新的语言来吧。新的语言要越简单越好。一开始大家都没认真，后来我跟很多同事聊了之后觉得新语言的计划可行，而且大家都很亦可赛艇。于是我们就用业余时间开始顶层设计和写代码。</p>
 <p>现在问题来了，因为我们已经有 Objective-C 了。虽然它有几个地方很丑，比如老是用 “@”，每句结束了还要打分号，但是这些并不妨碍它是一门伟大的语言。所以，我们为什么要开发新语言，而不是把精力花在优化 Objective - C 上？</p>
-<div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/1721232-daeab5554b57f046.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/650" alt="image2"><br></div>
+<div align="center"><br><br><img src="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/swift_image2.png" alt="image2"><br></div>
 
 
 <p>原因有三。</p>
@@ -466,7 +466,7 @@
 <p>当年我们开源了 LLVM 和 Clang，它们也发展喜人。我们的对手 AMD 们完全跟不上我们。但是跟 Swift 比起来，它们的发展也太慢了，LLVM 和 Clang 开源后完全没有 Swift 这么火。</p>
 <p>Swift 就不同了，开源一年之后，我们就有了上百万的开发者在使用这门语言 – 我和很多有丰富开源经验的老工程师都吓了一跳，这简直了！然后我们每天收到无数的邮件和 pull requests，要求更新这个、要求优化那个，我们的节奏完全被打乱了。我们如何规划开发？我们如何把 Swift 的开发导向一个正确的方向？这些问题随着时间的推移和经验的积累，慢慢找到了解决之道。</p>
 <p>我现在觉得开源这个决定至关重要。一来大家会帮着优化；二来我们有个巨大的论坛，在那里大家可以畅所欲言，全世界的人都在帮着 Swift 进步，这真的很棒。我们虽然没有一开始就具体计划要开源，但是苹果内部当时都觉得 Swift 肯定有一天要开源。</p>
-<h3 id="苹果与特斯拉"><a href="#苹果与特斯拉" class="headerlink" title="苹果与特斯拉"></a>苹果与特斯拉</h3><div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/1721232-648e86dc59a7cf78.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/650" alt="image3"><br></div>
+<h3 id="苹果与特斯拉"><a href="#苹果与特斯拉" class="headerlink" title="苹果与特斯拉"></a>苹果与特斯拉</h3><div align="center"><br><br><img src="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/swift_image3.jpg" alt="image3"><br></div>
 
 <p><strong>11</strong>. 苹果好像一直是个封闭的公司，你们内部对于开源怎么看？</p>
 <p>苹果其实有开源的传统。 LLVM 虽然不是始于苹果，但是最终是苹果完成并将其开源。Clang 则完完全全是生于斯开源于斯。还有其他工具，比如 LLDB，libc+，以及compiler-rt 都是如此。</p>
@@ -481,14 +481,14 @@
 <p>ABI 推迟有两个原因。</p>
 <p>第一是因为 Swift 的开发进程中有很多不确定性。当 Swift 开源之时，一堆人对我们提 pull request，提各种各样的 issue。这样我们就不得不去花大量的时间去维护开源社区，而不是专心去做计划内的工作。</p>
 <p>第二个原因是，尽管稳定的 ABI 很重要，但是对于开发者来说，稳定的 ABI 对他们来说没有明显的好处，他们更关心是语法和兼容上的稳定和优化。所以我们后来修改了计划，语法和兼容上的稳定性被定为是最先要实现的目标。这样当 Swift 3.1 或者 Swift 4.0 出来的时候，大家不用担心语言上的转化会让 Xcode 崩溃，或是需要大家整个重构 APP。Swift 3.0 主要就是实现这个目标。</p>
-<div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/1721232-a20135128b592275.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/650" alt="image4"><br></div>
+<div align="center"><br><br><img src="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/swift_image4.png" alt="image4"><br></div>
 
 <p><strong>15</strong>. 稳定的 <strong>ABI</strong> 什么时候推出？他会赶在异步和并发模型之前吗？</p>
 <p>Swift 现有的内存管理机制对 ABI 稳定性造成了不小的影响。有些底层逻辑还需要调整，比如 getter 和 setter 的生成以及属性的内存分配问题，苹果内部正在做这件事，这之后我们才能完成 ABI。至于并发模型啥的就跟 ABI 没有关系了。</p>
 <p>很多人担心 Swift 4.0 的时候苹果能不能推出稳定的 ABI，因为毕竟工作量太大。ABI 的工作正在井然有序得进行，而且对于开源社区来讲推出稳定的 ABI 至关重要。Ted （Chris Lattner 之后的 Swift 领导人）有一件事说对了，现在 Swift 当务之急就是让编译器更稳定，让错误处理更方便，提高编译速度，并且将 Swift 拓展到大规模系统中。</p>
 <p>我在想 Swift 4.0 的时候究竟能看到什么。也许没有稳定的 ABI，但是一定会有重要的新功能加入。</p>
 <p>ABI 将允许未来 Swift 版本开发的应用程序和编译库可以在二进制层次上与 Swift 3.0 版本的应用程序和编译库相互调用。这样，ABI的稳定性将保证一定程度的二进制兼容性，并且第三方更容易发布二进制库。另外，ABI 将允许删除需要的 Swift 标准库和二进制文件，就像目前情况下通过Xcode创建的 iOS 和 OS X 应用程序一样。</p>
-<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/1721232-f5541e6b471e30c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/650" alt="image5"><br></div>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><div align="center"><br><br><img src="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/swift_image5.png" alt="image5"><br></div>
 
 <h5 id="LLVM的三层结构"><a href="#LLVM的三层结构" class="headerlink" title="LLVM的三层结构"></a>LLVM的三层结构</h5><ul>
 <li>第一层：Clang 编译器，负责编译各种语言</li>
@@ -524,7 +524,7 @@
 <p>再接下来，<strong>Swift</strong> 要取代 <strong>Java</strong>，无论是脚本语言还是底层的系统设计，<strong>Swift</strong> 最终都应该能应付自如。</p>
 <p>脚本语言上，开源社区和我们苹果内部都在尝试将正则表达式、多行字符串等脚本语言的特征都加入到 Swift 当中，虽然工作量很大，但我认为它们最终都将成为 Swift 的一个部分。</p>
 <p>系统开发方面，我觉得取代 Java 最重要的一点就是 Swift 一定要有自己的特色。我觉得 Rust 是一个不错的语言，虽然现在没多少人用。Swift 在某些顶层开发上要明显优于 Rust。再等过些年，当 Swift 在系统开发上真正流行起来之时，Swift 就离一统天下不远了。</p>
-<div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/1721232-97a1247c57b5089c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/650" alt="image6"><br></div>
+<div align="center"><br><br><img src="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/swift_image6.png" alt="image6"><br></div>
 
 <p><strong>17</strong>. 对于 Swift 在服务器上的发展，你觉得交给开源社区去做就足够了吗？苹果自己会不会推出面向服务器端的 Swift 函数库？</p>
 <p>首先我觉得若要成为服务器端的流行语言，这几个部分 Swift 必须具备：编码和解码，网络传输协议，HTTP。这些部分我觉得要成为标准函数库，因为它们是最基本的东西，苹果内部自己来做也许更好，因为能确保质量。对于具体的网络应用函数库，我觉得短期内没必要。这是因为业界内部对此就争议很大，如同 Ruby on Rails 那样的王者框架还没有出现。</p>
@@ -542,7 +542,7 @@
 <p><strong>21</strong>. 有人说 <strong>Swift</strong> 是大杂烩，一部分借鉴 <strong>C#</strong>，一部分借鉴 <strong>Javascript</strong>，一部分借鉴 <strong>Objective-C</strong>，你是怎么看的？</p>
 <p>Swift 确实是大杂烩。但是它并不是简单的模仿其他语言，而是借鉴，然后创造出一个伟大的语言。我们确实参考了大量其他的语言设计。比如 Haskell 很多概念就被引入到 Swift 中。Swift 中的 Protocol，就是从 Haskell 的 construct 中得到启发的。</p>
 <p>还有其他部分长得像 <strong>Dart</strong>，亦或是借鉴了 <strong>Go</strong> 和 <strong>C#</strong>。这样做也有另一个好处，开发者拿到 <strong>Swift</strong> 的时候会有种似曾相识的感觉，这样大家也更愿意用 <strong>Swift</strong> 开发。</p>
-<h3 id="Swift-vs-Objective-C"><a href="#Swift-vs-Objective-C" class="headerlink" title="Swift vs. Objective-C"></a>Swift vs. Objective-C</h3><div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/1721232-f6b2084f144f48fb.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/650" alt="image7"><br></div>
+<h3 id="Swift-vs-Objective-C"><a href="#Swift-vs-Objective-C" class="headerlink" title="Swift vs. Objective-C"></a>Swift vs. Objective-C</h3><div align="center"><br><br><img src="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/swift_image7.jpeg" alt="image7"><br></div>
 
 <p><strong>22</strong>. 给我个现在就学习 <strong>Swift</strong> 的理由？</p>
 <p>这个其实无所谓。我个人不觉得 Objective-C 会短期内被取代，苹果依然支持 C 和 C++，而且放弃 Objective-C 对苹果来说有百害而无一利。你不必一定要学习 Swift，Swift 只是一门更好的语言。</p>
@@ -574,7 +574,7 @@
 <p>我个人要强调的是，这些毛病 Garbage Collection 也有。除此之外 Garbage Collection 还不能终止所有的线程，或者在特定的一个时间点终止一个线程。这是因为 Garbage Collection 引入了安全指针（safepoint），这同样也是一笔额外的开销。</p>
 <p>ARC 中引用计数的开销在实际开发中影响不大。而且我们对对象的整个生命流程都有掌控，而这是 Garbage Collection 不具备的。实际上我觉得 ARC 中有些额外开销是必须的，那些不必须的开销以后也会慢慢改进的。</p>
 <p>至于循环引用的问题。相比于你必须在具体的一行说明，retain/malloc 这个变量，然后再在后面某一行说明，release/free这个变量这种麻烦事，你只需要用 strong 或者 weak 表示你对对象的所有权，你省去了大量思考内存分配的担忧和操作，这难道不是一个巨大的进步吗？</p>
-<h3 id="身后之事"><a href="#身后之事" class="headerlink" title="身后之事"></a>身后之事</h3><div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/1721232-02b9bf7896c1d0be.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/650" alt="image8"><br></div>
+<h3 id="身后之事"><a href="#身后之事" class="headerlink" title="身后之事"></a>身后之事</h3><div align="center"><br><br><img src="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/swift_image8.jpeg" alt="image8"><br></div>
 
 <p><strong>29</strong>.把 <strong>Swift</strong> 交给 <strong>Ted</strong> 你放心吗？</p>
 <p>完全不用担心。</p>
@@ -618,20 +618,20 @@
       
         
   <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-    <div>国庆快乐,O(∩_∩)O~~！</div>
+    <div>元宵快乐,O(∩_∩)O~~！</div>
     <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
       <span>赏</span>
     </button>
     <div id="QR" style="display: none;">
       
         <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="http://ou344372s.bkt.clouddn.com/wechat-reward-image1.png" alt="calm WeChat Pay"/>
+          <img id="wechat_qr" src="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/wechat-reward-image1.png" alt="calm WeChat Pay"/>
           <p>微信打赏</p>
         </div>
       
       
         <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="http://ou344372s.bkt.clouddn.com/alipay-reward-image.png" alt="calm Alipay"/>
+          <img id="alipay_qr" src="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/alipay-reward-image.png" alt="calm Alipay"/>
           <p>支付宝打赏</p>
         </div>
       
@@ -783,7 +783,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -805,7 +805,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

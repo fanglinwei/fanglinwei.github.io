@@ -85,14 +85,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[美团点评技术年货]]></title>
-    <url>%2Fpost%2F%E7%BE%8E%E5%9B%A2%E6%8A%80%E6%9C%AF%E6%94%B6%E8%97%8F.html</url>
-    <content type="text"><![CDATA[摘要春节已近，年味渐浓，美团点评技术年货来啦！《2018年美团点评技术年货（上）》 《2018年美团点评技术年货（中）》 《2018年美团点评技术年货（下）》 《2018年美团点评技术年货（合辑）》 温馨提醒： 上册约22M，中册约23M，下册约36M，合辑约70M； 文件较大，缓存需要时间，请耐心等候； 请注意流量，建议通过WIFI下载，或者将地址复制到PC端，使用浏览器下载。]]></content>
-      <tags>
-        <tag>美团点评技术年货</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Python 开发工具安装]]></title>
     <url>%2Fpost%2Fpython%2FPython%20%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85.html</url>
     <content type="text"><![CDATA[PyCharm 下载链接：【PyCharm】 Python 3.x 最新版安装教程：brew install python3brew linkappsexport PATH=/usr/local/bin:$PATHsource ~/.bash_profilepython3 --version 最佳推荐 Python 开发工具，使用 PyCharm，附上 PyCharm 2017 最新激活链接： PyCharm 2017 最新激活链接]]></content>

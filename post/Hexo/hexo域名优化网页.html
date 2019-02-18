@@ -75,18 +75,18 @@
 <meta property="og:site_name" content="calm&#39;s Blog">
 <meta property="og:description" content="原文地址:Dnspod+Namesilo域名结合实现域名选路解析  摘要 上面的地址采用Dnspod+Namesilo实现国内国外解析,我用的是阿里的万网注册域名阿里云域名注册">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://ou344372s.bkt.clouddn.com/csummerblog/image/aliyunjiexi1.png">
-<meta property="og:image" content="http://ou344372s.bkt.clouddn.com/csummerblog/image/aliyunjiexi2.png">
-<meta property="og:image" content="http://ou344372s.bkt.clouddn.com/csummerblog/image/codingme3.png">
-<meta property="og:image" content="http://ou344372s.bkt.clouddn.com/csummerblog/image/codingme1.png">
-<meta property="og:image" content="http://ou344372s.bkt.clouddn.com/csummerblog/image/github1.png">
-<meta property="og:image" content="http://ou344372s.bkt.clouddn.com/csummerblog/image/aliyunjiexi3.png">
-<meta property="og:image" content="http://ou344372s.bkt.clouddn.com/csummerblog/image/codingme2.png">
-<meta property="og:updated_time" content="2017-08-09T04:52:26.000Z">
+<meta property="og:image" content="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/aliyunjiexi1.png">
+<meta property="og:image" content="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/aliyunjiexi2.png">
+<meta property="og:image" content="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/codingme3.png">
+<meta property="og:image" content="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/codingme1.png">
+<meta property="og:image" content="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/github1.png">
+<meta property="og:image" content="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/aliyunjiexi3.png">
+<meta property="og:image" content="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/codingme2.png">
+<meta property="og:updated_time" content="2019-02-18T05:13:00.098Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo域名优化网页">
 <meta name="twitter:description" content="原文地址:Dnspod+Namesilo域名结合实现域名选路解析  摘要 上面的地址采用Dnspod+Namesilo实现国内国外解析,我用的是阿里的万网注册域名阿里云域名注册">
-<meta name="twitter:image" content="http://ou344372s.bkt.clouddn.com/csummerblog/image/aliyunjiexi1.png">
+<meta name="twitter:image" content="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/aliyunjiexi1.png">
 
 
 
@@ -401,22 +401,22 @@
 <li>f1g1ns1.dnspod.net</li>
 <li>f1g1ns2.dnspod.net</li>
 </ol>
-<p><img src="http://ou344372s.bkt.clouddn.com/csummerblog/image/aliyunjiexi1.png" alt=""></p>
+<p><img src="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/aliyunjiexi1.png" alt=""></p>
 <h4 id="添加设置记录"><a href="#添加设置记录" class="headerlink" title="添加设置记录"></a>添加设置记录</h4><p>进入您的域名管理界面，添加别名</p>
 <p>留意的部分有：</p>
 <p><code>主机记录</code>：域名主机位（如；如果你的域名是xx.com,主机记录是mm,测mm.xx.com）</p>
 <p> <code>记录值</code>：是那个域名的别名（如xx.coding.me，侧mm.xx.com的解析将转向xx.coding.me，即访问mm.xx.com等于访问xx.coding.me）</p>
 <p><code>线路类型</code>：指你的域名是针对哪些线路解析（国内，国外，联通等等，DNSPOD的优势就在这里，<code>选路</code>）</p>
-<p>先添加两个github的链接<br><img src="http://ou344372s.bkt.clouddn.com/csummerblog/image/aliyunjiexi2.png" alt="title"></p>
-<h4 id="coding-me实现别名"><a href="#coding-me实现别名" class="headerlink" title="coding me实现别名"></a>coding me实现别名</h4><p>在<a href="https://coding.net" target="_blank" rel="external">coding</a>添加一个私有博客项目<br><img src="http://ou344372s.bkt.clouddn.com/csummerblog/image/codingme3.png" alt="title"></p>
-<p>创建好了后coding.me实现别名,点击Pages 服务->修改域名绑定为你在将要解析到阿里云的别名<br><img src="http://ou344372s.bkt.clouddn.com/csummerblog/image/codingme1.png" alt="title"></p>
+<p>先添加两个github的链接<br><img src="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/aliyunjiexi2.png" alt="image"></p>
+<h4 id="coding-me实现别名"><a href="#coding-me实现别名" class="headerlink" title="coding me实现别名"></a>coding me实现别名</h4><p>在<a href="https://coding.net" target="_blank" rel="external">coding</a>添加一个私有博客项目<br><img src="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/codingme3.png" alt="image"></p>
+<p>创建好了后coding.me实现别名,点击Pages 服务->修改域名绑定为你在将要解析到阿里云的别名<br><img src="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/codingme1.png" alt="image"></p>
 <h4 id="gitHub实现别名"><a href="#gitHub实现别名" class="headerlink" title="gitHub实现别名"></a>gitHub实现别名</h4><p>在Hexo目录下的Source下建立CNAME(注意必须为大写且只允许输入一个别名记录到此文件),并填入你在DNSPOD添加的CNAME到文件CNAME。如何查看是否生效？</p>
 <blockquote>
 <p>链接到你的Git如：<a href="https://github.com/yourname/yourname.github.io" target="_blank" rel="external">https://github.com/yourname/yourname.github.io</a> -> 点击导航栏部Settings</p>
 </blockquote>
-<p><img src="http://ou344372s.bkt.clouddn.com/csummerblog/image/github1.png" alt="title"></p>
-<h4 id="添加coding-me-和github地址解析"><a href="#添加coding-me-和github地址解析" class="headerlink" title="添加coding me 和github地址解析"></a>添加coding me 和github地址解析</h4><p><img src="http://ou344372s.bkt.clouddn.com/csummerblog/image/aliyunjiexi3.png" alt="title"></p>
-<h4 id="添加coding-me的SSH公钥"><a href="#添加coding-me的SSH公钥" class="headerlink" title="添加coding me的SSH公钥"></a>添加coding me的SSH公钥</h4><p><img src="http://ou344372s.bkt.clouddn.com/csummerblog/image/codingme2.png" alt="title"></p>
+<p><img src="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/github1.png" alt="image"></p>
+<h4 id="添加coding-me-和github地址解析"><a href="#添加coding-me-和github地址解析" class="headerlink" title="添加coding me 和github地址解析"></a>添加coding me 和github地址解析</h4><p><img src="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/aliyunjiexi3.png" alt="image"></p>
+<h4 id="添加coding-me的SSH公钥"><a href="#添加coding-me的SSH公钥" class="headerlink" title="添加coding me的SSH公钥"></a>添加coding me的SSH公钥</h4><p><img src="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/codingme2.png" alt="image"></p>
 <h4 id="设置站点-config-yml文件"><a href="#设置站点-config-yml文件" class="headerlink" title="设置站点_config.yml文件"></a>设置站点_config.yml文件</h4><p>设置站点_config.yml是为了每次改变同步都可以同步到github和codingme上的文件<br><figure class="highlight yml"><table><tr><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> <span class="string">git</span></div><div class="line"><span class="attr">  repo:</span> </div><div class="line">	<span class="attr">github:</span> <span class="string">git@github.com:fanglinwei/fanglinwei.github.io.git</span>  <span class="comment">#github地址</span></div><div class="line">	<span class="attr">codingme:</span> <span class="string">git@git.coding.net:CSummer/CSummer-blog.git</span>      <span class="comment">#codingme地址</span></div><div class="line"><span class="attr">  branch:</span> <span class="string">master</span></div></pre></td></tr></table></figure></p>
 <blockquote>
 <p>设置到这里基本上就可以达到域名访问国内资源了使用codingme绑定的page域名看看,是不是感觉快很多,而使用github绑定的page域名访问会慢一些</p>
@@ -436,20 +436,20 @@
       
         
   <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-    <div>国庆快乐,O(∩_∩)O~~！</div>
+    <div>元宵快乐,O(∩_∩)O~~！</div>
     <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
       <span>赏</span>
     </button>
     <div id="QR" style="display: none;">
       
         <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="http://ou344372s.bkt.clouddn.com/wechat-reward-image1.png" alt="calm WeChat Pay"/>
+          <img id="wechat_qr" src="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/wechat-reward-image1.png" alt="calm WeChat Pay"/>
           <p>微信打赏</p>
         </div>
       
       
         <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="http://ou344372s.bkt.clouddn.com/alipay-reward-image.png" alt="calm Alipay"/>
+          <img id="alipay_qr" src="https://csummer.oss-cn-beijing.aliyuncs.com/csummerblog/image/alipay-reward-image.png" alt="calm Alipay"/>
           <p>支付宝打赏</p>
         </div>
       
@@ -601,7 +601,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -623,7 +623,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
